@@ -6,7 +6,7 @@ import java.util.Set;
 public class TbSellMain implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
-	//销售主菜单
+	//閿�鍞富鑿滃崟
 	private String sellId;
 	private String pzs;
 	private String je;

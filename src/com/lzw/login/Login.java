@@ -23,20 +23,20 @@ public class Login extends JFrame {
 	private JButton login;
 	private static TbUserlist user;
 	public Login() {
-		setTitle("µÇÂ¼ÆóÒµ½øÏú´æ¹ÜÀíÏµÍ³");
+		setTitle("ç™»å½•ä¼ä¸šè¿›é”€å­˜ç®¡ç†ç³»ç»Ÿ");
 		final JPanel panel = new LoginPanel();
 		panel.setLayout(null);
 		getContentPane().add(panel);
 		setBounds(300, 200, panel.getWidth(), panel.getHeight());
 		userLabel = new JLabel();
-		userLabel.setText("ÓÃ»§Ãû£º");
+		userLabel.setText("ç”¨æˆ·åï¼š");
 		userLabel.setBounds(100, 135, 200, 18);
 		panel.add(userLabel);
 		final JTextField userName = new JTextField();
 		userName.setBounds(150, 135, 200, 18);
 		panel.add(userName);
 		passLabel = new JLabel();
-		passLabel.setText("ÃÜ  Âë£º");
+		passLabel.setText("å¯†  ç ï¼š");
 		passLabel.setBounds(100, 165, 200, 18);
 		panel.add(passLabel);
 		final JPasswordField userPassword = new JPasswordField();
@@ -62,7 +62,7 @@ public class Login extends JFrame {
 				new JXCFrame();
 			}
 		});
-		login.setText("µÇÂ¼");
+		login.setText("ç™»å½•");
 		login.setBounds(180, 195, 60, 18);
 		panel.add(login);
 		exit = new JButton();
@@ -71,7 +71,7 @@ public class Login extends JFrame {
 				System.exit(0);
 			}
 		});
-		exit.setText("ÍË³ö");
+		exit.setText("é€€å‡º");
 		exit.setBounds(260, 195, 60, 18);
 		panel.add(exit);
 		setVisible(true);

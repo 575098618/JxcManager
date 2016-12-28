@@ -29,7 +29,7 @@ public class GongYingShangChaXun extends JInternalFrame {
 		setMaximizable(true);
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("¹©Ó¦ÉÌĞÅÏ¢²éÑ¯");
+		setTitle("ä¾›åº”å•†ä¿¡æ¯æŸ¥è¯¢");
 		getContentPane().setLayout(new GridBagLayout());
 		setBounds(100, 100, 609, 375);
 
@@ -37,8 +37,8 @@ public class GongYingShangChaXun extends JInternalFrame {
 		table.setEnabled(false);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		final DefaultTableModel dftm = (DefaultTableModel) table.getModel();
-		String[] tableHeads = new String[]{"¹©Ó¦ÉÌID", "¹©Ó¦ÉÌÈ«³Æ", "¼ò³Æ", "ÓÊÕş±àÂë",
-				"µØÖ·", "µç»°", "´«Õæ", "ÁªÏµÈË", "ÁªÏµÈËµç»°", "¿ª»§ÒøĞĞ", "µç×ÓĞÅÏä"};
+		String[] tableHeads = new String[]{"ä¾›åº”å•†ID", "ä¾›åº”å•†å…¨ç§°", "ç®€ç§°", "é‚®æ”¿ç¼–ç ",
+				"åœ°å€", "ç”µè¯", "ä¼ çœŸ", "è”ç³»äºº", "è”ç³»äººç”µè¯", "å¼€æˆ·é“¶è¡Œ", "ç”µå­ä¿¡ç®±"};
 		dftm.setColumnIdentifiers(tableHeads);
 
 		final JScrollPane scrollPane = new JScrollPane(table);
@@ -52,15 +52,15 @@ public class GongYingShangChaXun extends JInternalFrame {
 		gridBagConstraints_6.gridx = 0;
 		getContentPane().add(scrollPane, gridBagConstraints_6);
 
-		setupComponet(new JLabel(" Ñ¡Ôñ²éÑ¯Ìõ¼ş£º"), 0, 0, 1, 1, false);
+		setupComponet(new JLabel(" é€‰æ‹©æŸ¥è¯¢æ¡ä»¶ï¼š"), 0, 0, 1, 1, false);
 		conditionName = new JComboBox();
-		conditionName.setModel(new DefaultComboBoxModel(new String[]{"¹©Ó¦ÉÌÈ«³Æ",
-				"¼ò³Æ"}));
+		conditionName.setModel(new DefaultComboBoxModel(new String[]{"ä¾›åº”å•†å…¨ç§°",
+				"ç®€ç§°"}));
 		setupComponet(conditionName, 1, 0, 1, 30, true);
 
 		conditionOperation = new JComboBox();
-		conditionOperation.setModel(new DefaultComboBoxModel(new String[]{"µÈÓÚ",
-				"°üº¬"}));
+		conditionOperation.setModel(new DefaultComboBoxModel(new String[]{"ç­‰äº",
+				"åŒ…å«"}));
 		setupComponet(conditionOperation, 2, 0, 1, 30, true);
 
 		conditionContent = new JTextField();
@@ -69,7 +69,7 @@ public class GongYingShangChaXun extends JInternalFrame {
 		final JButton queryButton = new JButton();
 		queryButton.addActionListener(new queryAction(dftm));
 		setupComponet(queryButton, 4, 0, 1, 1, false);
-		queryButton.setText("²éÑ¯");
+		queryButton.setText("æŸ¥è¯¢");
 
 		final JButton showAllButton = new JButton();
 		showAllButton.addActionListener(new ActionListener() {
@@ -80,7 +80,7 @@ public class GongYingShangChaXun extends JInternalFrame {
 			}
 		});
 		setupComponet(showAllButton, 5, 0, 1, 1, false);
-		showAllButton.setText("ÏÔÊ¾È«²¿Êı¾İ");
+		showAllButton.setText("æ˜¾ç¤ºå…¨éƒ¨æ•°æ®");
 	}
 
 	private void updateTable(List list, final DefaultTableModel dftm) {
@@ -110,7 +110,7 @@ public class GongYingShangChaXun extends JInternalFrame {
 			dftm.addRow(rowData);
 		}
 	}
-	// ÉèÖÃ×é¼şÎ»ÖÃ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();
@@ -138,14 +138,14 @@ public class GongYingShangChaXun extends JInternalFrame {
 					.trim();
 			content = conditionContent.getText().trim();
 			String sql = "select * from tb_gysInfo where ";
-			if (conName.equals("¹©Ó¦ÉÌÈ«³Æ")) {
-				if (conOperation.equals("µÈÓÚ"))
+			if (conName.equals("ä¾›åº”å•†å…¨ç§°")) {
+				if (conOperation.equals("ç­‰äº"))
 					list = Dao.findForList(sql + "name='" + content + "'");
 				else
 					list = Dao.findForList(sql + "name like '%" + content
 							+ "%'");
 			} else {
-				if (conOperation.equals("µÈÓÚ"))
+				if (conOperation.equals("ç­‰äº"))
 					list = Dao.findForList(sql + "jc='" + content + "'");
 				else
 					list = Dao.findForList(sql + "jc like '%" + content + "%'");

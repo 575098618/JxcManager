@@ -34,56 +34,56 @@ public class QuanManager extends JInternalFrame {
 		setClosable(true);
 		setIconifiable(true);
 		setBounds(10, 10, 420, 170);
-		setTitle("È¨ÏŞ¹ÜÀí");
+		setTitle("æƒé™ç®¡ç†");
 		setLayout(new GridBagLayout());
 		setVisible(true);
 
 		final JLabel khName = new JLabel();
-		khName.setText("ÓÃ»§ĞÕÃû£º");
+		khName.setText("ç”¨æˆ·å§“åï¼š");
 		setupComponet(khName, 0, 0, 1, 0, false);
 		userName = new JTextField();
 		userName.setEditable(false);
 		setupComponet(userName, 1, 0, 1, 100, true);
 
-		final JLabel addressLabel = new JLabel("µÇÂ¼Ãû£º");
+		final JLabel addressLabel = new JLabel("ç™»å½•åï¼š");
 		setupComponet(addressLabel, 2, 0, 1, 0, false);
 		name = new JTextField();
 		name.setEditable(false);
 		setupComponet(name, 3, 0, 1, 100, true);
 
-		setupComponet(new JLabel("ÃÜÂë£º"), 0, 1, 1, 0, false);
+		setupComponet(new JLabel("å¯†ç ï¼š"), 0, 1, 1, 0, false);
 		pass = new JTextField();
 		pass.setEditable(false);
 		setupComponet(pass, 1, 1, 1, 100, true);
 
-		setupComponet(new JLabel("È¨ÏŞ£º"), 2, 1, 1, 0, false);
-		quanXian = new JComboBox(new String[]{"¹ÜÀíÔ±", "²Ù×÷Ô±"});
+		setupComponet(new JLabel("æƒé™ï¼š"), 2, 1, 1, 0, false);
+		quanXian = new JComboBox(new String[]{"ç®¡ç†å‘˜", "æ“ä½œå‘˜"});
 		setupComponet(quanXian, 3, 1, 1, 100, true);
 
-		setupComponet(new JLabel("Ñ¡ÔñÓÃ»§"), 0, 2, 1, 0, false);
+		setupComponet(new JLabel("é€‰æ‹©ç”¨æˆ·"), 0, 2, 1, 0, false);
 		userCombo = new JComboBox();
 		userCombo.setPreferredSize(new Dimension(80, 21));
-		// ´¦ÀíÓÃ»§ĞÅÏ¢µÄÏÂÀ­Ñ¡Ôñ¿òµÄÑ¡ÔñÊÂ¼ş
+		// å¤„ç†ç”¨æˆ·ä¿¡æ¯çš„ä¸‹æ‹‰é€‰æ‹©æ¡†çš„é€‰æ‹©äº‹ä»¶
 		userCombo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				doUserSelectAction();
 			}
 		});
-		// ¶¨Î»ÓÃ»§ĞÅÏ¢µÄÏÂÀ­Ñ¡Ôñ¿ò
+		// å®šä½ç”¨æˆ·ä¿¡æ¯çš„ä¸‹æ‹‰é€‰æ‹©æ¡†
 		setupComponet(userCombo, 1, 2, 2, 0, true);
-		modifyButton = new JButton("ĞŞ¸Ä");
-		closeButton = new JButton("¹Ø±Õ");
+		modifyButton = new JButton("ä¿®æ”¹");
+		closeButton = new JButton("å…³é—­");
 		JPanel panel = new JPanel();
 		panel.add(modifyButton);
 		panel.add(closeButton);
 		setupComponet(panel, 3, 2, 1, 0, false);
-		// ´¦ÀíÉ¾³ı°´Å¥µÄµ¥»÷ÊÂ¼ş
+		// å¤„ç†åˆ é™¤æŒ‰é’®çš„å•å‡»äº‹ä»¶
 		closeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				QuanManager.this.doDefaultCloseAction();
 			}
 		});
-		// ´¦ÀíĞŞ¸Ä°´Å¥µÄµ¥»÷ÊÂ¼ş
+		// å¤„ç†ä¿®æ”¹æŒ‰é’®çš„å•å‡»äº‹ä»¶
 		modifyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Item item = (Item) userCombo.getSelectedItem();
@@ -94,19 +94,19 @@ public class QuanManager extends JInternalFrame {
 				else
 					user.setQuan("c");
 				if (Dao.updateUser(user) >= 1)
-					JOptionPane.showMessageDialog(QuanManager.this, "ĞŞ¸ÄÍê³É");
+					JOptionPane.showMessageDialog(QuanManager.this, "ä¿®æ”¹å®Œæˆ");
 				else
-					JOptionPane.showMessageDialog(QuanManager.this, "ĞŞ¸ÄÊ§°Ü");
+					JOptionPane.showMessageDialog(QuanManager.this, "ä¿®æ”¹å¤±è´¥");
 			}
 		});
-		// ´°Ìå¼¤»îÊÂ¼ş
+		// çª—ä½“æ¿€æ´»äº‹ä»¶
 		addInternalFrameListener(new InternalFrameAdapter() {
 			public void internalFrameActivated(InternalFrameEvent e) {
-				initComboBox();// ³õÊ¼»¯ÓÃ»§ÏÂÀ­Ñ¡Ôñ¿ò
+				initComboBox();// åˆå§‹åŒ–ç”¨æˆ·ä¸‹æ‹‰é€‰æ‹©æ¡†
 			}
 		});
 	}
-	// ³õÊ¼»¯ÓÃ»§ÏÂÀ­Ñ¡Ôñ¿ò
+	// åˆå§‹åŒ–ç”¨æˆ·ä¸‹æ‹‰é€‰æ‹©æ¡†
 	public void initComboBox() {
 		List khInfo = Dao.getUsers();
 		List<Item> items = new ArrayList<Item>();
@@ -123,7 +123,7 @@ public class QuanManager extends JInternalFrame {
 		}
 		doUserSelectAction();
 	}
-	// ÉèÖÃ×é¼şÎ»ÖÃ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();

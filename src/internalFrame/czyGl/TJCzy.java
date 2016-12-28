@@ -32,7 +32,7 @@ public class TJCzy extends JPanel {
 		setBounds(0, 0, 280, 236);
 		final JLabel label_4 = new JLabel();
 		label_4.setFont(new Font("", Font.PLAIN, 14));
-		label_4.setText("µÇÂ¼Ãû³Æ£º");
+		label_4.setText("ç™»å½•åç§°ï¼š");
 		final GridBagConstraints gridBagConstraints_10 = new GridBagConstraints();
 		gridBagConstraints_10.gridx = 0;
 		gridBagConstraints_10.gridy = 0;
@@ -48,7 +48,7 @@ public class TJCzy extends JPanel {
 		add(logName, gridBagConstraints_11);
 		final JLabel label = new JLabel();
 		label.setFont(new Font("", Font.PLAIN, 14));
-		label.setText("²Ù×÷Ô±ĞÕÃû£º");
+		label.setText("æ“ä½œå‘˜å§“åï¼š");
 		final GridBagConstraints gridBagConstraints = new GridBagConstraints();
 		gridBagConstraints.gridy = 1;
 		gridBagConstraints.gridx = 0;
@@ -67,7 +67,7 @@ public class TJCzy extends JPanel {
 		add(name, gridBagConstraints_1);
 		final JLabel label_2 = new JLabel();
 		label_2.setFont(new Font("", Font.PLAIN, 14));
-		label_2.setText("ÊäÈëÃÜÂë£º");
+		label_2.setText("è¾“å…¥å¯†ç ï¼š");
 		final GridBagConstraints gridBagConstraints_4 = new GridBagConstraints();
 		gridBagConstraints_4.gridy = 2;
 		gridBagConstraints_4.gridx = 0;
@@ -83,7 +83,7 @@ public class TJCzy extends JPanel {
 		add(passwordField, gridBagConstraints_5);
 		final JLabel label_3 = new JLabel();
 		label_3.setFont(new Font("", Font.PLAIN, 14));
-		label_3.setText("È·ÈÏÃÜÂë£º");
+		label_3.setText("ç¡®è®¤å¯†ç ï¼š");
 		final GridBagConstraints gridBagConstraints_6 = new GridBagConstraints();
 		gridBagConstraints_6.gridy = 3;
 		gridBagConstraints_6.gridx = 0;
@@ -106,17 +106,17 @@ public class TJCzy extends JPanel {
 				TbUserlist user = Dao.getUser(tbName, password);
 				if (user.getUsername() != null && !user.getUsername().isEmpty()) {
 					JOptionPane.showMessageDialog(TJCzy.this,
-							"´ËµÇÂ¼Ãû³ÆÒÑ¾­´æÔÚ");
+							"æ­¤ç™»å½•åç§°å·²ç»å­˜åœ¨");
 					name.setFocusable(true);
 					return;
 				}
 				if (name.getText() == null || name.getText().equals("")) {
-					JOptionPane.showMessageDialog(TJCzy.this, "ÓÃ»§Ãû²»ÄÜÎª¿Õ");
+					JOptionPane.showMessageDialog(TJCzy.this, "ç”¨æˆ·åä¸èƒ½ä¸ºç©º");
 					name.setRequestFocusEnabled(true);
 					return;
 				}
 				if (passwordField.getPassword().length == 0) {
-					JOptionPane.showMessageDialog(TJCzy.this, "ÃÜÂë²»ÄÜÎª¿Õ");
+					JOptionPane.showMessageDialog(TJCzy.this, "å¯†ç ä¸èƒ½ä¸ºç©º");
 				} else if (passwordField.getText().equals(
 						passwordField_1.getText())) {
 					TbUserlist tbUserlist = new TbUserlist();
@@ -125,15 +125,15 @@ public class TJCzy extends JPanel {
 					tbUserlist.setName(logName.getText().trim());
 					tbUserlist.setUsername(name.getText().trim());
 					Dao.addUser(tbUserlist);
-					JOptionPane.showMessageDialog(TJCzy.this, "²Ù×÷Ô±Ìí¼Ó³É¹¦");
+					JOptionPane.showMessageDialog(TJCzy.this, "æ“ä½œå‘˜æ·»åŠ æˆåŠŸ");
 					clear();
 				} else {
 					JOptionPane
-							.showMessageDialog(TJCzy.this, "Á½´ÎÃÜÂëÊäÈë²»ÏàÍ¬");
+							.showMessageDialog(TJCzy.this, "ä¸¤æ¬¡å¯†ç è¾“å…¥ä¸ç›¸åŒ");
 				}
 			}
 		});
-		button.setText("Ìí¼Ó");
+		button.setText("æ·»åŠ ");
 		final GridBagConstraints gridBagConstraints_8 = new GridBagConstraints();
 		gridBagConstraints_8.weighty = 1.0;
 		gridBagConstraints_8.anchor = GridBagConstraints.EAST;
@@ -147,7 +147,7 @@ public class TJCzy extends JPanel {
 				clear();
 			}
 		});
-		button_1.setText("ÖØĞ´");
+		button_1.setText("é‡å†™");
 		final GridBagConstraints gridBagConstraints_9 = new GridBagConstraints();
 		gridBagConstraints_9.weighty = 1.0;
 		gridBagConstraints_9.gridy = 5;

@@ -2,7 +2,7 @@ package model;
 public class TbSpinfo implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
-	//商品表格
+	//鍟嗗搧琛ㄦ牸
 	private String id;
 	private String spname;
 	private String jc;

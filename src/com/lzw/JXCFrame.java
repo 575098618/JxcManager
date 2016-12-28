@@ -35,35 +35,35 @@ import javax.swing.event.InternalFrameEvent;
 
 import com.lzw.login.Login;
 public class JXCFrame {
-	private JPanel sysManagePanel;//ÏµÍ³¹ÜÀíÃæ°å
-	private JDesktopPane desktopPane;//×ÀÃæÃæ°å
-	private JFrame frame;//´°Ìå£¨ÈİÆ÷£©
-	private JLabel backLabel;//±³¾°±êÇ©
+	private JPanel sysManagePanel;//ç³»ç»Ÿç®¡ç†é¢æ¿
+	private JDesktopPane desktopPane;//æ¡Œé¢é¢æ¿
+	private JFrame frame;//çª—ä½“ï¼ˆå®¹å™¨ï¼‰
+	private JLabel backLabel;//èƒŒæ™¯æ ‡ç­¾
 	/*
-	 * JLabel ¶ÔÏó¿ÉÒÔÏÔÊ¾ÎÄ±¾¡¢Í¼Ïñ»òÍ¬Ê±ÏÔÊ¾¶şÕß¡£¿ÉÒÔÍ¨¹ıÉèÖÃ´¹Ö±ºÍË®Æ½¶ÔÆë·½Ê½£¬
-	 * Ö¸¶¨±êÇ©ÏÔÊ¾ÇøÖĞ±êÇ©ÄÚÈİÔÚºÎ´¦¶ÔÆë¡£Ä¬ÈÏÇé¿öÏÂ£¬±êÇ©ÔÚÆäÏÔÊ¾ÇøÄÚ´¹Ö±¾ÓÖĞ¶ÔÆë¡£
-	 * Ä¬ÈÏÇé¿öÏÂ£¬Ö»ÏÔÊ¾ÎÄ±¾µÄ±êÇ©ÊÇ¿ªÊ¼±ß¶ÔÆë£»¶øÖ»ÏÔÊ¾Í¼ÏñµÄ±êÇ©ÔòË®Æ½¾ÓÖĞ¶ÔÆë¡£
-	 *  »¹¿ÉÒÔÖ¸¶¨ÎÄ±¾Ïà¶ÔÓÚÍ¼ÏñµÄÎ»ÖÃ¡£Ä¬ÈÏÇé¿öÏÂ£¬ÎÄ±¾Î»ÓÚÍ¼ÏñµÄ½áÎ²±ßÉÏ£¬ÎÄ±¾ºÍÍ¼Ïñ¶¼´¹Ö±¶ÔÆë¡£ 
+	 * JLabel å¯¹è±¡å¯ä»¥æ˜¾ç¤ºæ–‡æœ¬ã€å›¾åƒæˆ–åŒæ—¶æ˜¾ç¤ºäºŒè€…ã€‚å¯ä»¥é€šè¿‡è®¾ç½®å‚ç›´å’Œæ°´å¹³å¯¹é½æ–¹å¼ï¼Œ
+	 * æŒ‡å®šæ ‡ç­¾æ˜¾ç¤ºåŒºä¸­æ ‡ç­¾å†…å®¹åœ¨ä½•å¤„å¯¹é½ã€‚é»˜è®¤æƒ…å†µä¸‹ï¼Œæ ‡ç­¾åœ¨å…¶æ˜¾ç¤ºåŒºå†…å‚ç›´å±…ä¸­å¯¹é½ã€‚
+	 * é»˜è®¤æƒ…å†µä¸‹ï¼Œåªæ˜¾ç¤ºæ–‡æœ¬çš„æ ‡ç­¾æ˜¯å¼€å§‹è¾¹å¯¹é½ï¼›è€Œåªæ˜¾ç¤ºå›¾åƒçš„æ ‡ç­¾åˆ™æ°´å¹³å±…ä¸­å¯¹é½ã€‚
+	 *  è¿˜å¯ä»¥æŒ‡å®šæ–‡æœ¬ç›¸å¯¹äºå›¾åƒçš„ä½ç½®ã€‚é»˜è®¤æƒ…å†µä¸‹ï¼Œæ–‡æœ¬ä½äºå›¾åƒçš„ç»“å°¾è¾¹ä¸Šï¼Œæ–‡æœ¬å’Œå›¾åƒéƒ½å‚ç›´å¯¹é½ã€‚ 
 	 */
-	// ´´½¨´°ÌåµÄMapÀàĞÍ¼¯ºÏ¶ÔÏó,ÄÚ²¿´°¿Ú
+	// åˆ›å»ºçª—ä½“çš„Mapç±»å‹é›†åˆå¯¹è±¡,å†…éƒ¨çª—å£
 	private Map<String, JInternalFrame> ifs = new HashMap<String, JInternalFrame>();
 	public JXCFrame() {
-		frame = new JFrame("ÆóÒµ½øÏú´æ¹ÜÀíÏµÍ³");//´´½¨´°Ìå¶ÔÏó
-		frame.getContentPane().setBackground(new Color(170, 188, 120));//ÉèÖÃÑÕÉ«£¬RGBÑÕÉ«¶ÔÕÕ±í
-		frame.addComponentListener(new FrameListener());//Ìí¼Ó´°ÌåÊÂ¼ş¼àÌıÆ÷
-		frame.getContentPane().setLayout(new BorderLayout());//²¼¾Ö¹ÜÀíÆ÷
-		frame.setBounds(200, 200, 800, 600);//ÉèÖÃ´°ÌåÎ»ÖÃºÍ´óĞ¡£¬Ç°Á½¸öÊıÊÇ×ø±ê£¬ºóÃæÊÇ¿í¸ß
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//ÉèÖÃ´°ÌåÄ¬ÈÏµÄ¹Ø±Õ·½Ê½
-		backLabel = new JLabel();// ±³¾°±êÇ©
-		backLabel.setVerticalAlignment(SwingConstants.TOP);//ÉèÖÃ±³¾°±êÇ©´¹Ö±¶ÔÆë·½Ê½
-		backLabel.setHorizontalAlignment(SwingConstants.CENTER);//ÉèÖÃ±³¾°±êÇ©Ë®Æ½¶ÔÆë·½Ê½
-		updateBackImage(); // ¸üĞÂ»ò³õÊ¼»¯±³¾°Í¼Æ¬
-		desktopPane = new JDesktopPane();//´´½¨×ÀÃæÃæ°å
-		desktopPane.add(backLabel, new Integer(Integer.MIN_VALUE));//½«±³¾°±êÇ©Ìí¼Óµ½×ÀÃæÃæ°åÖĞ
-		frame.getContentPane().add(desktopPane);//Ìí¼Ó×ÀÃæÃæ°åµ½´°Ìå
-		JTabbedPane navigationPanel = createNavigationPanel(); // ´´½¨µ¼º½±êÇ©Ãæ°å
-		frame.getContentPane().add(navigationPanel, BorderLayout.NORTH);//Ìí¼Óµ¼º½±êÇ©µ½´°Ìå
-		frame .setVisible(true);//ÏÔÊ¾´°Ìå
+		frame = new JFrame("ä¼ä¸šè¿›é”€å­˜ç®¡ç†ç³»ç»Ÿ");//åˆ›å»ºçª—ä½“å¯¹è±¡
+		frame.getContentPane().setBackground(new Color(170, 188, 120));//è®¾ç½®é¢œè‰²ï¼ŒRGBé¢œè‰²å¯¹ç…§è¡¨
+		frame.addComponentListener(new FrameListener());//æ·»åŠ çª—ä½“äº‹ä»¶ç›‘å¬å™¨
+		frame.getContentPane().setLayout(new BorderLayout());//å¸ƒå±€ç®¡ç†å™¨
+		frame.setBounds(200, 200, 800, 600);//è®¾ç½®çª—ä½“ä½ç½®å’Œå¤§å°ï¼Œå‰ä¸¤ä¸ªæ•°æ˜¯åæ ‡ï¼Œåé¢æ˜¯å®½é«˜
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//è®¾ç½®çª—ä½“é»˜è®¤çš„å…³é—­æ–¹å¼
+		backLabel = new JLabel();// èƒŒæ™¯æ ‡ç­¾
+		backLabel.setVerticalAlignment(SwingConstants.TOP);//è®¾ç½®èƒŒæ™¯æ ‡ç­¾å‚ç›´å¯¹é½æ–¹å¼
+		backLabel.setHorizontalAlignment(SwingConstants.CENTER);//è®¾ç½®èƒŒæ™¯æ ‡ç­¾æ°´å¹³å¯¹é½æ–¹å¼
+		updateBackImage(); // æ›´æ–°æˆ–åˆå§‹åŒ–èƒŒæ™¯å›¾ç‰‡
+		desktopPane = new JDesktopPane();//åˆ›å»ºæ¡Œé¢é¢æ¿
+		desktopPane.add(backLabel, new Integer(Integer.MIN_VALUE));//å°†èƒŒæ™¯æ ‡ç­¾æ·»åŠ åˆ°æ¡Œé¢é¢æ¿ä¸­
+		frame.getContentPane().add(desktopPane);//æ·»åŠ æ¡Œé¢é¢æ¿åˆ°çª—ä½“
+		JTabbedPane navigationPanel = createNavigationPanel(); // åˆ›å»ºå¯¼èˆªæ ‡ç­¾é¢æ¿
+		frame.getContentPane().add(navigationPanel, BorderLayout.NORTH);//æ·»åŠ å¯¼èˆªæ ‡ç­¾åˆ°çª—ä½“
+		frame .setVisible(true);//æ˜¾ç¤ºçª—ä½“
 	}
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
@@ -72,88 +72,88 @@ public class JXCFrame {
 			}
 		});
 	}
-	private JTabbedPane createNavigationPanel() { // ´´½¨µ¼º½±êÇ©Ãæ°åµÄ·½·¨
+	private JTabbedPane createNavigationPanel() { // åˆ›å»ºå¯¼èˆªæ ‡ç­¾é¢æ¿çš„æ–¹æ³•
 		JTabbedPane tabbedPane = new JTabbedPane();
 		tabbedPane.setFocusable(false);
 		/*
 		 * 
-                     ¾ÍÊÇÊ§È¥½¹µãÁË¡£ËùÎ½½¹µã¾ÍÊÇ±»Ñ¡ÖĞµÄÒâË¼£¬»òÕßËµÊÇ¡°µ±Ç°ÕıÔÚ²Ù×÷µÄ×é¼ş¡±µÄÒâË¼¡£
-                     Èç¹ûÒ»¸ö×é¼ş±»Ñ¡ÖĞ£¬»òÕßÕıÔÚ±»²Ù×÷Õß£¬¾ÍÊÇµÃµ½ÁË½¹µã£¬¶øÏà·´µÄ£¬
-                     Ò»¸ö×é¼şÃ»ÓĞ±»Ñ¡ÖĞ»òÕßÊ§È¥²Ù×÷£¬¾ÍÊÇ±»×ªÒÆÁË½¹µã£¬½¹µãÒÑ¾­µ½±ğµÄ×é¼şÉÏÈ¥ÁË¡£
+                     å°±æ˜¯å¤±å»ç„¦ç‚¹äº†ã€‚æ‰€è°“ç„¦ç‚¹å°±æ˜¯è¢«é€‰ä¸­çš„æ„æ€ï¼Œæˆ–è€…è¯´æ˜¯â€œå½“å‰æ­£åœ¨æ“ä½œçš„ç»„ä»¶â€çš„æ„æ€ã€‚
+                     å¦‚æœä¸€ä¸ªç»„ä»¶è¢«é€‰ä¸­ï¼Œæˆ–è€…æ­£åœ¨è¢«æ“ä½œè€…ï¼Œå°±æ˜¯å¾—åˆ°äº†ç„¦ç‚¹ï¼Œè€Œç›¸åçš„ï¼Œ
+                     ä¸€ä¸ªç»„ä»¶æ²¡æœ‰è¢«é€‰ä¸­æˆ–è€…å¤±å»æ“ä½œï¼Œå°±æ˜¯è¢«è½¬ç§»äº†ç„¦ç‚¹ï¼Œç„¦ç‚¹å·²ç»åˆ°åˆ«çš„ç»„ä»¶ä¸Šå»äº†ã€‚
 		 */
 		tabbedPane.setBackground(new Color(211, 230, 192));
-		//±ß¿òÎªË«ÏßĞ±Ãæ±ß¿ò£¨¸¡µñĞ§¹û£©
+		//è¾¹æ¡†ä¸ºåŒçº¿æ–œé¢è¾¹æ¡†ï¼ˆæµ®é›•æ•ˆæœï¼‰
 		tabbedPane.setBorder(new BevelBorder(BevelBorder.RAISED));
 
-		JPanel baseManagePanel = new JPanel(); // »ù´¡ĞÅÏ¢¹ÜÀíÃæ°å
+		JPanel baseManagePanel = new JPanel(); // åŸºç¡€ä¿¡æ¯ç®¡ç†é¢æ¿
 		baseManagePanel.setBackground(new Color(215, 223, 194));
 		baseManagePanel.setLayout(new BoxLayout(baseManagePanel,
 				BoxLayout.X_AXIS));
-		//setLayout()ÉèÖÃÓÃ»§½çÃæÉÏµÄÆÁÄ»×é¼şµÄ¸ñÊ½²¼¾Ö.BoxLayoutÔÊĞí´¹Ö±»òË®Æ½²¼ÖÃ¶à¸ö×é¼şµÄ²¼¾Ö¹ÜÀíÆ÷¡£
+		//setLayout()è®¾ç½®ç”¨æˆ·ç•Œé¢ä¸Šçš„å±å¹•ç»„ä»¶çš„æ ¼å¼å¸ƒå±€.BoxLayoutå…è®¸å‚ç›´æˆ–æ°´å¹³å¸ƒç½®å¤šä¸ªç»„ä»¶çš„å¸ƒå±€ç®¡ç†å™¨ã€‚
 		
-		//BoxLayout.X_AXIS£º´Ó×óµ½ÓÒË®Æ½²¼ÖÃ×é¼ş,BoxLayout.Y_AXIS: ´ÓÉÏµ½ÏÂ´¹Ö±²¼ÖÃ×é¼ş
-		baseManagePanel.add(createFrameButton("¿Í»§ĞÅÏ¢¹ÜÀí", "KeHuGuanLi"));
-		baseManagePanel.add(createFrameButton("ÉÌÆ·ĞÅÏ¢¹ÜÀí", "ShangPinGuanLi"));
-		baseManagePanel.add(createFrameButton("¹©Ó¦ÉÌĞÅÏ¢¹ÜÀí", "GysGuanLi"));
+		//BoxLayout.X_AXISï¼šä»å·¦åˆ°å³æ°´å¹³å¸ƒç½®ç»„ä»¶,BoxLayout.Y_AXIS: ä»ä¸Šåˆ°ä¸‹å‚ç›´å¸ƒç½®ç»„ä»¶
+		baseManagePanel.add(createFrameButton("å®¢æˆ·ä¿¡æ¯ç®¡ç†", "KeHuGuanLi"));
+		baseManagePanel.add(createFrameButton("å•†å“ä¿¡æ¯ç®¡ç†", "ShangPinGuanLi"));
+		baseManagePanel.add(createFrameButton("ä¾›åº”å•†ä¿¡æ¯ç®¡ç†", "GysGuanLi"));
 
-		JPanel depotManagePanel = new JPanel(); // ¿â´æ¹ÜÀíÃæ°å
+		JPanel depotManagePanel = new JPanel(); // åº“å­˜ç®¡ç†é¢æ¿
 		depotManagePanel.setBackground(new Color(215, 223, 194));
 		depotManagePanel.setLayout(new BoxLayout(depotManagePanel,
 				BoxLayout.X_AXIS));
-		depotManagePanel.add(createFrameButton("¿â´æÅÌµã", "KuCunPanDian"));
-		depotManagePanel.add(createFrameButton("¼Û¸ñµ÷Õû", "JiaGeTiaoZheng"));
+		depotManagePanel.add(createFrameButton("åº“å­˜ç›˜ç‚¹", "KuCunPanDian"));
+		depotManagePanel.add(createFrameButton("ä»·æ ¼è°ƒæ•´", "JiaGeTiaoZheng"));
 
-		JPanel sellManagePanel = new JPanel();// ÏúÊÛ¹ÜÀíÃæ°å
+		JPanel sellManagePanel = new JPanel();// é”€å”®ç®¡ç†é¢æ¿
 		sellManagePanel.setBackground(new Color(215, 223, 194));
 		sellManagePanel.setLayout(new BoxLayout(sellManagePanel,
 				BoxLayout.X_AXIS));
-		sellManagePanel.add(createFrameButton("ÏúÊÛµ¥", "XiaoShouDan"));
-		sellManagePanel.add(createFrameButton("ÏúÊÛÍË»õ", "XiaoShouTuiHuo"));
+		sellManagePanel.add(createFrameButton("é”€å”®å•", "XiaoShouDan"));
+		sellManagePanel.add(createFrameButton("é”€å”®é€€è´§", "XiaoShouTuiHuo"));
  
-		JPanel searchStatisticPanel = new JPanel();// ²éÑ¯Í³¼ÆÃæ°å
+		JPanel searchStatisticPanel = new JPanel();// æŸ¥è¯¢ç»Ÿè®¡é¢æ¿
 		searchStatisticPanel.setBounds(0, 0, 600, 41);
 		searchStatisticPanel.setName("searchStatisticPanel");
 		searchStatisticPanel.setBackground(new Color(215, 223, 194));
 		searchStatisticPanel.setLayout(new BoxLayout(searchStatisticPanel,
 				BoxLayout.X_AXIS));
-		searchStatisticPanel.add(createFrameButton("¿Í»§ĞÅÏ¢²éÑ¯", "KeHuChaXun"));
-		searchStatisticPanel.add(createFrameButton("ÉÌÆ·ĞÅÏ¢²éÑ¯", "ShangPinChaXun"));
-		searchStatisticPanel.add(createFrameButton("¹©Ó¦ÉÌĞÅÏ¢²éÑ¯",
+		searchStatisticPanel.add(createFrameButton("å®¢æˆ·ä¿¡æ¯æŸ¥è¯¢", "KeHuChaXun"));
+		searchStatisticPanel.add(createFrameButton("å•†å“ä¿¡æ¯æŸ¥è¯¢", "ShangPinChaXun"));
+		searchStatisticPanel.add(createFrameButton("ä¾›åº”å•†ä¿¡æ¯æŸ¥è¯¢",
 				"GongYingShangChaXun"));
-		searchStatisticPanel.add(createFrameButton("ÏúÊÛĞÅÏ¢²éÑ¯", "XiaoShouChaXun"));
-		searchStatisticPanel.add(createFrameButton("ÏúÊÛÍË»õ²éÑ¯",
+		searchStatisticPanel.add(createFrameButton("é”€å”®ä¿¡æ¯æŸ¥è¯¢", "XiaoShouChaXun"));
+		searchStatisticPanel.add(createFrameButton("é”€å”®é€€è´§æŸ¥è¯¢",
 				"XiaoShouTuiHuoChaXun"));
-		searchStatisticPanel.add(createFrameButton("Èë¿â²éÑ¯", "RuKuChaXun"));
+		searchStatisticPanel.add(createFrameButton("å…¥åº“æŸ¥è¯¢", "RuKuChaXun"));
 		searchStatisticPanel
-				.add(createFrameButton("Èë¿âÍË»õ²éÑ¯", "RuKuTuiHuoChaXun"));
-		searchStatisticPanel.add(createFrameButton("ÏúÊÛÅÅĞĞ", "XiaoShouPaiHang"));
+				.add(createFrameButton("å…¥åº“é€€è´§æŸ¥è¯¢", "RuKuTuiHuoChaXun"));
+		searchStatisticPanel.add(createFrameButton("é”€å”®æ’è¡Œ", "XiaoShouPaiHang"));
 
-		JPanel stockManagePanel = new JPanel();// ½ø»õ¹ÜÀíÃæ°å
+		JPanel stockManagePanel = new JPanel();// è¿›è´§ç®¡ç†é¢æ¿
 		stockManagePanel.setBackground(new Color(215, 223, 194));
 		stockManagePanel.setLayout(new BoxLayout(stockManagePanel,
 				BoxLayout.X_AXIS));
-		stockManagePanel.add(createFrameButton("½ø»õµ¥", "JinHuoDan"));
-		stockManagePanel.add(createFrameButton("½ø»õÍË»õ", "JinHuoTuiHuo"));
+		stockManagePanel.add(createFrameButton("è¿›è´§å•", "JinHuoDan"));
+		stockManagePanel.add(createFrameButton("è¿›è´§é€€è´§", "JinHuoTuiHuo"));
 
-		sysManagePanel = new JPanel();// ÏµÍ³¹ÜÀíÃæ°å
+		sysManagePanel = new JPanel();// ç³»ç»Ÿç®¡ç†é¢æ¿
 		sysManagePanel.setBackground(new Color(215, 223, 194));
 		sysManagePanel
 				.setLayout(new BoxLayout(sysManagePanel, BoxLayout.X_AXIS));
-		sysManagePanel.add(createFrameButton("²Ù×÷Ô±¹ÜÀí", "CzyGL"));
-		sysManagePanel.add(createFrameButton("¸ü¸ÄÃÜÂë", "GengGaiMiMa"));
-		sysManagePanel.add(createFrameButton("È¨ÏŞ¹ÜÀí", "QuanManager"));
+		sysManagePanel.add(createFrameButton("æ“ä½œå‘˜ç®¡ç†", "CzyGL"));
+		sysManagePanel.add(createFrameButton("æ›´æ”¹å¯†ç ", "GengGaiMiMa"));
+		sysManagePanel.add(createFrameButton("æƒé™ç®¡ç†", "QuanManager"));
 
-		tabbedPane.addTab("   »ù´¡ĞÅÏ¢¹ÜÀí   ", null, baseManagePanel, "»ù´¡ĞÅÏ¢¹ÜÀí");
-		tabbedPane.addTab("   ½ø»õ¹ÜÀí   ", null, stockManagePanel, "½ø»õ¹ÜÀí");
-		tabbedPane.addTab("   ÏúÊÛ¹ÜÀí   ", null, sellManagePanel, "ÏúÊÛ¹ÜÀí");
-		tabbedPane.addTab("   ²éÑ¯Í³¼Æ   ", null, searchStatisticPanel, "²éÑ¯Í³¼Æ");
-		tabbedPane.addTab("   ¿â´æ¹ÜÀí   ", null, depotManagePanel, "¿â´æ¹ÜÀí");
-		tabbedPane.addTab("   ÏµÍ³¹ÜÀí   ", null, sysManagePanel, "ÏµÍ³¹ÜÀí");
+		tabbedPane.addTab("   åŸºç¡€ä¿¡æ¯ç®¡ç†   ", null, baseManagePanel, "åŸºç¡€ä¿¡æ¯ç®¡ç†");
+		tabbedPane.addTab("   è¿›è´§ç®¡ç†   ", null, stockManagePanel, "è¿›è´§ç®¡ç†");
+		tabbedPane.addTab("   é”€å”®ç®¡ç†   ", null, sellManagePanel, "é”€å”®ç®¡ç†");
+		tabbedPane.addTab("   æŸ¥è¯¢ç»Ÿè®¡   ", null, searchStatisticPanel, "æŸ¥è¯¢ç»Ÿè®¡");
+		tabbedPane.addTab("   åº“å­˜ç®¡ç†   ", null, depotManagePanel, "åº“å­˜ç®¡ç†");
+		tabbedPane.addTab("   ç³»ç»Ÿç®¡ç†   ", null, sysManagePanel, "ç³»ç»Ÿç®¡ç†");
 
 		return tabbedPane;
 	}
-	/** *********************¸¨Öú·½·¨************************* */
-	// ÎªÄÚ²¿´°ÌåÌí¼ÓActionµÄ·½·¨
+	/** *********************è¾…åŠ©æ–¹æ³•************************* */
+	// ä¸ºå†…éƒ¨çª—ä½“æ·»åŠ Actionçš„æ–¹æ³•
 	private JButton createFrameButton(String fName, String cname) {
 		String imgUrl = "res/ActionIcon/" + fName + ".png";
 		String imgUrl_roll = "res/ActionIcon/" + fName	+ "_roll.png";
@@ -178,7 +178,7 @@ public class JXCFrame {
 			button.setPressedIcon(icon_down);
 		return button;
 	}
-	// »ñÈ¡ÄÚ²¿´°ÌåµÄÎ¨Ò»ÊµÀı¶ÔÏó
+	// è·å–å†…éƒ¨çª—ä½“çš„å”¯ä¸€å®ä¾‹å¯¹è±¡
 	private JInternalFrame getIFrame(String frameName) {
 		JInternalFrame jf = null;
 		if (!ifs.containsKey(frameName)) {
@@ -194,10 +194,10 @@ public class JXCFrame {
 			jf = ifs.get(frameName);
 		return jf;
 	}
-	// ¸üĞÂ±³¾°Í¼Æ¬µÄ·½·¨
+	// æ›´æ–°èƒŒæ™¯å›¾ç‰‡çš„æ–¹æ³•
 	/*
-	 * ³õÊ¼»¯±³¾°±êÇ©£¬±³¾°±êÇ©Ê¹ÓÃµÄÊÇhtml³¬ÎÄ±¾ÓïÑÔÉèÖÃÁËÖ÷´°ÌåµÄ±³¾°Í¼Æ¬
-	 * ¸ÃÍ¼Æ¬½«Ëæ×ÅÖ÷´°ÌåµÄ´óĞ¡×Ô¶¯ÊÕËõ
+	 * åˆå§‹åŒ–èƒŒæ™¯æ ‡ç­¾ï¼ŒèƒŒæ™¯æ ‡ç­¾ä½¿ç”¨çš„æ˜¯htmlè¶…æ–‡æœ¬è¯­è¨€è®¾ç½®äº†ä¸»çª—ä½“çš„èƒŒæ™¯å›¾ç‰‡
+	 * è¯¥å›¾ç‰‡å°†éšç€ä¸»çª—ä½“çš„å¤§å°è‡ªåŠ¨æ”¶ç¼©
 	 */
 	private void updateBackImage() {
 		if (backLabel != null) {
@@ -210,13 +210,13 @@ public class JXCFrame {
 					+ "'></img></body></html>");
 		}
 	}
-	// ´°Ìå¼àÌıÆ÷
+	// çª—ä½“ç›‘å¬å™¨
 	private final class FrameListener extends ComponentAdapter {
 		public void componentResized(final ComponentEvent e) {
 			updateBackImage();
 		}
 	}
-	// Ö÷´°Ìå²Ëµ¥ÏîµÄµ¥»÷ÊÂ¼ş¼àÌıÆ÷
+	// ä¸»çª—ä½“èœå•é¡¹çš„å•å‡»äº‹ä»¶ç›‘å¬å™¨
 	protected final class openFrameAction extends AbstractAction {
 		private String frameName = null;
 		private openFrameAction() {
@@ -229,7 +229,7 @@ public class JXCFrame {
 		}
 		public void actionPerformed(final ActionEvent e) {
 			JInternalFrame jf = getIFrame(frameName);
-			// ÔÚÄÚ²¿´°Ìå±Õ¹ØÊ±£¬´ÓÄÚ²¿´°ÌåÈİÆ÷ifs¶ÔÏóÖĞÇå³ı¸Ã´°Ìå¡£
+			// åœ¨å†…éƒ¨çª—ä½“é—­å…³æ—¶ï¼Œä»å†…éƒ¨çª—ä½“å®¹å™¨ifså¯¹è±¡ä¸­æ¸…é™¤è¯¥çª—ä½“ã€‚
 			jf.addInternalFrameListener(new InternalFrameAdapter() {
 				public void internalFrameClosed(InternalFrameEvent e) {
 					ifs.remove(frameName);
@@ -246,9 +246,9 @@ public class JXCFrame {
 			}
 		}
 	}
-	//¾²Ì¬´úÂë¿éÖ»Ö´ĞĞÒ»´Î£¬Àà¼ÓÔØÖ®Ç°¾ÍÖ´ĞĞÁË
+	//é™æ€ä»£ç å—åªæ‰§è¡Œä¸€æ¬¡ï¼Œç±»åŠ è½½ä¹‹å‰å°±æ‰§è¡Œäº†
 	/*
-	 * ÉèÖÃÍâ¹ÛÑùÊ½£¬UIManagerÀàÖĞµÄgetSystemLookAndFeel·½·¨ÉèÖÃ³ÌĞò½çÃæÊ¹ÓÃ±¾µØÍâ¹Û
+	 * è®¾ç½®å¤–è§‚æ ·å¼ï¼ŒUIManagerç±»ä¸­çš„getSystemLookAndFeelæ–¹æ³•è®¾ç½®ç¨‹åºç•Œé¢ä½¿ç”¨æœ¬åœ°å¤–è§‚
 	 */
 	static {
 		try {

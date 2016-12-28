@@ -32,16 +32,16 @@ public class KeHuChaXun extends JInternalFrame {
 		super();
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("¿Í»§ĞÅÏ¢²éÑ¯");
+		setTitle("å®¢æˆ·ä¿¡æ¯æŸ¥è¯¢");
 		getContentPane().setLayout(new GridBagLayout());
 		setBounds(100, 100, 640, 375);
 
 		table = new JTable();
 		table.setEnabled(false);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		String[] tableHeads = new String[]{"¿Í»§ID", "¿Í»§È«³Æ", "¿Í»§µØÖ·", "¿Í»§¼ò³Æ",
-				"ÓÊÕş±àÂë", "µç¡¡¡¡»°", "´«¡¡¡¡Õæ", "Áª  Ïµ  ÈË", "ÁªÏµµç»°", "E-Mail", "¿ª»§ÒøĞĞ",
-				"ÒøĞĞÕËºÅ"};
+		String[] tableHeads = new String[]{"å®¢æˆ·ID", "å®¢æˆ·å…¨ç§°", "å®¢æˆ·åœ°å€", "å®¢æˆ·ç®€ç§°",
+				"é‚®æ”¿ç¼–ç ", "ç”µã€€ã€€è¯", "ä¼ ã€€ã€€çœŸ", "è”  ç³»  äºº", "è”ç³»ç”µè¯", "E-Mail", "å¼€æˆ·é“¶è¡Œ",
+				"é“¶è¡Œè´¦å·"};
 		final DefaultTableModel dftm = (DefaultTableModel) table.getModel();
 		dftm.setColumnIdentifiers(tableHeads);
 		
@@ -56,15 +56,15 @@ public class KeHuChaXun extends JInternalFrame {
 		gridBagConstraints_6.gridx = 0;
 		getContentPane().add(scrollPane, gridBagConstraints_6);
 
-		setupComponet(new JLabel(" Ñ¡Ôñ²éÑ¯Ìõ¼ş£º"), 0, 0, 1, 1, false);
+		setupComponet(new JLabel(" é€‰æ‹©æŸ¥è¯¢æ¡ä»¶ï¼š"), 0, 0, 1, 1, false);
 		conditionBox1 = new JComboBox();
-		conditionBox1.setModel(new DefaultComboBoxModel(new String[]{"¿Í»§È«³Æ",
-				"¿Í»§¼ò³Æ"}));
+		conditionBox1.setModel(new DefaultComboBoxModel(new String[]{"å®¢æˆ·å…¨ç§°",
+				"å®¢æˆ·ç®€ç§°"}));
 		setupComponet(conditionBox1, 1, 0, 1, 30, true);
 
 		conditionBox2 = new JComboBox();
 		conditionBox2.setModel(new DefaultComboBoxModel(
-				new String[]{"µÈÓÚ", "°üº¬"}));
+				new String[]{"ç­‰äº", "åŒ…å«"}));
 		setupComponet(conditionBox2, 2, 0, 1, 30, true);
 
 		conditionContent = new JTextField();
@@ -72,7 +72,7 @@ public class KeHuChaXun extends JInternalFrame {
 
 		final JButton queryButton = new JButton();
 		queryButton.addActionListener(new queryAction(dftm));
-		queryButton.setText("²éÑ¯");
+		queryButton.setText("æŸ¥è¯¢");
 		setupComponet(queryButton, 4, 0, 1, 1, false);
 
 		showAllButton = new JButton();
@@ -84,7 +84,7 @@ public class KeHuChaXun extends JInternalFrame {
 			}
 		});
 		setupComponet(showAllButton, 5, 0, 1, 1, false);
-		showAllButton.setText("ÏÔÊ¾È«²¿Êı¾İ");
+		showAllButton.setText("æ˜¾ç¤ºå…¨éƒ¨æ•°æ®");
 	}
 
 	private void updateTable(List list, final DefaultTableModel dftm) {
@@ -115,7 +115,7 @@ public class KeHuChaXun extends JInternalFrame {
 			dftm.addRow(rowData);
 		}
 	}
-	// ÉèÖÃ×é¼şÎ»ÖÃ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();
@@ -145,15 +145,15 @@ public class KeHuChaXun extends JInternalFrame {
 			conditionString = conditionContent.getText().trim();
 			if (!conditionString.isEmpty()) {
 				String sql = "select * from tb_khinfo where ";
-				if (condition.equals("¿Í»§È«³Æ")) {
-					if (conditionOperation.equals("µÈÓÚ"))
+				if (condition.equals("å®¢æˆ·å…¨ç§°")) {
+					if (conditionOperation.equals("ç­‰äº"))
 						list = Dao.findForList(sql + "khname='"
 								+ conditionString + "'");
 					else
 						list = Dao.findForList(sql + "khname like '%"
 								+ conditionString + "%'");
 				} else {
-					if (conditionOperation.equals("µÈÓÚ"))
+					if (conditionOperation.equals("ç­‰äº"))
 						list = Dao.findForList(sql + "jian='" + conditionString
 								+ "'");
 					else

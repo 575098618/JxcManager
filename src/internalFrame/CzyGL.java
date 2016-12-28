@@ -11,12 +11,12 @@ public class CzyGL extends JInternalFrame {
 		setIconifiable(true);
 		setClosable(true);
 		setBounds(100, 100, 491, 287);
-		setTitle("²Ù×÷Ô±¹ÜÀí");
+		setTitle("æ“ä½œå‘˜ç®¡ç†");
 		JTabbedPane tabPane = new JTabbedPane();
 		final TJCzy tjPanel = new TJCzy();
 		final ShanChuCaoZuoYuan delPanel = new ShanChuCaoZuoYuan();
-		tabPane.addTab("Ìí¼Ó²Ù×÷Ô±", null, tjPanel, "Ìí¼Ó²Ù×÷Ô±");
-		tabPane.addTab("É¾³ı²Ù×÷Ô±", null, delPanel, "É¾³ı²Ù×÷Ô±");
+		tabPane.addTab("æ·»åŠ æ“ä½œå‘˜", null, tjPanel, "æ·»åŠ æ“ä½œå‘˜");
+		tabPane.addTab("åˆ é™¤æ“ä½œå‘˜", null, delPanel, "åˆ é™¤æ“ä½œå‘˜");
 		getContentPane().add(tabPane);
 		tabPane.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {

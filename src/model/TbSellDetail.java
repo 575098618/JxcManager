@@ -2,7 +2,7 @@ package model;
 public class TbSellDetail implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
-	//ÏúÊÛÃ÷Ï¸
+	//é”€å”®æ˜ç»†
 	private Integer id;
 	private String tbSellMain;
 	private String spid;

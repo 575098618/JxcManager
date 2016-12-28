@@ -10,7 +10,7 @@ public class TbKhinfo  implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 
-    // Fields    客户表格
+    // Fields    瀹㈡埛琛ㄦ牸
 
      private String id;
      private String khname;

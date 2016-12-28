@@ -59,34 +59,34 @@ public class JiaGeTiaoZheng extends JInternalFrame {
 		setIconifiable(true);
 		setClosable(true);
 		getContentPane().setLayout(new GridBagLayout());
-		setTitle("¼Û¸ñµ÷Õû");
+		setTitle("ä»·æ ¼è°ƒæ•´");
 		setBounds(100, 100, 531, 253);
-		setupComponet(new JLabel("ÉÌÆ·Ãû³Æ£º"), 0, 0, 1, 1, false);
+		setupComponet(new JLabel("å•†å“åç§°ï¼š"), 0, 0, 1, 1, false);
 		shangPinMingCheng = new JComboBox();
 		shangPinMingCheng.setPreferredSize(new Dimension(220, 21));
 		setupComponet(shangPinMingCheng, 1, 0, 1, 1, true);
-		setupComponet(new JLabel("¹æ¡¡¡¡¸ñ£º"), 2, 0, 1, 0, false);
+		setupComponet(new JLabel("è§„ã€€ã€€æ ¼ï¼š"), 2, 0, 1, 0, false);
 		guiGe = new JLabel();
 		guiGe.setForeground(Color.BLUE);
 		guiGe.setPreferredSize(new Dimension(130, 21));
 		setupComponet(guiGe, 3, 0, 1, 1, true);
-		setupComponet(new JLabel("²ú¡¡¡¡µØ£º "), 0, 1, 1, 0, false);
+		setupComponet(new JLabel("äº§ã€€ã€€åœ°ï¼š "), 0, 1, 1, 0, false);
 		chanDi = new JLabel();
 		chanDi.setForeground(Color.BLUE);
 		setupComponet(chanDi, 1, 1, 1, 1, true);
-		setupComponet(new JLabel("¼ò¡¡¡¡³Æ£º"), 2, 1, 1, 0, false);
+		setupComponet(new JLabel("ç®€ã€€ã€€ç§°ï¼š"), 2, 1, 1, 0, false);
 		jianCheng = new JLabel();
 		jianCheng.setForeground(Color.BLUE);
 		setupComponet(jianCheng, 3, 1, 1, 1, true);
-		setupComponet(new JLabel("°ü¡¡¡¡×°£º"), 0, 2, 1, 0, false);
+		setupComponet(new JLabel("åŒ…ã€€ã€€è£…ï¼š"), 0, 2, 1, 0, false);
 		baoZhuang = new JLabel();
 		baoZhuang.setForeground(Color.BLUE);
 		setupComponet(baoZhuang, 1, 2, 1, 1, true);
-		setupComponet(new JLabel("µ¥¡¡¡¡Î»£º"), 2, 2, 1, 0, false);
+		setupComponet(new JLabel("å•ã€€ã€€ä½ï¼š"), 2, 2, 1, 0, false);
 		danWei = new JLabel();
 		danWei.setForeground(Color.BLUE);
 		setupComponet(danWei, 3, 2, 1, 1, true);
-		setupComponet(new JLabel("µ¥¡¡¡¡¼Û£º"), 0, 3, 1, 0, false);
+		setupComponet(new JLabel("å•ã€€ã€€ä»·ï¼š"), 0, 3, 1, 0, false);
 		danJia = new JTextField();
 		danJia.addKeyListener(new KeyAdapter() {
 			public void keyTyped(KeyEvent e) {
@@ -98,29 +98,29 @@ public class JiaGeTiaoZheng extends JInternalFrame {
 			}
 		});
 		setupComponet(danJia, 1, 3, 1, 1, true);
-		setupComponet(new JLabel("¿â´æÊıÁ¿£º"), 2, 3, 1, 0, false);
+		setupComponet(new JLabel("åº“å­˜æ•°é‡ï¼š"), 2, 3, 1, 0, false);
 		kuCunShuLiang = new JTextField();
 		kuCunShuLiang.setEditable(false);
 		setupComponet(kuCunShuLiang, 3, 3, 1, 1, true);
 
-		setupComponet(new JLabel("¿â´æ½ğ¶î£º"), 0, 4, 1, 0, false);
+		setupComponet(new JLabel("åº“å­˜é‡‘é¢ï¼š"), 0, 4, 1, 0, false);
 		kuCunJinE = new JTextField();
 		kuCunJinE.setEditable(false);
 		setupComponet(kuCunJinE, 1, 4, 1, 1, true);
 
 		final JButton okButton = new JButton();
 		okButton.addActionListener(new OkActionListener());
-		okButton.setText("È·¶¨");
+		okButton.setText("ç¡®å®š");
 		setupComponet(okButton, 1, 5, 1, 1, false);
 
 		final JButton closeButton = new JButton();
 		closeButton.addActionListener(new CloseActionListener());
-		closeButton.setText("¹Ø±Õ");
+		closeButton.setText("å…³é—­");
 		setupComponet(closeButton, 2, 5, 1, 1, false);
 
 		shangPinMingCheng.addItemListener(new ItemActionListener());
 	}
-	// ÉèÖÃ×é¼şÎ»ÖÃ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();
@@ -135,7 +135,7 @@ public class JiaGeTiaoZheng extends JInternalFrame {
 			gridBagConstrains.fill = GridBagConstraints.HORIZONTAL;
 		getContentPane().add(component, gridBagConstrains);
 	}
-	private void updateJinE() { // ¸üĞÂ¿â´æ½ğ¶îµÄ·½·¨
+	private void updateJinE() { // æ›´æ–°åº“å­˜é‡‘é¢çš„æ–¹æ³•
 		Double dj = Double.valueOf(danJia.getText());
 		Integer sl = Integer.valueOf(kuCunShuLiang.getText());
 		kuCunJinE.setText((dj * sl) + "");
@@ -146,8 +146,8 @@ public class JiaGeTiaoZheng extends JInternalFrame {
 			kcInfo.setKcsl(Integer.valueOf(kuCunShuLiang.getText()));
 			int rs = Dao.updateKucunDj(kcInfo);
 			if (rs > 0)
-				JOptionPane.showMessageDialog(getContentPane(), "¼Û¸ñµ÷ÕûÍê±Ï¡£",
-						kcInfo.getSpname() + "¼Û¸ñµ÷Õû",
+				JOptionPane.showMessageDialog(getContentPane(), "ä»·æ ¼è°ƒæ•´å®Œæ¯•ã€‚",
+						kcInfo.getSpname() + "ä»·æ ¼è°ƒæ•´",
 						JOptionPane.QUESTION_MESSAGE);
 		}
 	}
@@ -156,7 +156,7 @@ public class JiaGeTiaoZheng extends JInternalFrame {
 			JiaGeTiaoZheng.this.doDefaultCloseAction();
 		}
 	}
-	class ItemActionListener implements ItemListener {// ÉÌÆ·Ñ¡ÔñÊÂ¼ş¼àÌıÆ÷
+	class ItemActionListener implements ItemListener {// å•†å“é€‰æ‹©äº‹ä»¶ç›‘å¬å™¨
 		public void itemStateChanged(final ItemEvent e) {
 			Object selectedItem = shangPinMingCheng.getSelectedItem();
 			if (selectedItem == null)

@@ -58,21 +58,21 @@ public class RuKuChaXun extends JInternalFrame {
 		setMaximizable(true);
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("ÉÌÆ·Èë¿â²éÑ¯");
+		setTitle("å•†å“å…¥åº“æŸ¥è¯¢");
 		getContentPane().setLayout(new GridBagLayout());
 		setBounds(100, 100, 620, 375);
 
 		label = new JLabel();
 		label.setFont(new Font("", Font.PLAIN, 14));
-		label.setText(" Ñ¡Ôñ²éÑ¯Ìõ¼ş£º");
+		label.setText(" é€‰æ‹©æŸ¥è¯¢æ¡ä»¶ï¼š");
 		final GridBagConstraints gridBagConstraints = new GridBagConstraints();
 		gridBagConstraints.gridy = 0;
 		gridBagConstraints.gridx = 0;
 		getContentPane().add(label, gridBagConstraints);
 
 		condition = new JComboBox();
-		condition.setModel(new DefaultComboBoxModel(new String[]{"ÉÌÆ·Ãû³Æ",
-				"ÉÌÆ·±àºÅ", "¹©Ó¦ÉÌÈ«³Æ"}));
+		condition.setModel(new DefaultComboBoxModel(new String[]{"å•†å“åç§°",
+				"å•†å“ç¼–å·", "ä¾›åº”å•†å…¨ç§°"}));
 		condition.setFont(new Font("", Font.PLAIN, 14));
 		final GridBagConstraints gridBagConstraints_1 = new GridBagConstraints();
 		gridBagConstraints_1.gridy = 0;
@@ -80,7 +80,7 @@ public class RuKuChaXun extends JInternalFrame {
 		getContentPane().add(condition, gridBagConstraints_1);
 
 		operation = new JComboBox();
-		operation.setModel(new DefaultComboBoxModel(new String[]{"µÈÓÚ", "°üº¬"}));
+		operation.setModel(new DefaultComboBoxModel(new String[]{"ç­‰äº", "åŒ…å«"}));
 		operation.setFont(new Font("", Font.PLAIN, 14));
 		operation.setPreferredSize(new Dimension(30, 21));
 		final GridBagConstraints gridBagConstraints_2 = new GridBagConstraints();
@@ -157,7 +157,7 @@ public class RuKuChaXun extends JInternalFrame {
 		gridBagConstraints_4.gridx = 7;
 		getContentPane().add(button, gridBagConstraints_4);
 		button.setFont(new Font("", Font.PLAIN, 12));
-		button.setText("²éÑ¯");
+		button.setText("æŸ¥è¯¢");
 
 		selectDate = new JCheckBox();
 		selectDate.setFont(new Font("", Font.PLAIN, 14));
@@ -169,7 +169,7 @@ public class RuKuChaXun extends JInternalFrame {
 
 		final JLabel label_1 = new JLabel();
 		label_1.setFont(new Font("", Font.PLAIN, 14));
-		label_1.setText("Ö¸¶¨²éÑ¯ÈÕÆÚ   ´Ó");
+		label_1.setText("æŒ‡å®šæŸ¥è¯¢æ—¥æœŸ   ä»");
 		final GridBagConstraints gridBagConstraints_8 = new GridBagConstraints();
 		gridBagConstraints_8.anchor = GridBagConstraints.EAST;
 		gridBagConstraints_8.gridy = 1;
@@ -192,7 +192,7 @@ public class RuKuChaXun extends JInternalFrame {
 		gridBagConstraints_10.gridy = 1;
 		gridBagConstraints_10.gridx = 5;
 		getContentPane().add(label_2, gridBagConstraints_10);
-		label_2.setText("µ½");
+		label_2.setText("åˆ°");
 
 		endDate = new JTextField();
 		final GridBagConstraints gridBagConstraints_11 = new GridBagConstraints();
@@ -219,7 +219,7 @@ public class RuKuChaXun extends JInternalFrame {
 		gridBagConstraints_5.gridx = 7;
 		getContentPane().add(showallButton_1, gridBagConstraints_5);
 		showallButton_1.setFont(new Font("", Font.PLAIN, 12));
-		showallButton_1.setText("ÏÔÊ¾È«²¿Êı¾İ");
+		showallButton_1.setText("æ˜¾ç¤ºå…¨éƒ¨æ•°æ®");
 
 		final JScrollPane scrollPane = new JScrollPane();
 		final GridBagConstraints gridBagConstraints_6 = new GridBagConstraints();
@@ -238,8 +238,8 @@ public class RuKuChaXun extends JInternalFrame {
 		table.setShowGrid(true);
 		table.putClientProperty("Quaqua.Table.style", "striped");
 		dftm = (DefaultTableModel) table.getModel();
-		String[] tableHeads = new String[]{"Èë¿âÆ±ºÅ", "ÉÌÆ·±àºÅ", "ÉÌÆ·Ãû³Æ", "¹æ¸ñ", "µ¥¼Û",
-				"ÊıÁ¿", "½ğ¶î", "¹©Ó¦ÉÌÈ«³Æ", "Èë¿âÈÕÆÚ", "²Ù×÷Ô±", "¾­ÊÖÈË", "½áËã·½Ê½"};
+		String[] tableHeads = new String[]{"å…¥åº“ç¥¨å·", "å•†å“ç¼–å·", "å•†å“åç§°", "è§„æ ¼", "å•ä»·",
+				"æ•°é‡", "é‡‘é¢", "ä¾›åº”å•†å…¨ç§°", "å…¥åº“æ—¥æœŸ", "æ“ä½œå‘˜", "ç»æ‰‹äºº", "ç»“ç®—æ–¹å¼"};
 		dftm.setColumnIdentifiers(tableHeads);
 		scrollPane.setViewportView(table);
 	}

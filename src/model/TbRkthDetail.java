@@ -1,7 +1,7 @@
 package model;
 
 public class TbRkthDetail implements java.io.Serializable {
-	//Èë¿âÍË»õÃ÷Ï¸
+	//å…¥åº“é€€è´§æ˜ç»†
 	
 	private static final long serialVersionUID = 1L;
 

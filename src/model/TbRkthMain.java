@@ -2,7 +2,7 @@ package model;
 import java.util.HashSet;
 import java.util.Set;
 public class TbRkthMain implements java.io.Serializable {
-	//Èë¿âÍË»õÖ÷²Ëµ¥
+	//å…¥åº“é€€è´§ä¸»èœå•
 	
 	private static final long serialVersionUID = 1L;
 
@@ -16,8 +16,8 @@ public class TbRkthMain implements java.io.Serializable {
 	private String jsr;
 	private String jsfs;
 //	@SuppressWarnings("rawtypes")
-	//SuppressWarningsÑ¹ÖÆ¾¯¸æ,¼´È¥³ı¾¯¸æ 
-	//rawtypesÊÇËµ´«²ÎÊ±Ò²Òª´«µİ´ø·ºĞÍµÄ²ÎÊı 
+	//SuppressWarningså‹åˆ¶è­¦å‘Š,å³å»é™¤è­¦å‘Š 
+	//rawtypesæ˜¯è¯´ä¼ å‚æ—¶ä¹Ÿè¦ä¼ é€’å¸¦æ³›å‹çš„å‚æ•° 
 	private Set<TbRkthDetail> tbRkthDetails = new HashSet<TbRkthDetail>(0);
 	public TbRkthMain() {
 	}

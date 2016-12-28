@@ -41,18 +41,18 @@ import com.lzw.dao.Dao;
 import com.lzw.login.Login;
 public class JinHuoDan extends JInternalFrame {
 	private final JTable table;
-	private TbUserlist user = Login.getUser(); 			// µÇÂ¼ÓÃ»§ĞÅÏ¢
-	private final JTextField jhsj = new JTextField(); 	// ½ø»õÊ±¼ä
-	private final JTextField jsr = new JTextField(); 	// ¾­ÊÖÈË
-	private final JComboBox jsfs = new JComboBox(); 	// ¼ÆËã·½Ê½
-	private final JTextField lian = new JTextField(); 	// ÁªÏµÈË
-	private final JComboBox gys = new JComboBox(); 		// ¹©Ó¦ÉÌ
-	private final JTextField piaoHao = new JTextField();// Æ±ºÅ
-	private final JTextField pzs = new JTextField("0"); // Æ·ÖÖÊıÁ¿
-	private final JTextField hpzs = new JTextField("0");// »õÆ·×ÜÊı
-	private final JTextField hjje = new JTextField("0");// ºÏ¼Æ½ğ¶î
-	private final JTextField ysjl = new JTextField(); 	// ÑéÊÕ½áÂÛ
-	private final JTextField czy = new JTextField(user.getName());// ²Ù×÷Ô±
+	private TbUserlist user = Login.getUser(); 			// ç™»å½•ç”¨æˆ·ä¿¡æ¯
+	private final JTextField jhsj = new JTextField(); 	// è¿›è´§æ—¶é—´
+	private final JTextField jsr = new JTextField(); 	// ç»æ‰‹äºº
+	private final JComboBox jsfs = new JComboBox(); 	// è®¡ç®—æ–¹å¼
+	private final JTextField lian = new JTextField(); 	// è”ç³»äºº
+	private final JComboBox gys = new JComboBox(); 		// ä¾›åº”å•†
+	private final JTextField piaoHao = new JTextField();// ç¥¨å·
+	private final JTextField pzs = new JTextField("0"); // å“ç§æ•°é‡
+	private final JTextField hpzs = new JTextField("0");// è´§å“æ€»æ•°
+	private final JTextField hjje = new JTextField("0");// åˆè®¡é‡‘é¢
+	private final JTextField ysjl = new JTextField(); 	// éªŒæ”¶ç»“è®º
+	private final JTextField czy = new JTextField(user.getName());// æ“ä½œå‘˜
 	private Date jhsjDate;
 	private JComboBox sp;
 	public JinHuoDan() {
@@ -61,16 +61,16 @@ public class JinHuoDan extends JInternalFrame {
 		setIconifiable(true);
 		setClosable(true);
 		getContentPane().setLayout(new GridBagLayout());
-		setTitle("½ø»õµ¥");
+		setTitle("è¿›è´§å•");
 		setBounds(50, 50, 700, 400);
 
-		setupComponet(new JLabel("½ø»õÆ±ºÅ£º"), 0, 0, 1, 0, false);
+		setupComponet(new JLabel("è¿›è´§ç¥¨å·ï¼š"), 0, 0, 1, 0, false);
 		piaoHao.setFocusable(false);
 		setupComponet(piaoHao, 1, 0, 1, 140, true);
 
-		setupComponet(new JLabel("¹©Ó¦ÉÌ£º"), 2, 0, 1, 0, false);
+		setupComponet(new JLabel("ä¾›åº”å•†ï¼š"), 2, 0, 1, 0, false);
 		gys.setPreferredSize(new Dimension(160, 21));
-		// ¹©Ó¦ÉÌÏÂÀ­Ñ¡Ôñ¿òµÄÑ¡ÔñÊÂ¼ş
+		// ä¾›åº”å•†ä¸‹æ‹‰é€‰æ‹©æ¡†çš„é€‰æ‹©äº‹ä»¶
 		gys.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				doGysSelectAction();
@@ -78,28 +78,28 @@ public class JinHuoDan extends JInternalFrame {
 		});
 		setupComponet(gys, 3, 0, 1, 1, true);
 
-		setupComponet(new JLabel("ÁªÏµÈË£º"), 4, 0, 1, 0, false);
+		setupComponet(new JLabel("è”ç³»äººï¼š"), 4, 0, 1, 0, false);
 		lian.setFocusable(false);
 		setupComponet(lian, 5, 0, 1, 80, true);
 
-		setupComponet(new JLabel("½áËã·½Ê½£º"), 0, 1, 1, 0, false);
-		jsfs.addItem("ÏÖ½ğ");
-		jsfs.addItem("Ö§Æ±");
+		setupComponet(new JLabel("ç»“ç®—æ–¹å¼ï¼š"), 0, 1, 1, 0, false);
+		jsfs.addItem("ç°é‡‘");
+		jsfs.addItem("æ”¯ç¥¨");
 		jsfs.setEditable(true);
 		setupComponet(jsfs, 1, 1, 1, 1, true);
 
-		setupComponet(new JLabel("½ø»õÊ±¼ä£º"), 2, 1, 1, 0, false);
+		setupComponet(new JLabel("è¿›è´§æ—¶é—´ï¼š"), 2, 1, 1, 0, false);
 		jhsj.setFocusable(false);
 		setupComponet(jhsj, 3, 1, 1, 1, true);
 
-		setupComponet(new JLabel("¾­ÊÖÈË£º"), 4, 1, 1, 0, false);
+		setupComponet(new JLabel("ç»æ‰‹äººï¼š"), 4, 1, 1, 0, false);
 		setupComponet(jsr, 5, 1, 1, 1, true);
 
 		sp = new JComboBox();
 		sp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TbSpinfo info = (TbSpinfo) sp.getSelectedItem();
-				// Èç¹ûÑ¡ÔñÓĞĞ§¾Í¸üĞÂ±í¸ñ
+				// å¦‚æœé€‰æ‹©æœ‰æ•ˆå°±æ›´æ–°è¡¨æ ¼
 				if (info != null && info.getId() != null) {
 					updateTable();
 				}
@@ -109,47 +109,47 @@ public class JinHuoDan extends JInternalFrame {
 		table = new JTable();
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		initTable();
-		// Ìí¼ÓÊÂ¼şÍê³ÉÆ·ÖÖÊıÁ¿¡¢»õÆ·×ÜÊı¡¢ºÏ¼Æ½ğ¶îµÄ¼ÆËã
+		// æ·»åŠ äº‹ä»¶å®Œæˆå“ç§æ•°é‡ã€è´§å“æ€»æ•°ã€åˆè®¡é‡‘é¢çš„è®¡ç®—
 		table.addContainerListener(new computeInfo());
 		JScrollPane scrollPanel = new JScrollPane(table);
 		scrollPanel.setPreferredSize(new Dimension(380, 200));
 		setupComponet(scrollPanel, 0, 2, 6, 1, true);
 
-		setupComponet(new JLabel("Æ·ÖÖÊıÁ¿£º"), 0, 3, 1, 0, false);
+		setupComponet(new JLabel("å“ç§æ•°é‡ï¼š"), 0, 3, 1, 0, false);
 		pzs.setFocusable(false);
 		setupComponet(pzs, 1, 3, 1, 1, true);
 
-		setupComponet(new JLabel("»õÆ·×ÜÊı£º"), 2, 3, 1, 0, false);
+		setupComponet(new JLabel("è´§å“æ€»æ•°ï¼š"), 2, 3, 1, 0, false);
 		hpzs.setFocusable(false);
 		setupComponet(hpzs, 3, 3, 1, 1, true);
 
-		setupComponet(new JLabel("ºÏ¼Æ½ğ¶î£º"), 4, 3, 1, 0, false);
+		setupComponet(new JLabel("åˆè®¡é‡‘é¢ï¼š"), 4, 3, 1, 0, false);
 		hjje.setFocusable(false);
 		setupComponet(hjje, 5, 3, 1, 1, true);
 
-		setupComponet(new JLabel("ÑéÊÕ½áÂÛ£º"), 0, 4, 1, 0, false);
+		setupComponet(new JLabel("éªŒæ”¶ç»“è®ºï¼š"), 0, 4, 1, 0, false);
 		setupComponet(ysjl, 1, 4, 1, 1, true);
 
-		setupComponet(new JLabel("²Ù×÷ÈËÔ±£º"), 2, 4, 1, 0, false);
+		setupComponet(new JLabel("æ“ä½œäººå‘˜ï¼š"), 2, 4, 1, 0, false);
 		czy.setFocusable(false);
 		setupComponet(czy, 3, 4, 1, 1, true);
 
-		// µ¥»÷Ìí¼Ó°´Å¥ÔÚ±í¸ñÖĞÌí¼ÓĞÂµÄÒ»ĞĞ
-		JButton tjButton = new JButton("Ìí¼Ó");
+		// å•å‡»æ·»åŠ æŒ‰é’®åœ¨è¡¨æ ¼ä¸­æ·»åŠ æ–°çš„ä¸€è¡Œ
+		JButton tjButton = new JButton("æ·»åŠ ");
 		tjButton.addActionListener(new TjActionListener());
 		setupComponet(tjButton, 4, 4, 1, 1, false);
 
-		// µ¥»÷Èë¿â°´Å¥±£´æ½ø»õĞÅÏ¢
-		JButton rkButton = new JButton("Èë¿â");
+		// å•å‡»å…¥åº“æŒ‰é’®ä¿å­˜è¿›è´§ä¿¡æ¯
+		JButton rkButton = new JButton("å…¥åº“");
 		rkButton.addActionListener(new RkActionListener());
 		setupComponet(rkButton, 5, 4, 1, 1, false);
-		// Ìí¼Ó´°Ìå¼àÌıÆ÷£¬Íê³É³õÊ¼»¯
+		// æ·»åŠ çª—ä½“ç›‘å¬å™¨ï¼Œå®Œæˆåˆå§‹åŒ–
 		addInternalFrameListener(new initTasks());
 	}
-	// ³õÊ¼»¯±í¸ñ
+	// åˆå§‹åŒ–è¡¨æ ¼
 	private void initTable() {
-		String[] columnNames = {"ÉÌÆ·Ãû³Æ", "ÉÌÆ·±àºÅ", "²úµØ", "µ¥Î»", "¹æ¸ñ", "°ü×°", "µ¥¼Û",
-				"ÊıÁ¿", "ÅúºÅ", "Åú×¼ÎÄºÅ"};
+		String[] columnNames = {"å•†å“åç§°", "å•†å“ç¼–å·", "äº§åœ°", "å•ä½", "è§„æ ¼", "åŒ…è£…", "å•ä»·",
+				"æ•°é‡", "æ‰¹å·", "æ‰¹å‡†æ–‡å·"};
 		((DefaultTableModel) table.getModel())
 				.setColumnIdentifiers(columnNames);
 		TableColumn column = table.getColumnModel().getColumn(0);
@@ -157,7 +157,7 @@ public class JinHuoDan extends JInternalFrame {
 		editor.setClickCountToStart(2);
 		column.setCellEditor(editor);
 	}
-	// ³õÊ¼»¯ÉÌÆ·ÏÂÀ­Ñ¡Ôñ¿ò
+	// åˆå§‹åŒ–å•†å“ä¸‹æ‹‰é€‰æ‹©æ¡†
 	private void initSpBox() {
 		List list = new ArrayList();
 		ResultSet set = Dao.query("select * from tb_spinfo where gysName='"
@@ -173,7 +173,7 @@ public class JinHuoDan extends JInternalFrame {
 			while (set.next()) {
 				TbSpinfo spinfo = new TbSpinfo();
 				spinfo.setId(set.getString("id").trim());
-				// Èç¹û±í¸ñÖĞÒÔ´æÔÚÍ¬ÑùÉÌÆ·£¬ÉÌÆ·ÏÂÀ­¿òÖĞ¾Í²»ÔÙ°üº¬¸ÃÉÌÆ·
+				// å¦‚æœè¡¨æ ¼ä¸­ä»¥å­˜åœ¨åŒæ ·å•†å“ï¼Œå•†å“ä¸‹æ‹‰æ¡†ä¸­å°±ä¸å†åŒ…å«è¯¥å•†å“
 				if (list.contains(spinfo.getId()))
 					continue;
 				spinfo.setSpname(set.getString("spname").trim());
@@ -192,7 +192,7 @@ public class JinHuoDan extends JInternalFrame {
 			e.printStackTrace();
 		}
 	}
-	// ÉèÖÃ×é¼şÎ»ÖÃ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();
@@ -207,39 +207,39 @@ public class JinHuoDan extends JInternalFrame {
 			gridBagConstrains.fill = GridBagConstraints.HORIZONTAL;
 		getContentPane().add(component, gridBagConstrains);
 	}
-	// ¹©Ó¦ÉÌÑ¡ÔñÊ±¸üĞÂÁªÏµÈË×Ö¶Î
+	// ä¾›åº”å•†é€‰æ‹©æ—¶æ›´æ–°è”ç³»äººå­—æ®µ
 	private void doGysSelectAction() {
 		Item item = (Item) gys.getSelectedItem();
 		TbGysinfo gysInfo = Dao.getGysInfo(item);
 		lian.setText(gysInfo.getLian());
 		initSpBox();
 	}
-	class RkActionListener implements ActionListener {	// Èë¿â°´Å¥µÄÊÂ¼ş¼àÌıÆ÷
+	class RkActionListener implements ActionListener {	// å…¥åº“æŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨
 		public void actionPerformed(ActionEvent e) {
-			// ½áÊø±í¸ñÖĞÃ»ÓĞ±àĞ´µÄµ¥Ôª
+			// ç»“æŸè¡¨æ ¼ä¸­æ²¡æœ‰ç¼–å†™çš„å•å…ƒ
 			stopTableCellEditing();
-			// Çå³ı¿ÕĞĞ
+			// æ¸…é™¤ç©ºè¡Œ
 			clearEmptyRow();
-			String hpzsStr = hpzs.getText(); // »õÆ·×ÜÊı
-			String pzsStr = pzs.getText(); // Æ·ÖÖÊı
-			String jeStr = hjje.getText(); // ºÏ¼Æ½ğ¶î
-			String jsfsStr = jsfs.getSelectedItem().toString(); // ½áËã·½Ê½
-			String jsrStr = jsr.getText().trim(); // ¾­ÊÖÈË
-			String czyStr = czy.getText(); // ²Ù×÷Ô±
-			String rkDate = jhsjDate.toLocaleString(); // Èë¿âÊ±¼ä
-			String ysjlStr = ysjl.getText().trim(); // ÑéÊÕ½áÂÛ
-			String id = piaoHao.getText(); // Æ±ºÅ
-			String gysName = gys.getSelectedItem().toString();// ¹©Ó¦ÉÌÃû×Ö
+			String hpzsStr = hpzs.getText(); // è´§å“æ€»æ•°
+			String pzsStr = pzs.getText(); // å“ç§æ•°
+			String jeStr = hjje.getText(); // åˆè®¡é‡‘é¢
+			String jsfsStr = jsfs.getSelectedItem().toString(); // ç»“ç®—æ–¹å¼
+			String jsrStr = jsr.getText().trim(); // ç»æ‰‹äºº
+			String czyStr = czy.getText(); // æ“ä½œå‘˜
+			String rkDate = jhsjDate.toLocaleString(); // å…¥åº“æ—¶é—´
+			String ysjlStr = ysjl.getText().trim(); // éªŒæ”¶ç»“è®º
+			String id = piaoHao.getText(); // ç¥¨å·
+			String gysName = gys.getSelectedItem().toString();// ä¾›åº”å•†åå­—
 			if (jsrStr == null || jsrStr.isEmpty()) {
-				JOptionPane.showMessageDialog(JinHuoDan.this, "ÇëÌîĞ´¾­ÊÖÈË");
+				JOptionPane.showMessageDialog(JinHuoDan.this, "è¯·å¡«å†™ç»æ‰‹äºº");
 				return;
 			}
 			if (ysjlStr == null || ysjlStr.isEmpty()) {
-				JOptionPane.showMessageDialog(JinHuoDan.this, "ÌîĞ´ÑéÊÕ½áÂÛ");
+				JOptionPane.showMessageDialog(JinHuoDan.this, "å¡«å†™éªŒæ”¶ç»“è®º");
 				return;
 			}
 			if (table.getRowCount() <= 0) {
-				JOptionPane.showMessageDialog(JinHuoDan.this, "Ìî¼ÓÈë¿âÉÌÆ·");
+				JOptionPane.showMessageDialog(JinHuoDan.this, "å¡«åŠ å…¥åº“å•†å“");
 				return;
 			}
 			TbRukuMain ruMain = new TbRukuMain(id, pzsStr, jeStr, ysjlStr,
@@ -261,7 +261,7 @@ public class JinHuoDan extends JInternalFrame {
 			}
 			boolean rs = Dao.insertRukuInfo(ruMain);
 			if (rs) {
-				JOptionPane.showMessageDialog(JinHuoDan.this, "Èë¿âÍê³É");
+				JOptionPane.showMessageDialog(JinHuoDan.this, "å…¥åº“å®Œæˆ");
 				DefaultTableModel dftm = new DefaultTableModel();
 				table.setModel(dftm);
 				initTable();
@@ -271,13 +271,13 @@ public class JinHuoDan extends JInternalFrame {
 			}
 		}
 	}
-	class TjActionListener implements ActionListener {	// Ìí¼Ó°´Å¥µÄÊÂ¼ş¼àÌıÆ÷
+	class TjActionListener implements ActionListener {	// æ·»åŠ æŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨
 		public void actionPerformed(ActionEvent e) {
-			// ³õÊ¼»¯Æ±ºÅ
+			// åˆå§‹åŒ–ç¥¨å·
 			initPiaoHao();
-			// ½áÊø±í¸ñÖĞÃ»ÓĞ±àĞ´µÄµ¥Ôª
+			// ç»“æŸè¡¨æ ¼ä¸­æ²¡æœ‰ç¼–å†™çš„å•å…ƒ
 			stopTableCellEditing();
-			// Èç¹û±í¸ñÖĞ»¹°üº¬¿ÕĞĞ£¬¾ÍÔÙÌí¼ÓĞÂĞĞ
+			// å¦‚æœè¡¨æ ¼ä¸­è¿˜åŒ…å«ç©ºè¡Œï¼Œå°±å†æ·»åŠ æ–°è¡Œ
 			for (int i = 0; i < table.getRowCount(); i++) {
 				TbSpinfo info = (TbSpinfo) table.getValueAt(i, 0);
 				if (table.getValueAt(i, 0) == null)
@@ -288,22 +288,22 @@ public class JinHuoDan extends JInternalFrame {
 			initSpBox();
 		}
 	}
-	// ÔÚÊÂ¼şÖĞ¼ÆËãÆ·ÖÖÊıÁ¿¡¢»õÆ·×ÜÊı¡¢ºÏ¼Æ½ğ¶î
+	// åœ¨äº‹ä»¶ä¸­è®¡ç®—å“ç§æ•°é‡ã€è´§å“æ€»æ•°ã€åˆè®¡é‡‘é¢
 	private final class computeInfo implements ContainerListener {
 		public void componentRemoved(ContainerEvent e) {
-			// Çå³ı¿ÕĞĞ
+			// æ¸…é™¤ç©ºè¡Œ
 			clearEmptyRow();
-			// ¼ÆËã´úÂë
+			// è®¡ç®—ä»£ç 
 			int rows = table.getRowCount();
 			int count = 0;
 			double money = 0.0;
-			// ¼ÆËãÆ·ÖÖÊıÁ¿
+			// è®¡ç®—å“ç§æ•°é‡
 			TbSpinfo column = null;
 			if (rows > 0)
 				column = (TbSpinfo) table.getValueAt(rows - 1, 0);
 			if (rows > 0 && (column == null || column.getId().isEmpty()))
 				rows--;
-			// ¼ÆËã»õÆ·×ÜÊıºÍ½ğ¶î
+			// è®¡ç®—è´§å“æ€»æ•°å’Œé‡‘é¢
 			for (int i = 0; i < rows; i++) {
 				String column7 = (String) table.getValueAt(i, 7);
 				String column6 = (String) table.getValueAt(i, 6);
@@ -323,7 +323,7 @@ public class JinHuoDan extends JInternalFrame {
 		public void componentAdded(ContainerEvent e) {
 		}
 	}
-	// ´°ÌåµÄ³õÊ¼»¯ÈÎÎñ
+	// çª—ä½“çš„åˆå§‹åŒ–ä»»åŠ¡
 	private final class initTasks extends InternalFrameAdapter {
 		public void internalFrameActivated(InternalFrameEvent e) {
 			super.internalFrameActivated(e);
@@ -332,7 +332,7 @@ public class JinHuoDan extends JInternalFrame {
 			initPiaoHao();
 			initSpBox();
 		}
-		private void initGysField() {// ³õÊ¼»¯¹©Ó¦ÉÌ×Ö¶Î
+		private void initGysField() {// åˆå§‹åŒ–ä¾›åº”å•†å­—æ®µ
 			List gysInfos = Dao.getGysInfos();
 			for (Iterator iter = gysInfos.iterator(); iter.hasNext();) {
 				List list = (List) iter.next();
@@ -343,7 +343,7 @@ public class JinHuoDan extends JInternalFrame {
 			}
 			doGysSelectAction();
 		}
-		private void initTimeField() {// Æô¶¯½ø»õÊ±¼äÏß³Ì
+		private void initTimeField() {// å¯åŠ¨è¿›è´§æ—¶é—´çº¿ç¨‹
 			new Thread(new Runnable() {
 				public void run() {
 					try {
@@ -359,13 +359,13 @@ public class JinHuoDan extends JInternalFrame {
 			}).start();
 		}
 	}
-	// ³õÊ¼»¯Æ±ºÅÎÄ±¾¿òµÄ·½·¨
+	// åˆå§‹åŒ–ç¥¨å·æ–‡æœ¬æ¡†çš„æ–¹æ³•
 	private void initPiaoHao() {
 		java.sql.Date date = new java.sql.Date(jhsjDate.getTime());
 		String maxId = Dao.getRuKuMainMaxId(date);
 		piaoHao.setText(maxId);
 	}
-	// ¸ù¾İÉÌÆ·ÏÂÀ­¿òµÄÑ¡Ôñ£¬¸üĞÂ±í¸ñµ±Ç°ĞĞµÄÄÚÈİ
+	// æ ¹æ®å•†å“ä¸‹æ‹‰æ¡†çš„é€‰æ‹©ï¼Œæ›´æ–°è¡¨æ ¼å½“å‰è¡Œçš„å†…å®¹
 	private synchronized void updateTable() {
 		TbSpinfo spinfo = (TbSpinfo) sp.getSelectedItem();
 		int row = table.getSelectedRow();
@@ -382,7 +382,7 @@ public class JinHuoDan extends JInternalFrame {
 			table.editCellAt(row, 6);
 		}
 	}
-	// Çå³ı¿ÕĞĞ
+	// æ¸…é™¤ç©ºè¡Œ
 	private synchronized void clearEmptyRow() {
 		DefaultTableModel dftm = (DefaultTableModel) table.getModel();
 		for (int i = 0; i < table.getRowCount(); i++) {
@@ -393,7 +393,7 @@ public class JinHuoDan extends JInternalFrame {
 			}
 		}
 	}
-	// Í£Ö¹±í¸ñµ¥ÔªµÄ±à¼­
+	// åœæ­¢è¡¨æ ¼å•å…ƒçš„ç¼–è¾‘
 	private void stopTableCellEditing() {
 		TableCellEditor cellEditor = table.getCellEditor();
 		if (cellEditor != null)

@@ -6,7 +6,7 @@ import java.util.Set;
 public class TbXsthMain implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
-	//ÏúÊÛÍË»õÖ÷²Ëµ¥
+	//é”€å”®é€€è´§ä¸»èœå•
 	private String xsthId;
 	private String pzs;
 	private String je;

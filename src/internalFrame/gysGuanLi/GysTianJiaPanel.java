@@ -34,63 +34,63 @@ public class GysTianJiaPanel extends JPanel {
 		setLayout(new GridBagLayout());
 		setBounds(10, 10, 510, 302);
 
-		setupComponet(new JLabel("¹©Ó¦ÉÌÈ«³Æ£º"), 0, 0, 1, 1, false);
+		setupComponet(new JLabel("ä¾›åº”å•†å…¨ç§°ï¼š"), 0, 0, 1, 1, false);
 
 		quanChengF = new JTextField();
 		setupComponet(quanChengF, 1, 0, 3, 400, true);
 
-		setupComponet(new JLabel("¼ò³Æ£º"), 0, 1, 1, 1, false);
+		setupComponet(new JLabel("ç®€ç§°ï¼š"), 0, 1, 1, 1, false);
 
 		jianChengF = new JTextField();
 		setupComponet(jianChengF, 1, 1, 1, 160, true);
 
-		setupComponet(new JLabel("ÓÊÕş±àÂë£º"), 2, 1, 1, 1, false);
+		setupComponet(new JLabel("é‚®æ”¿ç¼–ç ï¼š"), 2, 1, 1, 1, false);
 		bianMaF = new JTextField();
 		bianMaF.addKeyListener(new InputKeyListener());
 		setupComponet(bianMaF, 3, 1, 1, 0, true);
 
-		setupComponet(new JLabel("µØÖ·£º"), 0, 2, 1, 1, false);
+		setupComponet(new JLabel("åœ°å€ï¼š"), 0, 2, 1, 1, false);
 		diZhiF = new JTextField();
 		setupComponet(diZhiF, 1, 2, 3, 0, true);
 
-		setupComponet(new JLabel("µç»°£º"), 0, 3, 1, 1, false);
+		setupComponet(new JLabel("ç”µè¯ï¼š"), 0, 3, 1, 1, false);
 		dianHuaF = new JTextField();
 		dianHuaF.addKeyListener(new InputKeyListener());
 		setupComponet(dianHuaF, 1, 3, 1, 0, true);
 
-		setupComponet(new JLabel("´«Õæ£º"), 2, 3, 1, 1, false);
+		setupComponet(new JLabel("ä¼ çœŸï¼š"), 2, 3, 1, 1, false);
 		chuanZhenF = new JTextField();
 		chuanZhenF.addKeyListener(new InputKeyListener());
 		setupComponet(chuanZhenF, 3, 3, 1, 0, true);
 
-		setupComponet(new JLabel("ÁªÏµÈË£º"), 0, 4, 1, 1, false);
+		setupComponet(new JLabel("è”ç³»äººï¼š"), 0, 4, 1, 1, false);
 		lianXiRenF = new JTextField();
 		setupComponet(lianXiRenF, 1, 4, 1, 0, true);
 
-		setupComponet(new JLabel("ÁªÏµÈËµç»°£º"), 2, 4, 1, 1, false);
+		setupComponet(new JLabel("è”ç³»äººç”µè¯ï¼š"), 2, 4, 1, 1, false);
 		lianXiRenDianHuaF = new JTextField();
 		lianXiRenDianHuaF.addKeyListener(new InputKeyListener());
 		setupComponet(lianXiRenDianHuaF, 3, 4, 1, 0, true);
 
-		setupComponet(new JLabel("¿ª»§ÒøĞĞ£º"), 0, 5, 1, 1, false);
+		setupComponet(new JLabel("å¼€æˆ·é“¶è¡Œï¼š"), 0, 5, 1, 1, false);
 		yinHangF = new JTextField();
 		setupComponet(yinHangF, 1, 5, 1, 0, true);
 
-		setupComponet(new JLabel("µç×ÓĞÅÏä£º"), 2, 5, 1, 1, false);
+		setupComponet(new JLabel("ç”µå­ä¿¡ç®±ï¼š"), 2, 5, 1, 1, false);
 		EMailF = new JTextField();
 		setupComponet(EMailF, 3, 5, 1, 0, true);
 
 		final JButton tjButton = new JButton();
 		tjButton.addActionListener(new TjActionListener());
-		tjButton.setText("Ìí¼Ó");
+		tjButton.setText("æ·»åŠ ");
 		setupComponet(tjButton, 2, 6, 1, 0, false);
 
 		resetButton = new JButton();
 		setupComponet(resetButton, 3, 6, 1, 0, false);
 		resetButton.addActionListener(new ResetActionListener());
-		resetButton.setText("ÖØÌî");
+		resetButton.setText("é‡å¡«");
 	}
-	// ÉèÖÃ×é¼şÎ»ÖÃ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();
@@ -105,7 +105,7 @@ public class GysTianJiaPanel extends JPanel {
 			gridBagConstrains.fill = GridBagConstraints.HORIZONTAL;
 		add(component, gridBagConstrains);
 	}
-	class ResetActionListener implements ActionListener {// ÖØÌî°´Å¥µÄÊÂ¼ş¼àÌıÀà
+	class ResetActionListener implements ActionListener {// é‡å¡«æŒ‰é’®çš„äº‹ä»¶ç›‘å¬ç±»
 		public void actionPerformed(final ActionEvent e) {
 			diZhiF.setText("");
 			bianMaF.setText("");
@@ -119,7 +119,7 @@ public class GysTianJiaPanel extends JPanel {
 			yinHangF.setText("");
 		}
 	}
-	class TjActionListener implements ActionListener {// Ìí¼Ó°´Å¥µÄÊÂ¼ş¼àÌıÀà
+	class TjActionListener implements ActionListener {// æ·»åŠ æŒ‰é’®çš„äº‹ä»¶ç›‘å¬ç±»
 		public void actionPerformed(final ActionEvent e) {
 			if (diZhiF.getText().equals("") || quanChengF.getText().equals("")
 					|| chuanZhenF.getText().equals("")
@@ -131,7 +131,7 @@ public class GysTianJiaPanel extends JPanel {
 					|| lianXiRenDianHuaF.getText().equals("")
 					|| EMailF.getText().equals("")
 					|| dianHuaF.getText().equals("")) {
-				JOptionPane.showMessageDialog(GysTianJiaPanel.this, "ÇëÌîĞ´È«²¿ĞÅÏ¢");
+				JOptionPane.showMessageDialog(GysTianJiaPanel.this, "è¯·å¡«å†™å…¨éƒ¨ä¿¡æ¯");
 				return;
 			}
 			try {
@@ -140,7 +140,7 @@ public class GysTianJiaPanel extends JPanel {
 								+ quanChengF.getText().trim() + "'");
 				if (haveUser.next()) {
 					JOptionPane.showMessageDialog(GysTianJiaPanel.this,
-							"¹©Ó¦ÉÌĞÅÏ¢Ìí¼ÓÊ§°Ü£¬´æÔÚÍ¬Ãû¹©Ó¦ÉÌ", "¹©Ó¦ÉÌÌí¼ÓĞÅÏ¢",
+							"ä¾›åº”å•†ä¿¡æ¯æ·»åŠ å¤±è´¥ï¼Œå­˜åœ¨åŒåä¾›åº”å•†", "ä¾›åº”å•†æ·»åŠ ä¿¡æ¯",
 							JOptionPane.INFORMATION_MESSAGE);
 					return;
 				}
@@ -168,8 +168,8 @@ public class GysTianJiaPanel extends JPanel {
 				gysInfo.setMail(EMailF.getText().trim());
 				gysInfo.setTel(dianHuaF.getText().trim());
 				Dao.addGys(gysInfo);
-				JOptionPane.showMessageDialog(GysTianJiaPanel.this, "ÒÑ³É¹¦Ìí¼Ó¿Í»§",
-						"¿Í»§Ìí¼ÓĞÅÏ¢", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(GysTianJiaPanel.this, "å·²æˆåŠŸæ·»åŠ å®¢æˆ·",
+						"å®¢æˆ·æ·»åŠ ä¿¡æ¯", JOptionPane.INFORMATION_MESSAGE);
 				resetButton.doClick();
 			} catch (SQLException e1) {
 				e1.printStackTrace();

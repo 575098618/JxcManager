@@ -33,12 +33,12 @@ public class XiaoShouPaiHang extends JInternalFrame {
 	public XiaoShouPaiHang() {
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("ÏúÊÛÅÅÐÐ");
+		setTitle("é”€å”®æŽ’è¡Œ");
 		getContentPane().setLayout(new GridBagLayout());
 		setBounds(100, 100, 650, 375);
 
 		final JLabel label_1 = new JLabel();
-		label_1.setText("¶Ô");
+		label_1.setText("å¯¹");
 		final GridBagConstraints gridBagConstraints_8 = new GridBagConstraints();
 		gridBagConstraints_8.anchor = GridBagConstraints.EAST;
 		gridBagConstraints_8.gridy = 0;
@@ -54,7 +54,7 @@ public class XiaoShouPaiHang extends JInternalFrame {
 		year.setPreferredSize(new Dimension(100, 21));
 		setupComponet(year, 1, 0, 1, 90, true);
 
-		setupComponet(new JLabel("Äê"), 2, 0, 1, 1, false);
+		setupComponet(new JLabel("å¹´"), 2, 0, 1, 1, false);
 
 		month = new JComboBox();
 		for (int i = 1; i <= 12; i++) {
@@ -65,22 +65,22 @@ public class XiaoShouPaiHang extends JInternalFrame {
 		month.setPreferredSize(new Dimension(100, 21));
 		setupComponet(month, 3, 0, 1, 30, true);
 
-		setupComponet(new JLabel(" ÔÂ·ÝµÄÏúÊÛÐÅÏ¢£¬°´"), 4, 0, 1, 1, false);
+		setupComponet(new JLabel(" æœˆä»½çš„é”€å”®ä¿¡æ¯ï¼ŒæŒ‰"), 4, 0, 1, 1, false);
 		condition = new JComboBox();
-		condition.setModel(new DefaultComboBoxModel(new String[]{"½ð¶î", "ÊýÁ¿"}));
+		condition.setModel(new DefaultComboBoxModel(new String[]{"é‡‘é¢", "æ•°é‡"}));
 		setupComponet(condition, 5, 0, 1, 30, true);
 
-		setupComponet(new JLabel(" ½øÐÐ"), 6, 0, 1, 1, false);
+		setupComponet(new JLabel(" è¿›è¡Œ"), 6, 0, 1, 1, false);
 
 		operation = new JComboBox();
 		operation.setModel(new DefaultComboBoxModel(
-				new String[]{"ÉýÐòÅÅÁÐ", "½µÐòÅÅÁÐ"}));
+				new String[]{"å‡åºæŽ’åˆ—", "é™åºæŽ’åˆ—"}));
 		setupComponet(operation, 7, 0, 1, 30, true);
 
 		okButton = new JButton();
 		okButton.addActionListener(new OkAction());
 		setupComponet(okButton, 8, 0, 1, 1, false);
-		okButton.setText("È·¶¨");
+		okButton.setText("ç¡®å®š");
 
 		final JScrollPane scrollPane = new JScrollPane();
 		final GridBagConstraints gridBagConstraints_6 = new GridBagConstraints();
@@ -97,8 +97,8 @@ public class XiaoShouPaiHang extends JInternalFrame {
 		table.setEnabled(false);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		dftm = (DefaultTableModel) table.getModel();
-		String[] tableHeads = new String[]{"ÉÌÆ·±àºÅ", "ÉÌÆ·Ãû³Æ", "ÏúÊÛ½ð¶î", "ÏúÊÛÊýÁ¿",
-				"¼ò³Æ", "²úµØ", "µ¥Î»", "¹æ¸ñ", "°ü×°", "ÅúºÅ", "Åú×¼ÎÄºÅ","¼ò½é","¹©Ó¦ÉÌ"};
+		String[] tableHeads = new String[]{"å•†å“ç¼–å·", "å•†å“åç§°", "é”€å”®é‡‘é¢", "é”€å”®æ•°é‡",
+				"ç®€ç§°", "äº§åœ°", "å•ä½", "è§„æ ¼", "åŒ…è£…", "æ‰¹å·", "æ‰¹å‡†æ–‡å·","ç®€ä»‹","ä¾›åº”å•†"};
 		dftm.setColumnIdentifiers(tableHeads);
 		scrollPane.setViewportView(table);
 	}
@@ -122,7 +122,7 @@ public class XiaoShouPaiHang extends JInternalFrame {
 			dftm.addRow(vector);
 		}
 	}
-	// ÉèÖÃ×é¼þÎ»ÖÃ²¢Ìí¼Óµ½ÈÝÆ÷ÖÐ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();

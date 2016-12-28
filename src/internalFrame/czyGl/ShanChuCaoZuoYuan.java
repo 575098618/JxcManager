@@ -49,7 +49,7 @@ public class ShanChuCaoZuoYuan extends JPanel {
 
 		table = new JTable();
 		dftm = (DefaultTableModel) table.getModel();
-		columnNames = new String[]{"ÓÃ»§ĞÕÃû", "µÇÂ¼Ãû", "ÃÜÂë", "È¨ÏŞ"};
+		columnNames = new String[]{"ç”¨æˆ·å§“å", "ç™»å½•å", "å¯†ç ", "æƒé™"};
 		dftm.setColumnIdentifiers(columnNames);
 		table.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(final MouseEvent e) {
@@ -70,7 +70,7 @@ public class ShanChuCaoZuoYuan extends JPanel {
 		gridBagConstraints_3.gridy = 2;
 		gridBagConstraints_3.gridx = 0;
 		add(label, gridBagConstraints_3);
-		label.setText("ÓÃ»§ĞÕÃû£º");
+		label.setText("ç”¨æˆ·å§“åï¼š");
 
 		userName = new JTextField();
 		userName.setEditable(false);
@@ -83,7 +83,7 @@ public class ShanChuCaoZuoYuan extends JPanel {
 		add(userName, gridBagConstraints_4);
 
 		final JLabel label_2 = new JLabel();
-		label_2.setText("µÇÂ¼Ãû£º");
+		label_2.setText("ç™»å½•åï¼š");
 		final GridBagConstraints gridBagConstraints_7 = new GridBagConstraints();
 		gridBagConstraints_7.gridy = 2;
 		gridBagConstraints_7.gridx = 4;
@@ -104,7 +104,7 @@ public class ShanChuCaoZuoYuan extends JPanel {
 		gridBagConstraints_6.gridy = 2;
 		gridBagConstraints_6.gridx = 6;
 		add(label_1, gridBagConstraints_6);
-		label_1.setText("ÃÜÂë£º");
+		label_1.setText("å¯†ç ï¼š");
 
 		passField = new JTextField();
 		final GridBagConstraints gridBagConstraints_5 = new GridBagConstraints();
@@ -116,7 +116,7 @@ public class ShanChuCaoZuoYuan extends JPanel {
 		add(passField, gridBagConstraints_5);
 		passField.setEditable(false);
 
-		final JButton button = new JButton("É¾³ı");
+		final JButton button = new JButton("åˆ é™¤");
 		final GridBagConstraints gridBagConstraints_1 = new GridBagConstraints();
 		gridBagConstraints_1.insets = new Insets(5, 0, 5, 0);
 		gridBagConstraints_1.gridy = 7;
@@ -125,7 +125,7 @@ public class ShanChuCaoZuoYuan extends JPanel {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
 				int op = JOptionPane.showConfirmDialog(ShanChuCaoZuoYuan.this,
-						"È·ÈÏÒªÉ¾³ı¸Ã²Ù×÷Ô±£¿");
+						"ç¡®è®¤è¦åˆ é™¤è¯¥æ“ä½œå‘˜ï¼Ÿ");
 				if (op == JOptionPane.OK_OPTION) {
 					Dao.delete("delete tb_userlist where username='"
 							+ loginName.getText() + "'");
@@ -137,7 +137,7 @@ public class ShanChuCaoZuoYuan extends JPanel {
 			}
 		});
 
-		final JButton button_1 = new JButton("¹Ø±Õ");
+		final JButton button_1 = new JButton("å…³é—­");
 		final GridBagConstraints gridBagConstraints_2 = new GridBagConstraints();
 		gridBagConstraints_2.insets = new Insets(5, 0, 5, 0);
 		gridBagConstraints_2.gridy = 7;
@@ -162,8 +162,8 @@ public class ShanChuCaoZuoYuan extends JPanel {
 			data[1] = (String) userlist.get(1);
 			data[2] = (String) userlist.get(2);
 			data[3] = ((String) userlist.get(3)).equals("a")
-					? "ÏµÍ³¹ÜÀíÔ±"
-					: "ÆÕÍ¨²Ù×÷Ô±";
+					? "ç³»ç»Ÿç®¡ç†å‘˜"
+					: "æ™®é€šæ“ä½œå‘˜";
 			dftm.addRow(data);
 		}
 		setVisible(true);

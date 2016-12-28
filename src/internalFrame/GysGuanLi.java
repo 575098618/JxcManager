@@ -9,12 +9,12 @@ public class GysGuanLi extends JInternalFrame {
 	public GysGuanLi() {
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("¹©Ó¦ÉÌ¹ÜÀí");
+		setTitle("ä¾›åº”å•†ç®¡ç†");
 		JTabbedPane tabPane = new JTabbedPane();
 		final GysXiuGaiPanel spxgPanel = new GysXiuGaiPanel();
 		final GysTianJiaPanel sptjPanel = new GysTianJiaPanel();
-		tabPane.addTab("¹©Ó¦ÉÌĞÅÏ¢Ìí¼Ó", null, sptjPanel, "¹©Ó¦ÉÌÌí¼Ó");
-		tabPane.addTab("¹©Ó¦ÉÌĞÅÏ¢ĞŞ¸ÄÓëÉ¾³ı", null, spxgPanel, "ĞŞ¸ÄÓëÉ¾³ı");
+		tabPane.addTab("ä¾›åº”å•†ä¿¡æ¯æ·»åŠ ", null, sptjPanel, "ä¾›åº”å•†æ·»åŠ ");
+		tabPane.addTab("ä¾›åº”å•†ä¿¡æ¯ä¿®æ”¹ä¸åˆ é™¤", null, spxgPanel, "ä¿®æ”¹ä¸åˆ é™¤");
 		getContentPane().add(tabPane);
 		tabPane.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {

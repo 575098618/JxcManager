@@ -32,7 +32,7 @@ public class ShangPinChaXun extends JInternalFrame {
 		super();
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("ÉÌÆ·ĞÅÏ¢²éÑ¯");
+		setTitle("å•†å“ä¿¡æ¯æŸ¥è¯¢");
 		getContentPane().setLayout(new GridBagLayout());
 		setBounds(100, 100, 609, 375);
 
@@ -40,8 +40,8 @@ public class ShangPinChaXun extends JInternalFrame {
 		table.setEnabled(false);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		final DefaultTableModel dftm = (DefaultTableModel) table.getModel();
-		String[] tableHeads = new String[]{"¿Í»§ID", "ÉÌÆ·Ãû³Æ", "¼ò³Æ", "²úµØ", "µ¥Î»",
-				"¹æ¸ñ", "°ü×°", "ÅúºÅ", "Åú×¼ÎÄºÅ", "¹©Ó¦ÉÌÈ«³Æ", "±¸×¢",};
+		String[] tableHeads = new String[]{"å®¢æˆ·ID", "å•†å“åç§°", "ç®€ç§°", "äº§åœ°", "å•ä½",
+				"è§„æ ¼", "åŒ…è£…", "æ‰¹å·", "æ‰¹å‡†æ–‡å·", "ä¾›åº”å•†å…¨ç§°", "å¤‡æ³¨",};
 		dftm.setColumnIdentifiers(tableHeads);
 
 		final JScrollPane scrollPane = new JScrollPane(table);
@@ -55,15 +55,15 @@ public class ShangPinChaXun extends JInternalFrame {
 		gridBagConstraints_6.gridx = 0;
 		getContentPane().add(scrollPane, gridBagConstraints_6);
 
-		setupComponet(new JLabel(" Ñ¡Ôñ²éÑ¯Ìõ¼ş£º"), 0, 0, 1, 1, false);
+		setupComponet(new JLabel(" é€‰æ‹©æŸ¥è¯¢æ¡ä»¶ï¼š"), 0, 0, 1, 1, false);
 		conditionName = new JComboBox();
-		conditionName.setModel(new DefaultComboBoxModel(new String[]{"ÉÌÆ·Ãû³Æ",
-				"¹©Ó¦ÉÌÈ«³Æ", "²úµØ", "¹æ¸ñ"}));
+		conditionName.setModel(new DefaultComboBoxModel(new String[]{"å•†å“åç§°",
+				"ä¾›åº”å•†å…¨ç§°", "äº§åœ°", "è§„æ ¼"}));
 		setupComponet(conditionName, 1, 0, 1, 30, true);
 
 		conditionOperation = new JComboBox();
-		conditionOperation.setModel(new DefaultComboBoxModel(new String[]{"µÈÓÚ",
-				"°üº¬"}));
+		conditionOperation.setModel(new DefaultComboBoxModel(new String[]{"ç­‰äº",
+				"åŒ…å«"}));
 		setupComponet(conditionOperation, 2, 0, 1, 30, true);
 
 		conditionContent = new JTextField();
@@ -72,7 +72,7 @@ public class ShangPinChaXun extends JInternalFrame {
 		final JButton queryButton = new JButton();
 		queryButton.addActionListener(new QueryAction(dftm));
 		setupComponet(queryButton, 4, 0, 1, 1, false);
-		queryButton.setText("²éÑ¯");
+		queryButton.setText("æŸ¥è¯¢");
 
 		final JButton showAllButton = new JButton();
 		showAllButton.addActionListener(new ActionListener() {
@@ -83,7 +83,7 @@ public class ShangPinChaXun extends JInternalFrame {
 			}
 		});
 		setupComponet(showAllButton, 5, 0, 1, 1, false);
-		showAllButton.setText("ÏÔÊ¾È«²¿Êı¾İ");
+		showAllButton.setText("æ˜¾ç¤ºå…¨éƒ¨æ•°æ®");
 	}
 
 	private void updateTable(List list, final DefaultTableModel dftm) {
@@ -113,7 +113,7 @@ public class ShangPinChaXun extends JInternalFrame {
 			dftm.addRow(rowData);
 		}
 	}
-	// ÉèÖÃ×é¼şÎ»ÖÃ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();
@@ -145,25 +145,25 @@ public class ShangPinChaXun extends JInternalFrame {
 		private List searchInfo(String conName, String conOperation,
 				String content, List list) {
 			String sql = "select * from Tb_Spinfo where ";
-			if (conOperation.equals("µÈÓÚ")) {
-				if (conName.equals("ÉÌÆ·Ãû³Æ"))
+			if (conOperation.equals("ç­‰äº")) {
+				if (conName.equals("å•†å“åç§°"))
 					list = Dao.findForList(sql + "spname='" + content + "'");
-				if (conName.equals("¹©Ó¦ÉÌÈ«³Æ"))
+				if (conName.equals("ä¾›åº”å•†å…¨ç§°"))
 					list = Dao.findForList(sql + "gysname='" + content + "'");
-				if (conName.equals("²úµØ"))
+				if (conName.equals("äº§åœ°"))
 					list = Dao.findForList(sql + "cd='" + content + "'");
-				if (conName.equals("¹æ¸ñ"))
+				if (conName.equals("è§„æ ¼"))
 					list = Dao.findForList(sql + "gg='" + content + "'");
 			} else {
-				if (conName.equals("ÉÌÆ·Ãû³Æ"))
+				if (conName.equals("å•†å“åç§°"))
 					list = Dao.findForList(sql + "spname like '%" + content
 							+ "%'");
-				if (conName.equals("¹©Ó¦ÉÌÈ«³Æ"))
+				if (conName.equals("ä¾›åº”å•†å…¨ç§°"))
 					list = Dao.findForList(sql + "gysname like '%" + content
 							+ "%'");
-				if (conName.equals("²úµØ"))
+				if (conName.equals("äº§åœ°"))
 					list = Dao.findForList(sql + "cd like '%" + content + "%'");
-				if (conName.equals("¹æ¸ñ"))
+				if (conName.equals("è§„æ ¼"))
 					list = Dao.findForList(sql + "gg like '%" + content + "%'");
 			}
 			return list;

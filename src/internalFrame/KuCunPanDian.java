@@ -27,34 +27,34 @@ import com.lzw.dao.Dao;
 import com.lzw.login.Login;
 public class KuCunPanDian extends JInternalFrame {
 	private final JTable table;
-	private TbUserlist user = Login.getUser(); // µÇÂ¼ÓÃ»§ĞÅÏ¢
-	private final JTextField pdsj = new JTextField(); // ½ø»õÊ±¼ä
-	private final JTextField pzs = new JTextField("0"); // Æ·ÖÖÊıÁ¿
-	private final JTextField hpzs = new JTextField("0"); // »õÆ·×ÜÊı
-	private final JTextField kcje = new JTextField("0"); // ¿â´æ½ğ¶î
+	private TbUserlist user = Login.getUser(); // ç™»å½•ç”¨æˆ·ä¿¡æ¯
+	private final JTextField pdsj = new JTextField(); // è¿›è´§æ—¶é—´
+	private final JTextField pzs = new JTextField("0"); // å“ç§æ•°é‡
+	private final JTextField hpzs = new JTextField("0"); // è´§å“æ€»æ•°
+	private final JTextField kcje = new JTextField("0"); // åº“å­˜é‡‘é¢
 	private Date pdDate=new Date();
-	private JTextField pdy = new JTextField(user.getUsername());// ÅÌµãÔ±
+	private JTextField pdy = new JTextField(user.getUsername());// ç›˜ç‚¹å‘˜
 	public KuCunPanDian() {
 		super();
 		setMaximizable(true);
 		setIconifiable(true);
 		setClosable(true);
 		getContentPane().setLayout(new GridBagLayout());
-		setTitle("¿â´æÅÌµã");
+		setTitle("åº“å­˜ç›˜ç‚¹");
 		setBounds(50, 50, 750, 400);
 
-		setupComponet(new JLabel("ÅÌ µã Ô±£º"), 0, 0, 1, 0, false);
+		setupComponet(new JLabel("ç›˜ ç‚¹ å‘˜ï¼š"), 0, 0, 1, 0, false);
 		pdy.setFocusable(false);
 		pdy.setPreferredSize(new Dimension(120, 21));
 		setupComponet(pdy, 1, 0, 1, 0, true);
 
-		setupComponet(new JLabel("ÅÌµãÊ±¼ä£º"), 2, 0, 1, 0, false);
+		setupComponet(new JLabel("ç›˜ç‚¹æ—¶é—´ï¼š"), 2, 0, 1, 0, false);
 		pdsj.setFocusable(false);
 		pdsj.setText(pdDate.toLocaleString());
 		pdsj.setPreferredSize(new Dimension(180, 21));
 		setupComponet(pdsj, 3, 0, 1, 1, true);
 
-		setupComponet(new JLabel("Æ· ÖÖ Êı£º"), 4, 0, 1, 0, false);
+		setupComponet(new JLabel("å“ ç§ æ•°ï¼š"), 4, 0, 1, 0, false);
 		pzs.setFocusable(false);
 		pzs.setPreferredSize(new Dimension(80, 21));
 		setupComponet(pzs, 5, 0, 1, 20, true);
@@ -67,13 +67,13 @@ public class KuCunPanDian extends JInternalFrame {
 		scrollPanel.setPreferredSize(new Dimension(700, 300));
 		setupComponet(scrollPanel, 0, 2, 6, 1, true);
 	}
-	// ³õÊ¼»¯±í¸ñ
+	// åˆå§‹åŒ–è¡¨æ ¼
 	private void initTable() {
-		String[] columnNames = {"ÉÌÆ·Ãû³Æ", "ÉÌÆ·±àºÅ", "¹©Ó¦ÉÌ", "²úµØ", "µ¥Î»", "¹æ¸ñ", "µ¥¼Û",
-				"ÊıÁ¿", "°ü×°", "ÅÌµãÊıÁ¿", "ËğÒæÊıÁ¿"};
+		String[] columnNames = {"å•†å“åç§°", "å•†å“ç¼–å·", "ä¾›åº”å•†", "äº§åœ°", "å•ä½", "è§„æ ¼", "å•ä»·",
+				"æ•°é‡", "åŒ…è£…", "ç›˜ç‚¹æ•°é‡", "æŸç›Šæ•°é‡"};
 		DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
 		tableModel.setColumnIdentifiers(columnNames);
-		// ÉèÖÃÅÌµã×Ö¶ÎÖ»½ÓÊÕÊı×ÖÊäÈë
+		// è®¾ç½®ç›˜ç‚¹å­—æ®µåªæ¥æ”¶æ•°å­—è¾“å…¥
 		final JTextField pdField = new JTextField(0);
 		pdField.setEditable(false);
 		pdField.addKeyListener(new KeyAdapter() {
@@ -108,7 +108,7 @@ public class KuCunPanDian extends JInternalFrame {
 
 		DefaultCellEditor pdEditor = new DefaultCellEditor(pdField);
 		DefaultCellEditor readOnlyEditor = new DefaultCellEditor(readOnlyField);
-		// ÉèÖÃ±í¸ñµ¥ÔªÎªÖ»¶Á¸ñÊ½
+		// è®¾ç½®è¡¨æ ¼å•å…ƒä¸ºåªè¯»æ ¼å¼
 		for (int i = 0; i < columnNames.length; i++) {
 			TableColumn column = table.getColumnModel().getColumn(i);
 			column.setCellEditor(readOnlyEditor);
@@ -118,7 +118,7 @@ public class KuCunPanDian extends JInternalFrame {
 		TableColumn syColumn = table.getColumnModel().getColumn(10);
 		pdColumn.setCellEditor(pdEditor);
 		syColumn.setCellEditor(readOnlyEditor);
-		// ³õÊ¼»¯±í¸ñÄÚÈİ
+		// åˆå§‹åŒ–è¡¨æ ¼å†…å®¹
 		List kcInfos = Dao.getKucunInfos();
 		for (int i = 0; i < kcInfos.size(); i++) {
 			List info = (List) kcInfos.get(i);
@@ -147,7 +147,7 @@ public class KuCunPanDian extends JInternalFrame {
 			}
 		}
 	}
-	// ÉèÖÃ×é¼şÎ»ÖÃ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();

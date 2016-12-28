@@ -12,12 +12,12 @@ public class ShangPinGuanLi extends JInternalFrame {
 	public ShangPinGuanLi() {
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("ÉÌÆ·¹ÜÀí");
+		setTitle("å•†å“ç®¡ç†");
 		JTabbedPane tabPane = new JTabbedPane();
 		final ShangPinXiuGaiPanel spxgPanel = new ShangPinXiuGaiPanel();
 		final ShangPinTianJiaPanel sptjPanel = new ShangPinTianJiaPanel();
-		tabPane.addTab("ÉÌÆ·ĞÅÏ¢Ìí¼Ó", null, sptjPanel, "ÉÌÆ·Ìí¼Ó");
-		tabPane.addTab("ÉÌÆ·ĞÅÏ¢ĞŞ¸ÄÓëÉ¾³ı", null, spxgPanel, "ĞŞ¸ÄÓëÉ¾³ı");
+		tabPane.addTab("å•†å“ä¿¡æ¯æ·»åŠ ", null, sptjPanel, "å•†å“æ·»åŠ ");
+		tabPane.addTab("å•†å“ä¿¡æ¯ä¿®æ”¹ä¸åˆ é™¤", null, spxgPanel, "ä¿®æ”¹ä¸åˆ é™¤");
 		getContentPane().add(tabPane);
 		tabPane.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {
@@ -25,7 +25,7 @@ public class ShangPinGuanLi extends JInternalFrame {
 				spxgPanel.initGysBox();
 			}
 		});
-		//ÔÚÉÌÆ·¹ÜÀí´°¿Ú±»¼¤»îÊ±£¬³õÊ¼»¯ÉÌÆ·Ìí¼Ó½çÃæµÄ¹©Ó¦ÉÌÏÂÀ­Ñ¡Ôñ¿ò
+		//åœ¨å•†å“ç®¡ç†çª—å£è¢«æ¿€æ´»æ—¶ï¼Œåˆå§‹åŒ–å•†å“æ·»åŠ ç•Œé¢çš„ä¾›åº”å•†ä¸‹æ‹‰é€‰æ‹©æ¡†
 		addInternalFrameListener(new InternalFrameAdapter(){
 			public void internalFrameActivated(InternalFrameEvent e) {
 				super.internalFrameActivated(e);

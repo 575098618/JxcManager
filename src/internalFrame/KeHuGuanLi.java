@@ -10,12 +10,12 @@ public class KeHuGuanLi extends JInternalFrame {
 	public KeHuGuanLi() {
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("¿Í»§ĞÅÏ¢¹ÜÀí");
+		setTitle("å®¢æˆ·ä¿¡æ¯ç®¡ç†");
 		JTabbedPane tabPane = new JTabbedPane();
 		final KeHuXiuGaiPanel khxgPanel = new KeHuXiuGaiPanel();
 		final KeHuTianJiaPanel khtjPanel = new KeHuTianJiaPanel();
-		tabPane.addTab("¿Í»§ĞÅÏ¢Ìí¼Ó", null, khtjPanel, "¿Í»§Ìí¼Ó");
-		tabPane.addTab("¿Í»§ĞÅÏ¢ĞŞ¸ÄÓëÉ¾³ı", null, khxgPanel, "ĞŞ¸ÄÓëÉ¾³ı");
+		tabPane.addTab("å®¢æˆ·ä¿¡æ¯æ·»åŠ ", null, khtjPanel, "å®¢æˆ·æ·»åŠ ");
+		tabPane.addTab("å®¢æˆ·ä¿¡æ¯ä¿®æ”¹ä¸åˆ é™¤", null, khxgPanel, "ä¿®æ”¹ä¸åˆ é™¤");
 		getContentPane().add(tabPane);
 		tabPane.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {

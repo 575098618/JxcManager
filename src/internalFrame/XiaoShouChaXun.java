@@ -54,17 +54,17 @@ public class XiaoShouChaXun extends JInternalFrame{
 		});
 		setIconifiable(true);
 		setClosable(true);
-		setTitle("ÏúÊÛĞÅÏ¢²éÑ¯");
+		setTitle("é”€å”®ä¿¡æ¯æŸ¥è¯¢");
 		getContentPane().setLayout(new GridBagLayout());
 		setBounds(100, 100, 650, 375);
 
-		setupComponet(new JLabel(" Ñ¡Ôñ²éÑ¯Ìõ¼ş£º"), 0, 0, 1, 1, false);
+		setupComponet(new JLabel(" é€‰æ‹©æŸ¥è¯¢æ¡ä»¶ï¼š"), 0, 0, 1, 1, false);
 		condition = new JComboBox();
-		condition.setModel(new DefaultComboBoxModel(new String[] {"¿Í»§È«³Æ", "ÏúÊÛÆ±ºÅ"}));
+		condition.setModel(new DefaultComboBoxModel(new String[] {"å®¢æˆ·å…¨ç§°", "é”€å”®ç¥¨å·"}));
 		setupComponet(condition, 1, 0, 1, 30, true);
 
 		operation = new JComboBox();
-		operation.setModel(new DefaultComboBoxModel(new String[]{"µÈÓÚ", "°üº¬"}));
+		operation.setModel(new DefaultComboBoxModel(new String[]{"ç­‰äº", "åŒ…å«"}));
 		setupComponet(operation, 4, 0, 1, 30, true);
 
 		content = new JTextField();
@@ -80,7 +80,7 @@ public class XiaoShouChaXun extends JInternalFrame{
 		queryButton = new JButton();
 		queryButton.addActionListener(new QueryActionListener());
 		setupComponet(queryButton, 7, 0, 1, 1, false);
-		queryButton.setText("²éÑ¯");
+		queryButton.setText("æŸ¥è¯¢");
 
 		selectDate = new JCheckBox();
 		final GridBagConstraints gridBagConstraints_7 = new GridBagConstraints();
@@ -91,7 +91,7 @@ public class XiaoShouChaXun extends JInternalFrame{
 		getContentPane().add(selectDate, gridBagConstraints_7);
 
 		final JLabel label_1 = new JLabel();
-		label_1.setText("Ö¸¶¨²éÑ¯ÈÕÆÚ    ´Ó");
+		label_1.setText("æŒ‡å®šæŸ¥è¯¢æ—¥æœŸ    ä»");
 		final GridBagConstraints gridBagConstraints_8 = new GridBagConstraints();
 		gridBagConstraints_8.anchor = GridBagConstraints.EAST;
 		gridBagConstraints_8.gridy = 1;
@@ -102,7 +102,7 @@ public class XiaoShouChaXun extends JInternalFrame{
 		startDate.setPreferredSize(new Dimension(100,21));
 		setupComponet(startDate, 2, 1, 3, 1, true);
 
-		setupComponet(new JLabel("µ½"), 5, 1, 1, 1, false);
+		setupComponet(new JLabel("åˆ°"), 5, 1, 1, 1, false);
 
 		endDate = new JTextField();
 		endDate.addKeyListener(content.getKeyListeners()[0]);
@@ -123,7 +123,7 @@ public class XiaoShouChaXun extends JInternalFrame{
 		gridBagConstraints_5.gridx = 7;
 		getContentPane().add(showAllButton, gridBagConstraints_5);
 		showAllButton.setFont(new Font("", Font.PLAIN, 12));
-		showAllButton.setText("ÏÔÊ¾È«²¿Êı¾İ");
+		showAllButton.setText("æ˜¾ç¤ºå…¨éƒ¨æ•°æ®");
 
 		final JScrollPane scrollPane = new JScrollPane();
 		final GridBagConstraints gridBagConstraints_6 = new GridBagConstraints();
@@ -140,13 +140,13 @@ public class XiaoShouChaXun extends JInternalFrame{
 		table.setEnabled(false);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		dftm = (DefaultTableModel)table.getModel();
-		String[] tableHeads = new String[]{"ÏúÊÛÆ±ºÅ", "ÉÌÆ·±àºÅ", "ÉÌÆ·Ãû³Æ", "¹æ¸ñ", "µ¥¼Û",
-				"ÊıÁ¿", "½ğ¶î", "¿Í»§È«³Æ", "ÏúÊÛÈÕÆÚ", "²Ù×÷Ô±", "¾­ÊÖÈË", "½áËã·½Ê½"};
+		String[] tableHeads = new String[]{"é”€å”®ç¥¨å·", "å•†å“ç¼–å·", "å•†å“åç§°", "è§„æ ¼", "å•ä»·",
+				"æ•°é‡", "é‡‘é¢", "å®¢æˆ·å…¨ç§°", "é”€å”®æ—¥æœŸ", "æ“ä½œå‘˜", "ç»æ‰‹äºº", "ç»“ç®—æ–¹å¼"};
 		dftm.setColumnIdentifiers(tableHeads);
 		scrollPane.setViewportView(table);
 	}
 
-	private void updateTable(Iterator iterator) {		// ¸üĞÂ±í¸ñÊı¾İ
+	private void updateTable(Iterator iterator) {		// æ›´æ–°è¡¨æ ¼æ•°æ®
 		int rowCount=dftm.getRowCount();
 		for(int i=0;i<rowCount;i++) {
 			dftm.removeRow(0);
@@ -158,7 +158,7 @@ public class XiaoShouChaXun extends JInternalFrame{
 			dftm.addRow(vector);
 		}
 	}
-	// ÉèÖÃ×é¼şÎ»ÖÃ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();
@@ -173,7 +173,7 @@ public class XiaoShouChaXun extends JInternalFrame{
 			gridBagConstrains.fill = GridBagConstraints.HORIZONTAL;
 		getContentPane().add(component, gridBagConstrains);
 	}
-	class ShowAllActoinListener implements ActionListener {			// ÏÔÊ¾È«²¿°´Å¥µÄ¶¯×÷¼àÌıÆ÷
+	class ShowAllActoinListener implements ActionListener {			// æ˜¾ç¤ºå…¨éƒ¨æŒ‰é’®çš„åŠ¨ä½œç›‘å¬å™¨
 		public void actionPerformed(final ActionEvent e) {
 			content.setText("");
 			List list=Dao.findForList("select * from v_sellView");
@@ -185,16 +185,16 @@ public class XiaoShouChaXun extends JInternalFrame{
 		public void actionPerformed(final ActionEvent e) {
 			boolean selDate = selectDate.isSelected();
 			if(content.getText().equals("")) {
-				JOptionPane.showMessageDialog(getContentPane(), "ÇëÊäÈë²éÑ¯ÄÚÈİ£¡");
+				JOptionPane.showMessageDialog(getContentPane(), "è¯·è¾“å…¥æŸ¥è¯¢å†…å®¹ï¼");
 				return;
 			}
 			if(selDate) {
 				if(startDate.getText()==null||startDate.getText().equals("")) {
-					JOptionPane.showMessageDialog(getContentPane(), "ÇëÊäÈë²éÑ¯µÄ¿ªÊ¼ÈÕÆÚ£¡");
+					JOptionPane.showMessageDialog(getContentPane(), "è¯·è¾“å…¥æŸ¥è¯¢çš„å¼€å§‹æ—¥æœŸï¼");
 					return;
 				}
 				if(endDate.getText()==null||endDate.getText().equals("")) {
-					JOptionPane.showMessageDialog(getContentPane(), "ÇëÊäÈë²éÑ¯µÄ½áÊøÈÕÆÚ£¡");
+					JOptionPane.showMessageDialog(getContentPane(), "è¯·è¾“å…¥æŸ¥è¯¢çš„ç»“æŸæ—¥æœŸï¼");
 					return;
 				}
 			}

@@ -47,17 +47,17 @@ public class Dao {
 	}
 	private Dao() {
 	}
-	// ¶ÁÈ¡ËùÓĞ¿Í»§ĞÅÏ¢
+	// è¯»å–æ‰€æœ‰å®¢æˆ·ä¿¡æ¯
 	public static List getKhInfos() {
 		List list = findForList("select id,khname from tb_khinfo");
 		return list;
 	}
-	// ¶ÁÈ¡ËùÓĞ¹©Ó¦ÉÌĞÅÏ¢
+	// è¯»å–æ‰€æœ‰ä¾›åº”å•†ä¿¡æ¯
 	public static List getGysInfos() {
 		List list = findForList("select id,name from tb_gysinfo");
 		return list;
 	}
-	// ¶ÁÈ¡¿Í»§ĞÅÏ¢
+	// è¯»å–å®¢æˆ·ä¿¡æ¯
 	public static TbKhinfo getKhInfo(Item item) {
 		String where = "khname='" + item.getName() + "'";
 		if (item.getId() != null)
@@ -85,7 +85,7 @@ public class Dao {
 		}
 		return info;
 	}
-	// ¶ÁÈ¡Ö¸¶¨¹©Ó¦ÉÌĞÅÏ¢
+	// è¯»å–æŒ‡å®šä¾›åº”å•†ä¿¡æ¯
 	public static TbGysinfo getGysInfo(Item item) {
 		String where = "name='" + item.getName() + "'";
 		if (item.getId() != null)
@@ -112,7 +112,7 @@ public class Dao {
 		}
 		return info;
 	}
-	// ¶ÁÈ¡ÓÃ»§
+	// è¯»å–ç”¨æˆ·
 	public static TbUserlist getUser(String name, String password) {
 		TbUserlist user = new TbUserlist();
 		ResultSet rs = findForResultSet("select * from tb_userlist where username='"
@@ -131,16 +131,16 @@ public class Dao {
 		}
 		return user;
 	}
-	// Ö´ĞĞÖ¸¶¨²éÑ¯
+	// æ‰§è¡ŒæŒ‡å®šæŸ¥è¯¢
 	public static ResultSet query(String QueryStr) {
 		ResultSet set = findForResultSet(QueryStr);
 		return set;
 	}
-	// Ö´ĞĞÉ¾³ı
+	// æ‰§è¡Œåˆ é™¤
 	public static int delete(String sql) {
 		return update(sql);
 	}
-	// Ìí¼Ó¿Í»§ĞÅÏ¢µÄ·½·¨
+	// æ·»åŠ å®¢æˆ·ä¿¡æ¯çš„æ–¹æ³•
 	public static boolean addKeHu(TbKhinfo khinfo) {
 		if (khinfo == null)
 			return false;
@@ -152,7 +152,7 @@ public class Dao {
 				+ khinfo.getMail() + "','" + khinfo.getXinhang() + "','"
 				+ khinfo.getHao() + "')");
 	}
-	// ĞŞ¸Ä¿Í»§ĞÅÏ¢µÄ·½·¨
+	// ä¿®æ”¹å®¢æˆ·ä¿¡æ¯çš„æ–¹æ³•
 	public static int updateKeHu(TbKhinfo khinfo) {
 		return update("update tb_khinfo set jian='" + khinfo.getJian()
 				+ "',address='" + khinfo.getAddress() + "',bianma='"
@@ -162,12 +162,12 @@ public class Dao {
 				+ "',xinhang='" + khinfo.getXinhang() + "',hao='"
 				+ khinfo.getHao() + "' where id='" + khinfo.getId() + "'");
 	}
-	// ĞŞ¸Ä¿â´æµÄ·½·¨
+	// ä¿®æ”¹åº“å­˜çš„æ–¹æ³•
 	public static int updateKucunDj(TbKucun kcInfo) {
 		return update("update tb_kucun set dj=" + kcInfo.getDj()
 				+ " where id='" + kcInfo.getId() + "'");
 	}
-	// ĞŞ¸Ä¹©Ó¦ÉÌĞÅÏ¢µÄ·½·¨
+	// ä¿®æ”¹ä¾›åº”å•†ä¿¡æ¯çš„æ–¹æ³•
 	public static int updateGys(TbGysinfo gysInfo) {
 		return update("update tb_gysinfo set jc='" + gysInfo.getJc()
 				+ "',address='" + gysInfo.getAddress() + "',bianma='"
@@ -177,7 +177,7 @@ public class Dao {
 				+ gysInfo.getMail() + "',yh='" + gysInfo.getYh()
 				+ "' where id='" + gysInfo.getId() + "'");
 	}
-	// Ìí¼Ó¹©Ó¦ÉÌĞÅÏ¢µÄ·½·¨
+	// æ·»åŠ ä¾›åº”å•†ä¿¡æ¯çš„æ–¹æ³•
 	public static boolean addGys(TbGysinfo gysInfo) {
 		if (gysInfo == null)
 			return false;
@@ -188,7 +188,7 @@ public class Dao {
 				+ gysInfo.getLian() + "','" + gysInfo.getLtel() + "','"
 				+ gysInfo.getMail() + "','" + gysInfo.getYh() + "')");
 	}
-	// Ìí¼ÓÉÌÆ·
+	// æ·»åŠ å•†å“
 	public static boolean addSp(TbSpinfo spInfo) {
 		if (spInfo == null)
 			return false;
@@ -199,7 +199,7 @@ public class Dao {
 				+ spInfo.getPh() + "','" + spInfo.getPzwh() + "','"
 				+ spInfo.getMemo() + "','" + spInfo.getGysname() + "')");
 	}
-	// ¸üĞÂÉÌÆ·
+	// æ›´æ–°å•†å“
 	public static int updateSp(TbSpinfo spInfo) {
 		return update("update tb_spinfo set jc='" + spInfo.getJc() + "',cd='"
 				+ spInfo.getCd() + "',dw='" + spInfo.getDw() + "',gg='"
@@ -208,7 +208,7 @@ public class Dao {
 				+ spInfo.getMemo() + "',gysname='" + spInfo.getGysname()
 				+ "' where id='" + spInfo.getId() + "'");
 	}
-	// ¶ÁÈ¡ÉÌÆ·ĞÅÏ¢
+	// è¯»å–å•†å“ä¿¡æ¯
 	public static TbSpinfo getSpInfo(Item item) {
 		String where = "spname='" + item.getName() + "'";
 		if (item.getId() != null)
@@ -235,12 +235,12 @@ public class Dao {
 		}
 		return spInfo;
 	}
-	// »ñÈ¡ËùÓĞÉÌÆ·ĞÅÏ¢
+	// è·å–æ‰€æœ‰å•†å“ä¿¡æ¯
 	public static List getSpInfos() {
 		List list = findForList("select * from tb_spinfo");
 		return list;
 	}
-	// »ñÈ¡¿â´æÉÌÆ·ĞÅÏ¢
+	// è·å–åº“å­˜å•†å“ä¿¡æ¯
 	public static TbKucun getKucun(Item item) {
 		String where = "spname='" + item.getName() + "'";
 		if (item.getId() != null)
@@ -264,16 +264,16 @@ public class Dao {
 		}
 		return kucun;
 	}
-	// »ñÈ¡Èë¿âµ¥µÄ×î´óID£¬¼´×î´óÈë¿âÆ±ºÅ
+	// è·å–å…¥åº“å•çš„æœ€å¤§IDï¼Œå³æœ€å¤§å…¥åº“ç¥¨å·
 	public static String getRuKuMainMaxId(Date date) {
 		return getMainTypeTableMaxId(date, "tb_ruku_main", "RK", "rkid");
 	}
-	// ÔÚÊÂÎñÖĞÌí¼ÓÈë¿âĞÅÏ¢
+	// åœ¨äº‹åŠ¡ä¸­æ·»åŠ å…¥åº“ä¿¡æ¯
 	public static boolean insertRukuInfo(TbRukuMain ruMain) {
 		try {
 			boolean autoCommit = conn.getAutoCommit();
 			conn.setAutoCommit(false);
-			// Ìí¼ÓÈë¿âÖ÷±í¼ÇÂ¼
+			// æ·»åŠ å…¥åº“ä¸»è¡¨è®°å½•
 			insert("insert into tb_ruku_main values('" + ruMain.getRkId()
 					+ "','" + ruMain.getPzs() + "'," + ruMain.getJe() + ",'"
 					+ ruMain.getYsjl() + "','" + ruMain.getGysname() + "','"
@@ -283,11 +283,11 @@ public class Dao {
 			for (Iterator<TbRukuDetail> iter = rkDetails.iterator(); iter
 					.hasNext();) {
 				TbRukuDetail details = iter.next();
-				// Ìí¼ÓÈë¿âÏêÏ¸±í¼ÇÂ¼
+				// æ·»åŠ å…¥åº“è¯¦ç»†è¡¨è®°å½•
 				insert("insert into tb_ruku_detail values('" + ruMain.getRkId()
 						+ "','" + details.getTabSpinfo() + "',"
 						+ details.getDj() + "," + details.getSl() + ")");
-				// Ìí¼Ó»òĞŞ¸Ä¿â´æ±í¼ÇÂ¼
+				// æ·»åŠ æˆ–ä¿®æ”¹åº“å­˜è¡¨è®°å½•
 				Item item = new Item();
 				item.setId(details.getTabSpinfo());
 				TbSpinfo spInfo = getSpInfo(item);
@@ -379,16 +379,16 @@ public class Dao {
 		}
 		return list;
 	}
-	// »ñÈ¡ÍË»õ×î´óID
+	// è·å–é€€è´§æœ€å¤§ID
 	public static String getRkthMainMaxId(Date date) {
 		return getMainTypeTableMaxId(date, "tb_rkth_main", "RT", "rkthId");
 	}
-	// ÔÚÊÂÎñÖĞÌí¼ÓÈë¿âÍË»õĞÅÏ¢
+	// åœ¨äº‹åŠ¡ä¸­æ·»åŠ å…¥åº“é€€è´§ä¿¡æ¯
 	public static boolean insertRkthInfo(TbRkthMain rkthMain) {
 		try {
 			boolean autoCommit = conn.getAutoCommit();
 			conn.setAutoCommit(false);
-			// Ìí¼ÓÈë¿âÍË»õÖ÷±í¼ÇÂ¼
+			// æ·»åŠ å…¥åº“é€€è´§ä¸»è¡¨è®°å½•
 			insert("insert into tb_rkth_main values('" + rkthMain.getRkthId()
 					+ "','" + rkthMain.getPzs() + "'," + rkthMain.getJe()
 					+ ",'" + rkthMain.getYsjl() + "','" + rkthMain.getGysname()
@@ -399,11 +399,11 @@ public class Dao {
 			for (Iterator<TbRkthDetail> iter = rkDetails.iterator(); iter
 					.hasNext();) {
 				TbRkthDetail details = iter.next();
-				// Ìí¼ÓÈë¿âÏêÏ¸±í¼ÇÂ¼
+				// æ·»åŠ å…¥åº“è¯¦ç»†è¡¨è®°å½•
 				insert("insert into tb_rkth_detail values('"
 						+ rkthMain.getRkthId() + "','" + details.getSpid()
 						+ "'," + details.getDj() + "," + details.getSl() + ")");
-				// Ìí¼Ó»òĞŞ¸Ä¿â´æ±í¼ÇÂ¼
+				// æ·»åŠ æˆ–ä¿®æ”¹åº“å­˜è¡¨è®°å½•
 				Item item = new Item();
 				item.setId(details.getSpid());
 				TbSpinfo spInfo = getSpInfo(item);
@@ -423,16 +423,16 @@ public class Dao {
 		}
 		return true;
 	}
-	// »ñÈ¡ÏúÊÛÖ÷±í×î´óID
+	// è·å–é”€å”®ä¸»è¡¨æœ€å¤§ID
 	public static String getSellMainMaxId(Date date) {
 		return getMainTypeTableMaxId(date, "tb_sell_main", "XS", "sellID");
 	}
-	// ÔÚÊÂÎñÖĞÌí¼ÓÏúÊÛĞÅÏ¢
+	// åœ¨äº‹åŠ¡ä¸­æ·»åŠ é”€å”®ä¿¡æ¯
 	public static boolean insertSellInfo(TbSellMain sellMain) {
 		try {
 			boolean autoCommit = conn.getAutoCommit();
 			conn.setAutoCommit(false);
-			// Ìí¼ÓÏúÊÛÖ÷±í¼ÇÂ¼
+			// æ·»åŠ é”€å”®ä¸»è¡¨è®°å½•
 			insert("insert into tb_sell_main values('" + sellMain.getSellId()
 					+ "','" + sellMain.getPzs() + "'," + sellMain.getJe()
 					+ ",'" + sellMain.getYsjl() + "','" + sellMain.getKhname()
@@ -443,11 +443,11 @@ public class Dao {
 			for (Iterator<TbSellDetail> iter = rkDetails.iterator(); iter
 					.hasNext();) {
 				TbSellDetail details = iter.next();
-				// Ìí¼ÓÏúÊÛÏêÏ¸±í¼ÇÂ¼
+				// æ·»åŠ é”€å”®è¯¦ç»†è¡¨è®°å½•
 				insert("insert into tb_sell_detail values('"
 						+ sellMain.getSellId() + "','" + details.getSpid()
 						+ "'," + details.getDj() + "," + details.getSl() + ")");
-				// ĞŞ¸Ä¿â´æ±í¼ÇÂ¼
+				// ä¿®æ”¹åº“å­˜è¡¨è®°å½•
 				Item item = new Item();
 				item.setId(details.getSpid());
 				TbSpinfo spInfo = getSpInfo(item);
@@ -467,7 +467,7 @@ public class Dao {
 		}
 		return true;
 	}
-	// »ñÈ¡¸üÀàÖ÷±í×î´óID
+	// è·å–æ›´ç±»ä¸»è¡¨æœ€å¤§ID
 	private static String getMainTypeTableMaxId(Date date, String table,
 			String idChar, String idName) {
 		String dateStr = date.toString().replace("-", "");
@@ -494,12 +494,12 @@ public class Dao {
 		List list = findForList("select id,spname,dj,kcsl from tb_kucun");
 		return list;
 	}
-	// ÔÚÊÂÎñÖĞÌí¼ÓÏúÊÛÍË»õĞÅÏ¢
+	// åœ¨äº‹åŠ¡ä¸­æ·»åŠ é”€å”®é€€è´§ä¿¡æ¯
 	public static boolean insertXsthInfo(TbXsthMain xsthMain) {
 		try {
 			boolean autoCommit = conn.getAutoCommit();
 			conn.setAutoCommit(false);
-			// Ìí¼ÓÏúÊÛÍË»õÖ÷±í¼ÇÂ¼
+			// æ·»åŠ é”€å”®é€€è´§ä¸»è¡¨è®°å½•
 			insert("insert into tb_xsth_main values('" + xsthMain.getXsthId()
 					+ "','" + xsthMain.getPzs() + "'," + xsthMain.getJe()
 					+ ",'" + xsthMain.getYsjl() + "','" + xsthMain.getKhname()
@@ -510,11 +510,11 @@ public class Dao {
 			for (Iterator<TbXsthDetail> iter = xsthDetails.iterator(); iter
 					.hasNext();) {
 				TbXsthDetail details = iter.next();
-				// Ìí¼ÓÏúÊÛÍË»õÏêÏ¸±í¼ÇÂ¼
+				// æ·»åŠ é”€å”®é€€è´§è¯¦ç»†è¡¨è®°å½•
 				insert("insert into tb_xsth_detail values('"
 						+ xsthMain.getXsthId() + "','" + details.getSpid()
 						+ "'," + details.getDj() + "," + details.getSl() + ")");
-				// ĞŞ¸Ä¿â´æ±í¼ÇÂ¼
+				// ä¿®æ”¹åº“å­˜è¡¨è®°å½•
 				Item item = new Item();
 				item.setId(details.getSpid());
 				TbSpinfo spInfo = getSpInfo(item);
@@ -534,7 +534,7 @@ public class Dao {
 		}
 		return true;
 	}
-	// Ìí¼ÓÓÃ»§
+	// æ·»åŠ ç”¨æˆ·
 	public static int addUser(TbUserlist ul) {
 		return update("insert tb_userlist values('" + ul.getUsername() + "','"
 				+ ul.getName() + "','" + ul.getPass() + "','" + ul.getQuan()
@@ -544,14 +544,14 @@ public class Dao {
 		List list = findForList("select * from tb_userlist");
 		return list;
 	}
-	// ĞŞ¸ÄÓÃ»§·½·¨
+	// ä¿®æ”¹ç”¨æˆ·æ–¹æ³•
 	public static int updateUser(TbUserlist user) {
 		return update("update tb_userlist set username='" + user.getUsername()
 				+ "',name='" + user.getName() + "',pass='" + user.getPass()
 				+ "',quan='" + user.getQuan() + "' where name='"
 				+ user.getName() + "'");
 	}
-	// »ñÈ¡ÓÃ»§¶ÔÏóµÄ·½·¨
+	// è·å–ç”¨æˆ·å¯¹è±¡çš„æ–¹æ³•
 	public static TbUserlist getUser(Item item) {
 		String where = "username='" + item.getName() + "'";
 		if (item.getId() != null)

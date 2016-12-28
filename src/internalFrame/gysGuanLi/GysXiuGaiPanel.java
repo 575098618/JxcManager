@@ -40,77 +40,77 @@ public class GysXiuGaiPanel extends JPanel {
 		setLayout(new GridBagLayout());
 		setBounds(10, 10, 510, 302);
 
-		setupComponet(new JLabel("¹©Ó¦ÉÌÈ«³Æ£º"), 0, 0, 1, 1, false);
+		setupComponet(new JLabel("ä¾›åº”å•†å…¨ç§°ï¼š"), 0, 0, 1, 1, false);
 		quanChengF = new JTextField();
 		quanChengF.setEditable(false);
 		setupComponet(quanChengF, 1, 0, 3, 400, true);
 
-		setupComponet(new JLabel("¼ò³Æ£º"), 0, 1, 1, 1, false);
+		setupComponet(new JLabel("ç®€ç§°ï¼š"), 0, 1, 1, 1, false);
 
 		jianChengF = new JTextField();
 		setupComponet(jianChengF, 1, 1, 1, 160, true);
 
-		setupComponet(new JLabel("ÓÊÕş±àÂë£º"), 2, 1, 1, 1, false);
+		setupComponet(new JLabel("é‚®æ”¿ç¼–ç ï¼š"), 2, 1, 1, 1, false);
 		bianMaF = new JTextField();
 		bianMaF.addKeyListener(new InputKeyListener());
 		setupComponet(bianMaF, 3, 1, 1, 0, true);
 
-		setupComponet(new JLabel("µØÖ·£º"), 0, 2, 1, 1, false);
+		setupComponet(new JLabel("åœ°å€ï¼š"), 0, 2, 1, 1, false);
 		diZhiF = new JTextField();
 		setupComponet(diZhiF, 1, 2, 3, 0, true);
 
-		setupComponet(new JLabel("µç»°£º"), 0, 3, 1, 1, false);
+		setupComponet(new JLabel("ç”µè¯ï¼š"), 0, 3, 1, 1, false);
 		dianHuaF = new JTextField();
 		dianHuaF.addKeyListener(new InputKeyListener());
 		setupComponet(dianHuaF, 1, 3, 1, 0, true);
 
-		setupComponet(new JLabel("´«Õæ£º"), 2, 3, 1, 1, false);
+		setupComponet(new JLabel("ä¼ çœŸï¼š"), 2, 3, 1, 1, false);
 		chuanZhenF = new JTextField();
 		chuanZhenF.addKeyListener(new InputKeyListener());
 		setupComponet(chuanZhenF, 3, 3, 1, 0, true);
 
-		setupComponet(new JLabel("ÁªÏµÈË£º"), 0, 4, 1, 1, false);
+		setupComponet(new JLabel("è”ç³»äººï¼š"), 0, 4, 1, 1, false);
 		lianXiRenF = new JTextField();
 		setupComponet(lianXiRenF, 1, 4, 1, 0, true);
 
-		setupComponet(new JLabel("ÁªÏµÈËµç»°£º"), 2, 4, 1, 1, false);
+		setupComponet(new JLabel("è”ç³»äººç”µè¯ï¼š"), 2, 4, 1, 1, false);
 		lianXiRenDianHuaF = new JTextField();
 		lianXiRenDianHuaF.addKeyListener(new InputKeyListener());
 		setupComponet(lianXiRenDianHuaF, 3, 4, 1, 0, true);
 
-		setupComponet(new JLabel("¿ª»§ÒøĞĞ£º"), 0, 5, 1, 1, false);
+		setupComponet(new JLabel("å¼€æˆ·é“¶è¡Œï¼š"), 0, 5, 1, 1, false);
 		yinHangF = new JTextField();
 		setupComponet(yinHangF, 1, 5, 1, 0, true);
 
-		setupComponet(new JLabel("µç×ÓĞÅÏä£º"), 2, 5, 1, 1, false);
+		setupComponet(new JLabel("ç”µå­ä¿¡ç®±ï¼š"), 2, 5, 1, 1, false);
 		EMailF = new JTextField();
 		setupComponet(EMailF, 3, 5, 1, 0, true);
 
-		setupComponet(new JLabel("Ñ¡Ôñ¹©Ó¦ÉÌ"), 0, 7, 1, 0, false);
+		setupComponet(new JLabel("é€‰æ‹©ä¾›åº”å•†"), 0, 7, 1, 0, false);
 		gys = new JComboBox();
 		gys.setPreferredSize(new Dimension(230, 21));
-		initComboBox();// ³õÊ¼»¯ÏÂÀ­Ñ¡Ôñ¿ò
-		// ´¦Àí¹©Ó¦ÉÌĞÅÏ¢µÄÏÂÀ­Ñ¡Ôñ¿òµÄÑ¡ÔñÊÂ¼ş
+		initComboBox();// åˆå§‹åŒ–ä¸‹æ‹‰é€‰æ‹©æ¡†
+		// å¤„ç†ä¾›åº”å•†ä¿¡æ¯çš„ä¸‹æ‹‰é€‰æ‹©æ¡†çš„é€‰æ‹©äº‹ä»¶
 		gys.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				doGysSelectAction();
 			}
 		});
-		// ¶¨Î»¹©Ó¦ÉÌĞÅÏ¢µÄÏÂÀ­Ñ¡Ôñ¿ò
+		// å®šä½ä¾›åº”å•†ä¿¡æ¯çš„ä¸‹æ‹‰é€‰æ‹©æ¡†
 		setupComponet(gys, 1, 7, 2, 0, true);
-		JButton modifyButton = new JButton("ĞŞ¸Ä");
-		JButton delButton = new JButton("É¾³ı");
+		JButton modifyButton = new JButton("ä¿®æ”¹");
+		JButton delButton = new JButton("åˆ é™¤");
 		JPanel panel = new JPanel();
 		panel.add(modifyButton);
 		panel.add(delButton);
-		// ¶¨Î»°´Å¥
+		// å®šä½æŒ‰é’®
 		setupComponet(panel, 3, 7, 1, 0, false);
-		// ´¦ÀíÉ¾³ı°´Å¥µÄµ¥»÷ÊÂ¼ş
+		// å¤„ç†åˆ é™¤æŒ‰é’®çš„å•å‡»äº‹ä»¶
 		delButton.addActionListener(new DelActionListener());
-		// ´¦ÀíĞŞ¸Ä°´Å¥µÄµ¥»÷ÊÂ¼ş
+		// å¤„ç†ä¿®æ”¹æŒ‰é’®çš„å•å‡»äº‹ä»¶
 		modifyButton.addActionListener(new ModifyActionListener());
 	}
-	// ³õÊ¼»¯¹©Ó¦ÉÌÏÂÀ­Ñ¡Ôñ¿ò
+	// åˆå§‹åŒ–ä¾›åº”å•†ä¸‹æ‹‰é€‰æ‹©æ¡†
 	public void initComboBox() {
 		List gysInfo = Dao.getGysInfos();
 		List<Item> items = new ArrayList<Item>();
@@ -127,7 +127,7 @@ public class GysXiuGaiPanel extends JPanel {
 		}
 		doGysSelectAction();
 	}
-	// ÉèÖÃ×é¼şÎ»ÖÃ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();
@@ -142,7 +142,7 @@ public class GysXiuGaiPanel extends JPanel {
 			gridBagConstrains.fill = GridBagConstraints.HORIZONTAL;
 		add(component, gridBagConstrains);
 	}
-	// ´¦Àí¹©Ó¦ÉÌÑ¡ÔñÊÂ¼ş
+	// å¤„ç†ä¾›åº”å•†é€‰æ‹©äº‹ä»¶
 	private void doGysSelectAction() {
 		Item selectedItem;
 		if (!(gys.getSelectedItem() instanceof Item)) {
@@ -161,7 +161,7 @@ public class GysXiuGaiPanel extends JPanel {
 		EMailF.setText(gysInfo.getMail());
 		yinHangF.setText(gysInfo.getYh());
 	}
-	//ĞŞ¸Ä°´Å¥µÄÊÂ¼ş¼àÌıÆ÷
+	//ä¿®æ”¹æŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨
 	class ModifyActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			Item item = (Item) gys.getSelectedItem();
@@ -178,29 +178,29 @@ public class GysXiuGaiPanel extends JPanel {
 			gysInfo.setMail(EMailF.getText().trim());
 			gysInfo.setTel(dianHuaF.getText().trim());
 			if (Dao.updateGys(gysInfo) == 1)
-				JOptionPane.showMessageDialog(GysXiuGaiPanel.this, "ĞŞ¸ÄÍê³É");
+				JOptionPane.showMessageDialog(GysXiuGaiPanel.this, "ä¿®æ”¹å®Œæˆ");
 			else
-				JOptionPane.showMessageDialog(GysXiuGaiPanel.this, "ĞŞ¸ÄÊ§°Ü");
+				JOptionPane.showMessageDialog(GysXiuGaiPanel.this, "ä¿®æ”¹å¤±è´¥");
 		}
 	}
-	//É¾³ı°´Å¥µÄÊÂ¼ş¼àÌıÆ÷
+	//åˆ é™¤æŒ‰é’®çš„äº‹ä»¶ç›‘å¬å™¨
 	class DelActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			Item item = (Item) gys.getSelectedItem();
 			if (item == null || !(item instanceof Item))
 				return;
 			int confirm = JOptionPane.showConfirmDialog(
-					GysXiuGaiPanel.this, "È·ÈÏÉ¾³ı¹©Ó¦ÉÌĞÅÏ¢Âğ£¿");
+					GysXiuGaiPanel.this, "ç¡®è®¤åˆ é™¤ä¾›åº”å•†ä¿¡æ¯å—ï¼Ÿ");
 			if (confirm == JOptionPane.YES_OPTION) {
 				int rs = Dao.delete("delete tb_gysInfo where id='"
 						+ item.getId() + "'");
 				if (rs > 0) {
 					JOptionPane.showMessageDialog(GysXiuGaiPanel.this,
-							"¹©Ó¦ÉÌ£º" + item.getName() + "¡£É¾³ı³É¹¦");
+							"ä¾›åº”å•†ï¼š" + item.getName() + "ã€‚åˆ é™¤æˆåŠŸ");
 					gys.removeItem(item);
 				} else {
 					JOptionPane.showMessageDialog(GysXiuGaiPanel.this,
-							"ÎŞ·¨É¾³ı¿Í»§£º" + item.getName() + "¡£");
+							"æ— æ³•åˆ é™¤å®¢æˆ·ï¼š" + item.getName() + "ã€‚");
 				}
 			}
 		}

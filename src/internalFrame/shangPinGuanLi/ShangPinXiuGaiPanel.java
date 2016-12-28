@@ -41,86 +41,86 @@ public class ShangPinXiuGaiPanel extends JPanel {
 		setLayout(new GridBagLayout());
 		setBounds(10, 10, 550, 400);
 
-		setupComponet(new JLabel("ÉÌÆ·Ãû³Æ£º"), 0, 0, 1, 1, false);
+		setupComponet(new JLabel("å•†å“åç§°ï¼š"), 0, 0, 1, 1, false);
 		quanCheng = new JTextField();
 		quanCheng.setEditable(false);
 		setupComponet(quanCheng, 1, 0, 3, 1, true);
 
-		setupComponet(new JLabel("¼ò³Æ£º"), 0, 1, 1, 1, false);
+		setupComponet(new JLabel("ç®€ç§°ï¼š"), 0, 1, 1, 1, false);
 		jianCheng = new JTextField();
 		setupComponet(jianCheng, 1, 1, 3, 10, true);
 
-		setupComponet(new JLabel("²úµØ£º"), 0, 2, 1, 1, false);
+		setupComponet(new JLabel("äº§åœ°ï¼š"), 0, 2, 1, 1, false);
 		chanDi = new JTextField();
 		setupComponet(chanDi, 1, 2, 3, 300, true);
 
-		setupComponet(new JLabel("µ¥Î»£º"), 0, 3, 1, 1, false);
+		setupComponet(new JLabel("å•ä½ï¼š"), 0, 3, 1, 1, false);
 		danWei = new JTextField();
 		setupComponet(danWei, 1, 3, 1, 130, true);
 
-		setupComponet(new JLabel("¹æ¸ñ£º"), 2, 3, 1, 1, false);
+		setupComponet(new JLabel("è§„æ ¼ï¼š"), 2, 3, 1, 1, false);
 		guiGe = new JTextField();
 		setupComponet(guiGe, 3, 3, 1, 1, true);
 
-		setupComponet(new JLabel("°ü×°£º"), 0, 4, 1, 1, false);
+		setupComponet(new JLabel("åŒ…è£…ï¼š"), 0, 4, 1, 1, false);
 		baoZhuang = new JTextField();
 		setupComponet(baoZhuang, 1, 4, 1, 1, true);
 
-		setupComponet(new JLabel("ÅúºÅ£º"), 2, 4, 1, 1, false);
+		setupComponet(new JLabel("æ‰¹å·ï¼š"), 2, 4, 1, 1, false);
 		piHao = new JTextField();
 		setupComponet(piHao, 3, 4, 1, 1, true);
 
-		setupComponet(new JLabel("Åú×¼ÎÄºÅ£º"), 0, 5, 1, 1, false);
+		setupComponet(new JLabel("æ‰¹å‡†æ–‡å·ï¼š"), 0, 5, 1, 1, false);
 		wenHao = new JTextField();
 		setupComponet(wenHao, 1, 5, 3, 1, true);
 
-		setupComponet(new JLabel("¹©Ó¦ÉÌÈ«³Æ£º"), 0, 6, 1, 1, false);
+		setupComponet(new JLabel("ä¾›åº”å•†å…¨ç§°ï¼š"), 0, 6, 1, 1, false);
 		gysQuanCheng = new JComboBox();
 		gysQuanCheng.setMaximumRowCount(5);
 		setupComponet(gysQuanCheng, 1, 6, 3, 1, true);
 
-		setupComponet(new JLabel("±¸×¢£º"), 0, 7, 1, 1, false);
+		setupComponet(new JLabel("å¤‡æ³¨ï¼š"), 0, 7, 1, 1, false);
 		beiZhu = new JTextField();
 		setupComponet(beiZhu, 1, 7, 3, 1, true);
 
-		setupComponet(new JLabel("Ñ¡ÔñÉÌÆ·"), 0, 8, 1, 0, false);
+		setupComponet(new JLabel("é€‰æ‹©å•†å“"), 0, 8, 1, 0, false);
 		sp = new JComboBox();
 		sp.setPreferredSize(new Dimension(230, 21));
-		// ´¦Àí¿Í»§ĞÅÏ¢µÄÏÂÀ­Ñ¡Ôñ¿òµÄÑ¡ÔñÊÂ¼ş
+		// å¤„ç†å®¢æˆ·ä¿¡æ¯çš„ä¸‹æ‹‰é€‰æ‹©æ¡†çš„é€‰æ‹©äº‹ä»¶
 		sp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				doSpSelectAction();
 			}
 		});
-		// ¶¨Î»ÉÌÆ·ĞÅÏ¢µÄÏÂÀ­Ñ¡Ôñ¿ò
+		// å®šä½å•†å“ä¿¡æ¯çš„ä¸‹æ‹‰é€‰æ‹©æ¡†
 		setupComponet(sp, 1, 8, 2, 0, true);
-		modifyButton = new JButton("ĞŞ¸Ä");
-		delButton = new JButton("É¾³ı");
+		modifyButton = new JButton("ä¿®æ”¹");
+		delButton = new JButton("åˆ é™¤");
 		JPanel panel = new JPanel();
 		panel.add(modifyButton);
 		panel.add(delButton);
-		// ¶¨Î»°´Å¥
+		// å®šä½æŒ‰é’®
 		setupComponet(panel, 3, 8, 1, 0, false);
-		// ´¦ÀíÉ¾³ı°´Å¥µÄµ¥»÷ÊÂ¼ş
+		// å¤„ç†åˆ é™¤æŒ‰é’®çš„å•å‡»äº‹ä»¶
 		delButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Item item = (Item) sp.getSelectedItem();
 				if (item == null || !(item instanceof Item))
 					return;
 				int confirm = JOptionPane.showConfirmDialog(
-						ShangPinXiuGaiPanel.this, "È·ÈÏÉ¾³ıÉÌÆ·ĞÅÏ¢Âğ£¿");
+						ShangPinXiuGaiPanel.this, "ç¡®è®¤åˆ é™¤å•†å“ä¿¡æ¯å—ï¼Ÿ");
 				if (confirm == JOptionPane.YES_OPTION) {
 					int rs = Dao.delete("delete tb_spinfo where id='"
 							+ item.getId() + "'");
 					if (rs > 0) {
 						JOptionPane.showMessageDialog(ShangPinXiuGaiPanel.this,
-								"ÉÌÆ·£º" + item.getName() + "¡£É¾³ı³É¹¦");
+								"å•†å“ï¼š" + item.getName() + "ã€‚åˆ é™¤æˆåŠŸ");
 						sp.removeItem(item);
 					}
 				}
 			}
 		});
-		// ´¦ÀíĞŞ¸Ä°´Å¥µÄµ¥»÷ÊÂ¼ş
+		// å¤„ç†ä¿®æ”¹æŒ‰é’®çš„å•å‡»äº‹ä»¶
 		modifyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Item item = (Item) sp.getSelectedItem();
@@ -139,14 +139,14 @@ public class ShangPinXiuGaiPanel extends JPanel {
 				spInfo.setSpname(quanCheng.getText().trim());
 				if (Dao.updateSp(spInfo) == 1)
 					JOptionPane.showMessageDialog(ShangPinXiuGaiPanel.this,
-							"ĞŞ¸ÄÍê³É");
+							"ä¿®æ”¹å®Œæˆ");
 				else
 					JOptionPane.showMessageDialog(ShangPinXiuGaiPanel.this,
-							"ĞŞ¸ÄÊ§°Ü");
+							"ä¿®æ”¹å¤±è´¥");
 			}
 		});
 	}
-	// ³õÊ¼»¯ÉÌÆ·ÏÂÀ­Ñ¡Ôñ¿ò
+	// åˆå§‹åŒ–å•†å“ä¸‹æ‹‰é€‰æ‹©æ¡†
 	public void initComboBox() {
 		List khInfo = Dao.getSpInfos();
 		List<Item> items = new ArrayList<Item>();
@@ -163,7 +163,7 @@ public class ShangPinXiuGaiPanel extends JPanel {
 		}
 		doSpSelectAction();
 	}
-	// ³õÊ¼»¯¹©Ó¦ÉÌÏÂÀ­Ñ¡Ôñ¿ò
+	// åˆå§‹åŒ–ä¾›åº”å•†ä¸‹æ‹‰é€‰æ‹©æ¡†
 	public void initGysBox() {
 		List gysInfo = Dao.getGysInfos();
 		List<Item> items = new ArrayList<Item>();
@@ -180,7 +180,7 @@ public class ShangPinXiuGaiPanel extends JPanel {
 		}
 		doSpSelectAction();
 	}
-	// ÉèÖÃ×é¼şÎ»ÖÃ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();
@@ -195,7 +195,7 @@ public class ShangPinXiuGaiPanel extends JPanel {
 			gridBagConstrains.fill = GridBagConstraints.HORIZONTAL;
 		add(component, gridBagConstrains);
 	}
-	// ´¦ÀíÉÌÆ·Ñ¡ÔñÊÂ¼ş
+	// å¤„ç†å•†å“é€‰æ‹©äº‹ä»¶
 	private void doSpSelectAction() {
 		Item selectedItem;
 		if (!(sp.getSelectedItem() instanceof Item)) {
@@ -214,7 +214,7 @@ public class ShangPinXiuGaiPanel extends JPanel {
 			piHao.setText(spInfo.getPh());
 			wenHao.setText(spInfo.getPzwh());
 			beiZhu.setText(spInfo.getMemo());
-			// ÉèÖÃ¹©Ó¦ÉÌÏÂÀ­¿òµÄµ±Ç°Ñ¡ÔñÏî
+			// è®¾ç½®ä¾›åº”å•†ä¸‹æ‹‰æ¡†çš„å½“å‰é€‰æ‹©é¡¹
 			Item item = new Item();
 			item.setId(null);
 			item.setName(spInfo.getGysname());

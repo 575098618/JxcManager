@@ -1,7 +1,7 @@
 package model;
 public class TbUserlist {
 	
-	//用户管理
+	//鐢ㄦ埛绠＄悊
 	private String name;
 	private String username;
 	private String pass;

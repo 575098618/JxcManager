@@ -34,68 +34,68 @@ public class KeHuTianJiaPanel extends JPanel {
 		setLayout(new GridBagLayout());
 		setVisible(true);
 		final JLabel khName = new JLabel();
-		khName.setText("¿Í»§È«³Æ£º");
+		khName.setText("å®¢æˆ·å…¨ç§°ï¼š");
 		setupComponet(khName, 0, 0, 1, 0, false);
 		keHuQuanCheng = new JTextField();
-		// ¶¨Î»È«³ÆÎÄ±¾¿ò
+		// å®šä½å…¨ç§°æ–‡æœ¬æ¡†
 		setupComponet(keHuQuanCheng, 1, 0, 3, 350, true);
-		final JLabel addressLabel = new JLabel("¿Í»§µØÖ·£º");
+		final JLabel addressLabel = new JLabel("å®¢æˆ·åœ°å€ï¼š");
 		setupComponet(addressLabel, 0, 1, 1, 0, false);
 		diZhi = new JTextField();
-		// ¶¨Î»µØÖ·ÎÄ±¾¿ò
+		// å®šä½åœ°å€æ–‡æœ¬æ¡†
 		setupComponet(diZhi, 1, 1, 3, 0, true);
 		final JLabel jc = new JLabel();
-		jc.setText("¿Í»§¼ò³Æ£º");
+		jc.setText("å®¢æˆ·ç®€ç§°ï¼š");
 		setupComponet(jc, 0, 2, 1, 0, false);
 		keHuJianCheng = new JTextField();
-		// ¶¨Î»¿Í»§¼ò³ÆÎÄ±¾¿ò
+		// å®šä½å®¢æˆ·ç®€ç§°æ–‡æœ¬æ¡†
 		setupComponet(keHuJianCheng, 1, 2, 1, 100, true);
-		setupComponet(new JLabel("ÓÊÕş±àÂë£º"), 2, 2, 1, 0, false);
+		setupComponet(new JLabel("é‚®æ”¿ç¼–ç ï¼š"), 2, 2, 1, 0, false);
 		youZhengBianMa = new JTextField();
-		// ¶¨Î»ÓÊÕş±àÂëÎÄ±¾¿ò
+		// å®šä½é‚®æ”¿ç¼–ç æ–‡æœ¬æ¡†
 		setupComponet(youZhengBianMa, 3, 2, 1, 100, true);
 		youZhengBianMa.addKeyListener(new InputKeyListener());
-		setupComponet(new JLabel("µç»°£º"), 0, 3, 1, 0, false);
+		setupComponet(new JLabel("ç”µè¯ï¼š"), 0, 3, 1, 0, false);
 		dianHua = new JTextField();
-		// ¶¨Î»µç»°ÎÄ±¾¿ò
+		// å®šä½ç”µè¯æ–‡æœ¬æ¡†
 		setupComponet(dianHua, 1, 3, 1, 100, true);
 		dianHua.addKeyListener(new InputKeyListener());
-		setupComponet(new JLabel("´«Õæ£º"), 2, 3, 1, 0, false);
+		setupComponet(new JLabel("ä¼ çœŸï¼š"), 2, 3, 1, 0, false);
 		chuanZhen = new JTextField();
-		// ¶¨Î»´«ÕæÎÄ±¾¿ò
+		// å®šä½ä¼ çœŸæ–‡æœ¬æ¡†
 		chuanZhen.addKeyListener(new InputKeyListener());
 		setupComponet(chuanZhen, 3, 3, 1, 100, true);
-		setupComponet(new JLabel("ÁªÏµÈË£º"), 0, 4, 1, 0, false);
+		setupComponet(new JLabel("è”ç³»äººï¼š"), 0, 4, 1, 0, false);
 		lianXiRen = new JTextField();
-		// ¶¨Î»ÁªÏµÈËÎÄ±¾¿ò
+		// å®šä½è”ç³»äººæ–‡æœ¬æ¡†
 		setupComponet(lianXiRen, 1, 4, 1, 100, true);
-		setupComponet(new JLabel("ÁªÏµµç»°£º"), 2, 4, 1, 0, false);
+		setupComponet(new JLabel("è”ç³»ç”µè¯ï¼š"), 2, 4, 1, 0, false);
 		lianXiDianHua = new JTextField();
-		// ¶¨Î»ÁªÏµµç»°ÎÄ±¾¿ò
+		// å®šä½è”ç³»ç”µè¯æ–‡æœ¬æ¡†
 		setupComponet(lianXiDianHua, 3, 4, 1, 100, true);
 		lianXiDianHua.addKeyListener(new InputKeyListener());
-		setupComponet(new JLabel("E-Mail£º"), 0, 5, 1, 0, false);
+		setupComponet(new JLabel("E-Mailï¼š"), 0, 5, 1, 0, false);
 		EMail = new JTextField();
-		// ¶¨Î»E-MailÎÄ±¾¿ò
+		// å®šä½E-Mailæ–‡æœ¬æ¡†
 		setupComponet(EMail, 1, 5, 3, 350, true);
-		setupComponet(new JLabel("¿ª»§ÒøĞĞ£º"), 0, 6, 1, 0, false);
+		setupComponet(new JLabel("å¼€æˆ·é“¶è¡Œï¼š"), 0, 6, 1, 0, false);
 		kaiHuYinHang = new JTextField();
-		// ¶¨Î»¿ª»§ÒøĞĞÎÄ±¾¿ò
+		// å®šä½å¼€æˆ·é“¶è¡Œæ–‡æœ¬æ¡†
 		setupComponet(kaiHuYinHang, 1, 6, 1, 100, true);
-		setupComponet(new JLabel("ÒøĞĞÕËºÅ£º"), 2, 6, 1, 0, false);
+		setupComponet(new JLabel("é“¶è¡Œè´¦å·ï¼š"), 2, 6, 1, 0, false);
 		yinHangZhangHao = new JTextField();
-		// ¶¨Î»ÒøĞĞÕËºÅÎÄ±¾¿ò
+		// å®šä½é“¶è¡Œè´¦å·æ–‡æœ¬æ¡†
 		setupComponet(yinHangZhangHao, 3, 6, 1, 100, true);
-		final JButton saveButton = new JButton("±£´æ");
-		// ¶¨Î»±£´æ°´Å¥
+		final JButton saveButton = new JButton("ä¿å­˜");
+		// å®šä½ä¿å­˜æŒ‰é’®
 		setupComponet(saveButton, 1, 7, 1, 0, false);
 		saveButton.addActionListener(new SaveButtonActionListener());
-		resetButton = new JButton("ÖØÖÃ");
-		// ¶¨Î»ÖØÖÃ°´Å¥
+		resetButton = new JButton("é‡ç½®");
+		// å®šä½é‡ç½®æŒ‰é’®
 		setupComponet(resetButton, 3, 7, 1, 0, false);
 		resetButton.addActionListener(new ChongZheButtonActionListener());
 	}
-	// ÉèÖÃ×é¼şÎ»ÖÃ²¢Ìí¼Óµ½ÈİÆ÷ÖĞ
+	// è®¾ç½®ç»„ä»¶ä½ç½®å¹¶æ·»åŠ åˆ°å®¹å™¨ä¸­
 	private void setupComponet(JComponent component, int gridx, int gridy,
 			int gridwidth, int ipadx, boolean fill) {
 		final GridBagConstraints gridBagConstrains = new GridBagConstraints();
@@ -110,7 +110,7 @@ public class KeHuTianJiaPanel extends JPanel {
 			gridBagConstrains.fill = GridBagConstraints.HORIZONTAL;
 		add(component, gridBagConstrains);
 	}
-	// ±£´æ°´Å¥µÄÊÂ¼ş¼àÌıÀà
+	// ä¿å­˜æŒ‰é’®çš„äº‹ä»¶ç›‘å¬ç±»
 	private final class SaveButtonActionListener implements ActionListener {
 		public void actionPerformed(final ActionEvent e) {
 			if (diZhi.getText().equals("")
@@ -124,7 +124,7 @@ public class KeHuTianJiaPanel extends JPanel {
 					|| EMail.getText().equals("")
 					|| dianHua.getText().equals("")
 					|| kaiHuYinHang.getText().equals("")) {
-				JOptionPane.showMessageDialog(null, "ÇëÌîĞ´È«²¿ĞÅÏ¢");
+				JOptionPane.showMessageDialog(null, "è¯·å¡«å†™å…¨éƒ¨ä¿¡æ¯");
 				return;
 			}
 			ResultSet haveUser = Dao
@@ -134,7 +134,7 @@ public class KeHuTianJiaPanel extends JPanel {
 				if (haveUser.next()){
 					System.out.println("error");
 					JOptionPane.showMessageDialog(KeHuTianJiaPanel.this,
-							"¿Í»§ĞÅÏ¢Ìí¼ÓÊ§°Ü£¬´æÔÚÍ¬Ãû¿Í»§", "¿Í»§Ìí¼ÓĞÅÏ¢",
+							"å®¢æˆ·ä¿¡æ¯æ·»åŠ å¤±è´¥ï¼Œå­˜åœ¨åŒåå®¢æˆ·", "å®¢æˆ·æ·»åŠ ä¿¡æ¯",
 							JOptionPane.INFORMATION_MESSAGE);
 					return;
 				}
@@ -170,12 +170,12 @@ public class KeHuTianJiaPanel extends JPanel {
 			khinfo.setTel(dianHua.getText().trim());
 			khinfo.setXinhang(kaiHuYinHang.getText());
 			Dao.addKeHu(khinfo);
-			JOptionPane.showMessageDialog(KeHuTianJiaPanel.this, "ÒÑ³É¹¦Ìí¼Ó¿Í»§",
-					"¿Í»§Ìí¼ÓĞÅÏ¢", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(KeHuTianJiaPanel.this, "å·²æˆåŠŸæ·»åŠ å®¢æˆ·",
+					"å®¢æˆ·æ·»åŠ ä¿¡æ¯", JOptionPane.INFORMATION_MESSAGE);
 			resetButton.doClick();
 		}
 	}
-	// ÖØÖÃ°´Å¥µÄÊÂ¼ş¼àÌıÀà
+	// é‡ç½®æŒ‰é’®çš„äº‹ä»¶ç›‘å¬ç±»
 	private class ChongZheButtonActionListener implements ActionListener {
 		public void actionPerformed(final ActionEvent e) {
 			keHuQuanCheng.setText("");
