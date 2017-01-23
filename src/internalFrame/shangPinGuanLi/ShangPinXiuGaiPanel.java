@@ -26,11 +26,12 @@ import com.lzw.dao.Dao;
 public class ShangPinXiuGaiPanel extends JPanel {
 	private JComboBox gysQuanCheng;
 	private JTextField beiZhu;
-	private JTextField wenHao;
+	private JTextField zhuceHao;
 	private JTextField piHao;
-	private JTextField baoZhuang;
+	//private JTextField baoZhuang;
 	private JTextField guiGe;
 	private JTextField danWei;
+	private JTextField danJia;
 	private JTextField chanDi;
 	private JTextField jianCheng;
 	private JTextField quanCheng;
@@ -50,29 +51,33 @@ public class ShangPinXiuGaiPanel extends JPanel {
 		jianCheng = new JTextField();
 		setupComponet(jianCheng, 1, 1, 3, 10, true);
 
-		setupComponet(new JLabel("产地："), 0, 2, 1, 1, false);
+		setupComponet(new JLabel("生产企业："), 0, 2, 1, 1, false);
 		chanDi = new JTextField();
 		setupComponet(chanDi, 1, 2, 3, 300, true);
 
 		setupComponet(new JLabel("单位："), 0, 3, 1, 1, false);
 		danWei = new JTextField();
 		setupComponet(danWei, 1, 3, 1, 130, true);
+		
+		setupComponet(new JLabel("单价（元）："), 2, 3, 1, 1, false);
+		danJia = new JTextField();
+		setupComponet(danJia, 3, 3, 1, 1, true);
 
-		setupComponet(new JLabel("规格："), 2, 3, 1, 1, false);
+		setupComponet(new JLabel("规格："), 0, 4, 1, 1, false);
 		guiGe = new JTextField();
-		setupComponet(guiGe, 3, 3, 1, 1, true);
+		setupComponet(guiGe,  1, 4, 1, 1, true);
 
-		setupComponet(new JLabel("包装："), 0, 4, 1, 1, false);
+		/*setupComponet(new JLabel("包装："), 0, 4, 1, 1, false);
 		baoZhuang = new JTextField();
-		setupComponet(baoZhuang, 1, 4, 1, 1, true);
+		setupComponet(baoZhuang, 1, 4, 1, 1, true);*/
 
-		setupComponet(new JLabel("批号："), 2, 4, 1, 1, false);
+		setupComponet(new JLabel("生产批号："), 2, 4, 1, 1, false);
 		piHao = new JTextField();
 		setupComponet(piHao, 3, 4, 1, 1, true);
 
-		setupComponet(new JLabel("批准文号："), 0, 5, 1, 1, false);
-		wenHao = new JTextField();
-		setupComponet(wenHao, 1, 5, 3, 1, true);
+		setupComponet(new JLabel("注册号："), 0, 5, 1, 1, false);
+		zhuceHao = new JTextField();
+		setupComponet(zhuceHao, 1, 5, 3, 1, true);
 
 		setupComponet(new JLabel("供应商全称："), 0, 6, 1, 1, false);
 		gysQuanCheng = new JComboBox();
@@ -126,16 +131,17 @@ public class ShangPinXiuGaiPanel extends JPanel {
 				Item item = (Item) sp.getSelectedItem();
 				TbSpinfo spInfo = new TbSpinfo();
 				spInfo.setId(item.getId());
-				spInfo.setBz(baoZhuang.getText().trim());
+				//spInfo.setBz(baoZhuang.getText().trim());
 				spInfo.setCd(chanDi.getText().trim());
 				spInfo.setDw(danWei.getText().trim());
+				spInfo.setDJ(danJia.getText().trim());
 				spInfo.setGg(guiGe.getText().trim());
 				spInfo.setGysname(gysQuanCheng.getSelectedItem().toString()
 						.trim());
 				spInfo.setJc(jianCheng.getText().trim());
 				spInfo.setMemo(beiZhu.getText().trim());
 				spInfo.setPh(piHao.getText().trim());
-				spInfo.setPzwh(wenHao.getText().trim());
+				spInfo.setPzwh(zhuceHao.getText().trim());
 				spInfo.setSpname(quanCheng.getText().trim());
 				if (Dao.updateSp(spInfo) == 1)
 					JOptionPane.showMessageDialog(ShangPinXiuGaiPanel.this,
@@ -205,14 +211,15 @@ public class ShangPinXiuGaiPanel extends JPanel {
 		TbSpinfo spInfo = Dao.getSpInfo(selectedItem);
 		if (!spInfo.getId().isEmpty()) {
 			quanCheng.setText(spInfo.getSpname());
-			baoZhuang.setText(spInfo.getBz());
+			//baoZhuang.setText(spInfo.getBz());
 			chanDi.setText(spInfo.getCd());
 			danWei.setText(spInfo.getDw());
+			danJia.setText(spInfo.getDJ());
 			guiGe.setText(spInfo.getGg());
 			jianCheng.setText(spInfo.getJc());
 			beiZhu.setText(spInfo.getMemo());
 			piHao.setText(spInfo.getPh());
-			wenHao.setText(spInfo.getPzwh());
+			zhuceHao.setText(spInfo.getPzwh());
 			beiZhu.setText(spInfo.getMemo());
 			// 设置供应商下拉框的当前选择项
 			Item item = new Item();

@@ -27,7 +27,7 @@ public class TbGysinfo implements java.io.Serializable {
 	private String address;
 	private String bianma;
 	private String tel;
-	private String fax;
+	//private String fax;
 	private String lian;
 	private String ltel;
 	private String yh;
@@ -53,7 +53,7 @@ public class TbGysinfo implements java.io.Serializable {
 		this.address = address;
 		this.bianma = bianma;
 		this.tel = tel;
-		this.fax = fax;
+		//this.fax = fax;
 		this.lian = lian;
 		this.ltel = ltel;
 		this.yh = yh;
@@ -110,13 +110,13 @@ public class TbGysinfo implements java.io.Serializable {
 		this.tel = tel;
 	}
 
-	public String getFax() {
+	/*public String getFax() {
 		return this.fax;
 	}
 
 	public void setFax(String fax) {
 		this.fax = fax;
-	}
+	}*/
 
 	public String getLian() {
 		return this.lian;

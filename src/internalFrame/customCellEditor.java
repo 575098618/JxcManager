@@ -38,7 +38,7 @@ public class customCellEditor extends JComboBox implements TableCellEditor {
 				spinfo.setJc(set.getString("jc").trim());
 				spinfo.setDw(set.getString("dw").trim());
 				spinfo.setGg(set.getString("gg").trim());
-				spinfo.setBz(set.getString("bz").trim());
+				spinfo.setDJ(set.getString("dj").trim());
 				spinfo.setPh(set.getString("ph").trim());
 				spinfo.setPzwh(set.getString("pzwh").trim());
 				spinfo.setMemo(set.getString("memo").trim());

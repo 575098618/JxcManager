@@ -8,8 +8,9 @@ public class TbSpinfo implements java.io.Serializable {
 	private String jc;
 	private String cd;
 	private String dw;
+	private String dj;
 	private String gg;
-	private String bz;
+	//private String bz;
 	private String ph;
 	private String pzwh;
 	private String memo;
@@ -59,6 +60,14 @@ public class TbSpinfo implements java.io.Serializable {
 	public void setDw(String dw) {
 		this.dw = dw;
 	}
+	
+	public String getDJ() {
+		return this.dj;
+	}
+
+	public void setDJ(String dj) {
+		this.dj = dj;
+	}
 
 	public String getGg() {
 		return this.gg;
@@ -68,14 +77,14 @@ public class TbSpinfo implements java.io.Serializable {
 		this.gg = gg;
 	}
 
-	public String getBz() {
+	/*public String getBz() {
 		return this.bz;
 	}
 
 	public void setBz(String bz) {
 		this.bz = bz;
 	}
-
+*/
 	public String getPh() {
 		return this.ph;
 	}

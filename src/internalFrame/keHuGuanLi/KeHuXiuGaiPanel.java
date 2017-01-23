@@ -27,7 +27,7 @@ public class KeHuXiuGaiPanel extends JPanel {
 	private JTextField EMail;
 	private JTextField lianXiDianHua;
 	private JTextField lianXiRen;
-	private JTextField chuanZhen;
+	//private JTextField chuanZhen;
 	private JTextField dianHua;
 	private JTextField youZhengBianMa;
 	private JTextField diZhi;
@@ -75,12 +75,12 @@ public class KeHuXiuGaiPanel extends JPanel {
 		setupComponet(dianHua, 1, 3, 1, 100, true);
 		dianHua.addKeyListener(new InputKeyListener());
 
-		setupComponet(new JLabel("传真："), 2, 3, 1, 0, false);
+		/*setupComponet(new JLabel("传真："), 2, 3, 1, 0, false);
 		chuanZhen = new JTextField();
 		// 定位传真文本框
 		chuanZhen.addKeyListener(new InputKeyListener());
 		setupComponet(chuanZhen, 3, 3, 1, 100, true);
-
+*/
 		setupComponet(new JLabel("联系人："), 0, 4, 1, 0, false);
 		lianXiRen = new JTextField();
 		// 定位联系人文本框
@@ -153,7 +153,7 @@ public class KeHuXiuGaiPanel extends JPanel {
 				khinfo.setId(item.getId());
 				khinfo.setAddress(diZhi.getText().trim());
 				khinfo.setBianma(youZhengBianMa.getText().trim());
-				khinfo.setFax(chuanZhen.getText().trim());
+				//khinfo.setFax(chuanZhen.getText().trim());
 				khinfo.setHao(yinHangZhangHao.getText().trim());
 				khinfo.setJian(keHuJianCheng.getText().trim());
 				khinfo.setKhname(keHuQuanCheng.getText().trim());
@@ -213,7 +213,7 @@ public class KeHuXiuGaiPanel extends JPanel {
 		keHuJianCheng.setText(khInfo.getJian());
 		youZhengBianMa.setText(khInfo.getBianma());
 		dianHua.setText(khInfo.getTel());
-		chuanZhen.setText(khInfo.getFax());
+		//chuanZhen.setText(khInfo.getFax());
 		lianXiRen.setText(khInfo.getLian());
 		lianXiDianHua.setText(khInfo.getLtel());
 		EMail.setText(khInfo.getMail());

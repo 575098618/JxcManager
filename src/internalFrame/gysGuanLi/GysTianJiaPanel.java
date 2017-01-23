@@ -23,7 +23,7 @@ public class GysTianJiaPanel extends JPanel {
 	private JTextField yinHangF;
 	private JTextField lianXiRenDianHuaF;
 	private JTextField lianXiRenF;
-	private JTextField chuanZhenF;
+	//private JTextField chuanZhenF;
 	private JTextField dianHuaF;
 	private JTextField diZhiF;
 	private JTextField bianMaF;
@@ -58,10 +58,10 @@ public class GysTianJiaPanel extends JPanel {
 		dianHuaF.addKeyListener(new InputKeyListener());
 		setupComponet(dianHuaF, 1, 3, 1, 0, true);
 
-		setupComponet(new JLabel("传真："), 2, 3, 1, 1, false);
+		/*setupComponet(new JLabel("传真："), 2, 3, 1, 1, false);
 		chuanZhenF = new JTextField();
 		chuanZhenF.addKeyListener(new InputKeyListener());
-		setupComponet(chuanZhenF, 3, 3, 1, 0, true);
+		setupComponet(chuanZhenF, 3, 3, 1, 0, true);*/
 
 		setupComponet(new JLabel("联系人："), 0, 4, 1, 1, false);
 		lianXiRenF = new JTextField();
@@ -109,7 +109,7 @@ public class GysTianJiaPanel extends JPanel {
 		public void actionPerformed(final ActionEvent e) {
 			diZhiF.setText("");
 			bianMaF.setText("");
-			chuanZhenF.setText("");
+			//chuanZhenF.setText("");
 			jianChengF.setText("");
 			lianXiRenF.setText("");
 			lianXiRenDianHuaF.setText("");
@@ -122,7 +122,7 @@ public class GysTianJiaPanel extends JPanel {
 	class TjActionListener implements ActionListener {// 添加按钮的事件监听类
 		public void actionPerformed(final ActionEvent e) {
 			if (diZhiF.getText().equals("") || quanChengF.getText().equals("")
-					|| chuanZhenF.getText().equals("")
+					//|| chuanZhenF.getText().equals("")
 					|| jianChengF.getText().equals("")
 					|| yinHangF.getText().equals("")
 					|| bianMaF.getText().equals("")
@@ -159,7 +159,7 @@ public class GysTianJiaPanel extends JPanel {
 				gysInfo.setId(id);
 				gysInfo.setAddress(diZhiF.getText().trim());
 				gysInfo.setBianma(bianMaF.getText().trim());
-				gysInfo.setFax(chuanZhenF.getText().trim());
+				//gysInfo.setFax(chuanZhenF.getText().trim());
 				gysInfo.setYh(yinHangF.getText().trim());
 				gysInfo.setJc(jianChengF.getText().trim());
 				gysInfo.setName(quanChengF.getText().trim());

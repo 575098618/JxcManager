@@ -38,7 +38,7 @@ public class GongYingShangChaXun extends JInternalFrame {
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		final DefaultTableModel dftm = (DefaultTableModel) table.getModel();
 		String[] tableHeads = new String[]{"供应商ID", "供应商全称", "简称", "邮政编码",
-				"地址", "电话", "传真", "联系人", "联系人电话", "开户银行", "电子信箱"};
+				"地址", "电话", "联系人", "联系人电话", "开户银行", "电子信箱"};
 		dftm.setColumnIdentifiers(tableHeads);
 
 		final JScrollPane scrollPane = new JScrollPane(table);
@@ -102,7 +102,7 @@ public class GongYingShangChaXun extends JInternalFrame {
 			rowData.add(gysInfo.getBianma());
 			rowData.add(gysInfo.getAddress());
 			rowData.add(gysInfo.getTel());
-			rowData.add(gysInfo.getFax());
+			//rowData.add(gysInfo.getFax());
 			rowData.add(gysInfo.getLian());
 			rowData.add(gysInfo.getLtel());
 			rowData.add(gysInfo.getYh());

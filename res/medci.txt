@@ -1,0 +1,51 @@
+CREATE TABLE mediciTool(
+id        INT       NOT NULL,
+buyTime   VARCHAR   NOT NULL,
+saleUnit  VARCHAR   NOT NULL,
+saleCode  VARCHAR   NOT NULL,
+name      VARCHAR   NOT NULL,
+standard  VARCHAR   NOT NULL,
+unit      VARCHAR   NOT NULL,
+num       INT       NOT NULL,
+price     INT       NOT NULL,
+factory   VARCHAR   NOT NULL,
+registrId VARCHAR   NOT NULL,
+batchNo   VARCHAR   NOT NULL,
+producData VARCHAR   NOT NULL,
+usefulData  VARCHAR   NOT NULL,
+responsiPerson VARCHAR   NOT NULL,
+remark VARCHAR   NOT NULL,
+PRIMARY KEY (id)
+);
+
+INSERT INTO mediciTool VALUES(,'2015.11.12','黄山天和','*3797352','富士I','35+25/*2','套',1,400,'而至齿科（昆山）有限公司','国食药监械（准）字2011弟3631461号','*150305181964','2015.05.20','2018.05.20','陈志鑫','');
+INSERT INTO mediciTool VALUES(,'2015.11.12','黄山天和','*3797352','富士I','35+25/*2','套',1,400,'而至齿科（昆山）有限公司','国食药监械（准）字2011弟3631461号','*150305181964','2015.05.20','2018.05.20','陈志鑫','');
+INSERT INTO mediciTool VALUES(,'2015.11.12','黄山天和','*3797352','富士I','35+25/*2','套',1,400,'而至齿科（昆山）有限公司','国食药监械（准）字2011弟3631461号','*150305181964','2015.05.20','2018.05.20','陈志鑫','');
+INSERT INTO mediciTool VALUES(,'2015.11.12','黄山天和','*3797352','富士I','35+25/*2','套',1,400,'而至齿科（昆山）有限公司','国食药监械（准）字2011弟3631461号','*150305181964','2015.05.20','2018.05.20','陈志鑫','');
+INSERT INTO mediciTool VALUES(,'2015.11.12','黄山天和','*3797352','富士I','35+25/*2','套',1,400,'而至齿科（昆山）有限公司','国食药监械（准）字2011弟3631461号','*150305181964','2015.05.20','2018.05.20','陈志鑫','');
+
+
+CREATE TABLE tooth(
+id        INT       NOT NULL,
+useTime   VARCHAR   NOT NULL,
+name      VARCHAR   NOT NULL,
+sex       VARCHAR   NOT NULL,
+age       INT   NOT NULL,
+address      VARCHAR   NOT NULL,
+telephone      VARCHAR   NOT NULL,
+type     VARCHAR   NOT NULL,
+toothSite      VARCHAR   NOT NULL,
+num       INT       NOT NULL,
+batchNo   VARCHAR   NOT NULL,
+factory   VARCHAR   NOT NULL,
+check     boolean NOT NULL,
+handlers  VARCHAR   NOT NULL,
+isSuccess VARCHAR   ,
+price     INT       NOT NULL,
+PRIMARY KEY (id)
+);
+INSERT INTO tooth VALUES(,'2015.11.12','陈志','m',39,'黄山','1275803237','3252353','rightUp',2,'*150305181964','而至齿科（昆山）有限公司',true,'陈志鑫',true);
+INSERT INTO tooth VALUES(,'2015.11.12','陈志','m',39,'黄山','1275803237','3252353','rightUp',2,'*150305181964','而至齿科（昆山）有限公司',true,'陈志鑫',true);
+INSERT INTO tooth VALUES(,'2015.11.12','陈志','m',39,'黄山','1275803237','3252353','rightUp',2,'*150305181964','而至齿科（昆山）有限公司',true,'陈志鑫',true);
+INSERT INTO tooth VALUES(,'2015.11.12','陈志','m',39,'黄山','1275803237','3252353','rightUp',2,'*150305181964','而至齿科（昆山）有限公司',true,'陈志鑫',true);
+INSERT INTO tooth VALUES(,'2015.11.12','陈志','m',39,'黄山','1275803237','3252353','rightUp',2,'*150305181964','而至齿科（昆山）有限公司',true,'陈志鑫',true);

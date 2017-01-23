@@ -40,7 +40,7 @@ public class KeHuChaXun extends JInternalFrame {
 		table.setEnabled(false);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		String[] tableHeads = new String[]{"客户ID", "客户全称", "客户地址", "客户简称",
-				"邮政编码", "电　　话", "传　　真", "联  系  人", "联系电话", "E-Mail", "开户银行",
+				"邮政编码", "电　　话", "联  系  人", "联系电话", "E-Mail", "开户银行",
 				"银行账号"};
 		final DefaultTableModel dftm = (DefaultTableModel) table.getModel();
 		dftm.setColumnIdentifiers(tableHeads);
@@ -106,7 +106,7 @@ public class KeHuChaXun extends JInternalFrame {
 			rowData.add(khInfo.getJian().trim());
 			rowData.add(khInfo.getBianma().trim());
 			rowData.add(khInfo.getTel().trim());
-			rowData.add(khInfo.getFax().trim());
+			//rowData.add(khInfo.getFax().trim());
 			rowData.add(khInfo.getLian().trim());
 			rowData.add(khInfo.getLtel().trim());
 			rowData.add(khInfo.getMail().trim());

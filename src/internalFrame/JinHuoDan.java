@@ -44,7 +44,7 @@ public class JinHuoDan extends JInternalFrame {
 	private TbUserlist user = Login.getUser(); 			// 登录用户信息
 	private final JTextField jhsj = new JTextField(); 	// 进货时间
 	private final JTextField jsr = new JTextField(); 	// 经手人
-	private final JComboBox jsfs = new JComboBox(); 	// 计算方式
+	private final JComboBox jsfs = new JComboBox(); 	// 结算方式
 	private final JTextField lian = new JTextField(); 	// 联系人
 	private final JComboBox gys = new JComboBox(); 		// 供应商
 	private final JTextField piaoHao = new JTextField();// 票号
@@ -84,7 +84,7 @@ public class JinHuoDan extends JInternalFrame {
 
 		setupComponet(new JLabel("结算方式："), 0, 1, 1, 0, false);
 		jsfs.addItem("现金");
-		jsfs.addItem("支票");
+		jsfs.addItem("转账");
 		jsfs.setEditable(true);
 		setupComponet(jsfs, 1, 1, 1, 1, true);
 
@@ -148,8 +148,7 @@ public class JinHuoDan extends JInternalFrame {
 	}
 	// 初始化表格
 	private void initTable() {
-		String[] columnNames = {"商品名称", "商品编号", "产地", "单位", "规格", "包装", "单价",
-				"数量", "批号", "批准文号"};
+		String[] columnNames = {"商品名称", "商品编号", "生产企业", "单位","单价（元）", "数量","规格", "生产批号", "注册号"};
 		((DefaultTableModel) table.getModel())
 				.setColumnIdentifiers(columnNames);
 		TableColumn column = table.getColumnModel().getColumn(0);
@@ -181,7 +180,7 @@ public class JinHuoDan extends JInternalFrame {
 				spinfo.setJc(set.getString("jc").trim());
 				spinfo.setDw(set.getString("dw").trim());
 				spinfo.setGg(set.getString("gg").trim());
-				spinfo.setBz(set.getString("bz").trim());
+				spinfo.setDJ(set.getString("dj").trim());
 				spinfo.setPh(set.getString("ph").trim());
 				spinfo.setPzwh(set.getString("pzwh").trim());
 				spinfo.setMemo(set.getString("memo").trim());
@@ -248,8 +247,8 @@ public class JinHuoDan extends JInternalFrame {
 			int rows = table.getRowCount();
 			for (int i = 0; i < rows; i++) {
 				TbSpinfo spinfo = (TbSpinfo) table.getValueAt(i, 0);
-				String djStr = (String) table.getValueAt(i, 6);
-				String slStr = (String) table.getValueAt(i, 7);
+				String djStr = (String) table.getValueAt(i, 4);
+				String slStr = (String) table.getValueAt(i, 5);
 				Double dj = Double.valueOf(djStr);
 				Integer sl = Integer.valueOf(slStr);
 				TbRukuDetail detail = new TbRukuDetail();
@@ -305,8 +304,8 @@ public class JinHuoDan extends JInternalFrame {
 				rows--;
 			// 计算货品总数和金额
 			for (int i = 0; i < rows; i++) {
-				String column7 = (String) table.getValueAt(i, 7);
-				String column6 = (String) table.getValueAt(i, 6);
+				String column7 = (String) table.getValueAt(i, 5);
+				String column6 = (String) table.getValueAt(i, 4);
 				int c7 = (column7 == null || column7.isEmpty()) ? 0 : Integer
 						.parseInt(column7);
 				float c6 = (column6 == null || column6.isEmpty()) ? 0 : Float
@@ -373,13 +372,14 @@ public class JinHuoDan extends JInternalFrame {
 			table.setValueAt(spinfo.getId(), row, 1);
 			table.setValueAt(spinfo.getCd(), row, 2);
 			table.setValueAt(spinfo.getDw(), row, 3);
-			table.setValueAt(spinfo.getGg(), row, 4);
-			table.setValueAt(spinfo.getBz(), row, 5);
-			table.setValueAt("0", row, 6);
-			table.setValueAt("0", row, 7);
-			table.setValueAt(spinfo.getPh(), row, 8);
-			table.setValueAt(spinfo.getPzwh(), row, 9);
-			table.editCellAt(row, 6);
+			//table.setValueAt(spinfo.getGg(), row, 4);
+			table.setValueAt(spinfo.getDJ(), row, 4);
+			table.setValueAt("0", row, 5);
+			//table.setValueAt("0", row, 7);
+			table.setValueAt(spinfo.getGg(), row, 6);
+			table.setValueAt(spinfo.getPh(), row, 7);
+			table.setValueAt(spinfo.getPzwh(), row, 8);
+			table.editCellAt(row, 5);
 		}
 	}
 	// 清除空行

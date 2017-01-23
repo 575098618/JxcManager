@@ -8,7 +8,7 @@ public class TbKucun  implements java.io.Serializable {
      private String jc;
      private String cd;
      private String gg;
-     private String bz;
+     //private String bz;
      private String dw;
      private Double dj;
      private Integer kcsl;
@@ -23,7 +23,7 @@ public class TbKucun  implements java.io.Serializable {
         this.jc = jc;
         this.cd = cd;
         this.gg = gg;
-        this.bz = bz;
+        //this.bz = bz;
         this.dw = dw;
         this.dj = dj;
         this.kcsl = kcsl;
@@ -58,12 +58,12 @@ public class TbKucun  implements java.io.Serializable {
     public void setGg(String gg) {
         this.gg = gg;
     }
-    public String getBz() {
+  /*  public String getBz() {
         return this.bz;
     }
     public void setBz(String bz) {
         this.bz = bz;
-    }
+    }*/
     public String getDw() {
         return this.dw;
     }

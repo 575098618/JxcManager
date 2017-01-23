@@ -69,8 +69,8 @@ public class KuCunPanDian extends JInternalFrame {
 	}
 	// 初始化表格
 	private void initTable() {
-		String[] columnNames = {"商品名称", "商品编号", "供应商", "产地", "单位", "规格", "单价",
-				"数量", "包装", "盘点数量", "损益数量"};
+		String[] columnNames = {"商品名称", "商品编号", "供应商", "生产企业", "单位", "规格", "单价",
+				"盘点数量", "损益数量"};
 		DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
 		tableModel.setColumnIdentifiers(columnNames);
 		// 设置盘点字段只接收数字输入
@@ -94,7 +94,7 @@ public class KuCunPanDian extends JInternalFrame {
 					int pdNum = Integer.parseInt(pdStr);
 					int kcNum = Integer.parseInt(kcStr);
 					if (row >= 0) {
-						table.setValueAt(kcNum - pdNum, row, 10);
+						table.setValueAt(kcNum - pdNum, row, 8);
 					}
 					if (e.getKeyChar() != 8)
 						pdField.setEditable(false);
@@ -114,8 +114,8 @@ public class KuCunPanDian extends JInternalFrame {
 			column.setCellEditor(readOnlyEditor);
 		}
 
-		TableColumn pdColumn = table.getColumnModel().getColumn(9);
-		TableColumn syColumn = table.getColumnModel().getColumn(10);
+		TableColumn pdColumn = table.getColumnModel().getColumn(7);
+		TableColumn syColumn = table.getColumnModel().getColumn(8);
 		pdColumn.setCellEditor(pdEditor);
 		syColumn.setCellEditor(readOnlyEditor);
 		// 初始化表格内容
@@ -134,9 +134,9 @@ public class KuCunPanDian extends JInternalFrame {
 				row[3] = spinfo.getCd();
 				row[4] = spinfo.getDw();
 				row[5] = spinfo.getGg();
-				row[6] = info.get(2).toString();
-				row[7] = info.get(3).toString();
-				row[8] = spinfo.getBz();
+				row[6] = spinfo.getDJ();
+				row[7] = info.get(2).toString();
+				row[8] = info.get(3).toString();				
 				row[9] = 0;
 				row[10] = 0;
 				tableModel.addRow(row);

@@ -40,8 +40,8 @@ public class ShangPinChaXun extends JInternalFrame {
 		table.setEnabled(false);
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		final DefaultTableModel dftm = (DefaultTableModel) table.getModel();
-		String[] tableHeads = new String[]{"客户ID", "商品名称", "简称", "产地", "单位",
-				"规格", "包装", "批号", "批准文号", "供应商全称", "备注",};
+		String[] tableHeads = new String[]{"客户ID", "商品名称", "简称", "生产企业", "单位","单价（元）",
+				"规格","生产批号", "注册号","供应商全称", "备注",};
 		dftm.setColumnIdentifiers(tableHeads);
 
 		final JScrollPane scrollPane = new JScrollPane(table);
@@ -58,7 +58,7 @@ public class ShangPinChaXun extends JInternalFrame {
 		setupComponet(new JLabel(" 选择查询条件："), 0, 0, 1, 1, false);
 		conditionName = new JComboBox();
 		conditionName.setModel(new DefaultComboBoxModel(new String[]{"商品名称",
-				"供应商全称", "产地", "规格"}));
+				"供应商全称", "生产企业", "规格"}));
 		setupComponet(conditionName, 1, 0, 1, 30, true);
 
 		conditionOperation = new JComboBox();
@@ -104,8 +104,8 @@ public class ShangPinChaXun extends JInternalFrame {
 			rowData.add(spInfo.getJc());
 			rowData.add(spInfo.getCd());
 			rowData.add(spInfo.getDw());
-			rowData.add(spInfo.getGg());
-			rowData.add(spInfo.getBz());
+			rowData.add(spInfo.getDJ());
+			rowData.add(spInfo.getGg());			
 			rowData.add(spInfo.getPh());
 			rowData.add(spInfo.getPzwh());
 			rowData.add(spInfo.getGysname());
@@ -150,7 +150,7 @@ public class ShangPinChaXun extends JInternalFrame {
 					list = Dao.findForList(sql + "spname='" + content + "'");
 				if (conName.equals("供应商全称"))
 					list = Dao.findForList(sql + "gysname='" + content + "'");
-				if (conName.equals("产地"))
+				if (conName.equals("生产企业"))
 					list = Dao.findForList(sql + "cd='" + content + "'");
 				if (conName.equals("规格"))
 					list = Dao.findForList(sql + "gg='" + content + "'");
@@ -161,7 +161,7 @@ public class ShangPinChaXun extends JInternalFrame {
 				if (conName.equals("供应商全称"))
 					list = Dao.findForList(sql + "gysname like '%" + content
 							+ "%'");
-				if (conName.equals("产地"))
+				if (conName.equals("生产企业"))
 					list = Dao.findForList(sql + "cd like '%" + content + "%'");
 				if (conName.equals("规格"))
 					list = Dao.findForList(sql + "gg like '%" + content + "%'");

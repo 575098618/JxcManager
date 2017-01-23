@@ -70,7 +70,7 @@ public class JiaGeTiaoZheng extends JInternalFrame {
 		guiGe.setForeground(Color.BLUE);
 		guiGe.setPreferredSize(new Dimension(130, 21));
 		setupComponet(guiGe, 3, 0, 1, 1, true);
-		setupComponet(new JLabel("产　　地： "), 0, 1, 1, 0, false);
+		setupComponet(new JLabel("生产企业： "), 0, 1, 1, 0, false);
 		chanDi = new JLabel();
 		chanDi.setForeground(Color.BLUE);
 		setupComponet(chanDi, 1, 1, 1, 1, true);
@@ -78,14 +78,15 @@ public class JiaGeTiaoZheng extends JInternalFrame {
 		jianCheng = new JLabel();
 		jianCheng.setForeground(Color.BLUE);
 		setupComponet(jianCheng, 3, 1, 1, 1, true);
-		setupComponet(new JLabel("包　　装："), 0, 2, 1, 0, false);
-		baoZhuang = new JLabel();
-		baoZhuang.setForeground(Color.BLUE);
-		setupComponet(baoZhuang, 1, 2, 1, 1, true);
-		setupComponet(new JLabel("单　　位："), 2, 2, 1, 0, false);
+		setupComponet(new JLabel("单　　位："), 0, 2, 1, 0, false);
 		danWei = new JLabel();
 		danWei.setForeground(Color.BLUE);
-		setupComponet(danWei, 3, 2, 1, 1, true);
+		setupComponet(danWei, 1, 2, 1, 1, true);
+		
+		/*setupComponet(new JLabel("包　　装："), 2, 2, 1, 0, false);
+		baoZhuang = new JLabel();
+		baoZhuang.setForeground(Color.BLUE);*/
+		//setupComponet(baoZhuang,3, 2, 1, 1, true);
 		setupComponet(new JLabel("单　　价："), 0, 3, 1, 0, false);
 		danJia = new JTextField();
 		danJia.addKeyListener(new KeyAdapter() {
@@ -170,7 +171,7 @@ public class JiaGeTiaoZheng extends JInternalFrame {
 			sl = kcInfo.getKcsl().intValue();
 			chanDi.setText(kcInfo.getCd());
 			jianCheng.setText(kcInfo.getJc());
-			baoZhuang.setText(kcInfo.getBz());
+			//baoZhuang.setText(kcInfo.getBz());
 			danWei.setText(kcInfo.getDw());
 			danJia.setText(kcInfo.getDj() + "");
 			kuCunShuLiang.setText(kcInfo.getKcsl() + "");

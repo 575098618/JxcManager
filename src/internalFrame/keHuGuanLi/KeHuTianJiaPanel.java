@@ -22,7 +22,7 @@ public class KeHuTianJiaPanel extends JPanel {
 	private JTextField EMail;
 	private JTextField lianXiDianHua;
 	private JTextField lianXiRen;
-	private JTextField chuanZhen;
+	//private JTextField chuanZhen;
 	private JTextField dianHua;
 	private JTextField youZhengBianMa;
 	private JTextField diZhi;
@@ -60,11 +60,11 @@ public class KeHuTianJiaPanel extends JPanel {
 		// 定位电话文本框
 		setupComponet(dianHua, 1, 3, 1, 100, true);
 		dianHua.addKeyListener(new InputKeyListener());
-		setupComponet(new JLabel("传真："), 2, 3, 1, 0, false);
+		/*setupComponet(new JLabel("传真："), 2, 3, 1, 0, false);
 		chuanZhen = new JTextField();
 		// 定位传真文本框
 		chuanZhen.addKeyListener(new InputKeyListener());
-		setupComponet(chuanZhen, 3, 3, 1, 100, true);
+		setupComponet(chuanZhen, 3, 3, 1, 100, true);*/
 		setupComponet(new JLabel("联系人："), 0, 4, 1, 0, false);
 		lianXiRen = new JTextField();
 		// 定位联系人文本框
@@ -115,7 +115,7 @@ public class KeHuTianJiaPanel extends JPanel {
 		public void actionPerformed(final ActionEvent e) {
 			if (diZhi.getText().equals("")
 					|| youZhengBianMa.getText().equals("")
-					|| chuanZhen.getText().equals("")
+					//|| chuanZhen.getText().equals("")
 					|| yinHangZhangHao.getText().equals("")
 					|| keHuJianCheng.getText().equals("")
 					|| keHuQuanCheng.getText().equals("")
@@ -160,7 +160,7 @@ public class KeHuTianJiaPanel extends JPanel {
 			khinfo.setId(id);
 			khinfo.setAddress(diZhi.getText().trim());
 			khinfo.setBianma(youZhengBianMa.getText().trim());
-			khinfo.setFax(chuanZhen.getText().trim());
+			//khinfo.setFax(chuanZhen.getText().trim());
 			khinfo.setHao(yinHangZhangHao.getText().trim());
 			khinfo.setJian(keHuJianCheng.getText().trim());
 			khinfo.setKhname(keHuQuanCheng.getText().trim());
@@ -184,7 +184,7 @@ public class KeHuTianJiaPanel extends JPanel {
 			EMail.setText("");
 			lianXiDianHua.setText("");
 			lianXiRen.setText("");
-			chuanZhen.setText("");
+			//chuanZhen.setText("");
 			dianHua.setText("");
 			youZhengBianMa.setText("");
 			diZhi.setText("");

@@ -45,7 +45,7 @@ public class XiaoShouDan extends JInternalFrame {
 	private TbUserlist user = Login.getUser(); // 登录用户信息
 	private final JTextField jhsj = new JTextField(); // 进货时间
 	private final JTextField jsr = new JTextField(); // 经手人
-	private final JComboBox jsfs = new JComboBox(); // 计算方式
+	private final JComboBox jsfs = new JComboBox(); // 结算方式
 	private final JTextField lian = new JTextField(); // 联系人
 	private final JComboBox kehu = new JComboBox(); // 客户
 	private final JTextField piaoHao = new JTextField(); // 票号
@@ -86,7 +86,7 @@ public class XiaoShouDan extends JInternalFrame {
 
 		setupComponet(new JLabel("结算方式："), 0, 1, 1, 0, false);
 		jsfs.addItem("现金");
-		jsfs.addItem("支票");
+		jsfs.addItem("转账");
 		jsfs.setEditable(true);
 		setupComponet(jsfs, 1, 1, 1, 1, true);
 
@@ -219,8 +219,7 @@ public class XiaoShouDan extends JInternalFrame {
 	}
 	// 初始化表格
 	private void initTable() {
-		String[] columnNames = {"商品名称", "商品编号", "供应商", "产地", "单位", "规格", "单价",
-				"数量", "包装", "批号", "批准文号"};
+		String[] columnNames = {"商品名称", "商品编号", "供应商",  "生产企业", "单位","单价（元）", "数量","规格", "生产批号", "注册号", "使用位置"};
 		((DefaultTableModel) table.getModel())
 				.setColumnIdentifiers(columnNames);
 		TableColumn column = table.getColumnModel().getColumn(0);
@@ -252,7 +251,7 @@ public class XiaoShouDan extends JInternalFrame {
 				spinfo.setJc(set.getString("jc").trim());
 				spinfo.setDw(set.getString("dw").trim());
 				spinfo.setGg(set.getString("gg").trim());
-				spinfo.setBz(set.getString("bz").trim());
+				spinfo.setDJ(set.getString("dj").trim());
 				spinfo.setPh(set.getString("ph").trim());
 				spinfo.setPzwh(set.getString("pzwh").trim());
 				spinfo.setMemo(set.getString("memo").trim());
@@ -301,8 +300,8 @@ public class XiaoShouDan extends JInternalFrame {
 				rows--;
 			// 计算货品总数和金额
 			for (int i = 0; i < rows; i++) {
-				String column7 = (String) table.getValueAt(i, 7);
-				String column6 = (String) table.getValueAt(i, 6);
+				String column7 = (String) table.getValueAt(i, 6);
+				String column6 = (String) table.getValueAt(i, 5);
 				int c7 = (column7 == null || column7.isEmpty()) ? 0 : Integer
 						.valueOf(column7);
 				Double c6 = (column6 == null || column6.isEmpty()) ? 0 : Double
@@ -370,14 +369,15 @@ public class XiaoShouDan extends JInternalFrame {
 			table.setValueAt(spinfo.getId(), row, 1);
 			table.setValueAt(spinfo.getGysname(), row, 2);
 			table.setValueAt(spinfo.getCd(), row, 3);
-			table.setValueAt(spinfo.getDw(), row, 4);
-			table.setValueAt(spinfo.getGg(), row, 5);
-			table.setValueAt(kucun.getDj() + "", row, 6);
-			table.setValueAt(kucun.getKcsl() + "", row, 7);
-			table.setValueAt(spinfo.getBz(), row, 8);
-			table.setValueAt(spinfo.getPh(), row, 9);
-			table.setValueAt(spinfo.getPzwh(), row, 10);
-			table.editCellAt(row, 7);
+			table.setValueAt(spinfo.getDw(), row, 4);			
+			table.setValueAt(kucun.getDj() + "", row, 5);
+			table.setValueAt(kucun.getKcsl() + "", row, 6);
+			table.setValueAt(spinfo.getGg(), row, 7);			
+			table.setValueAt(spinfo.getPh(), row, 8);
+			table.setValueAt(spinfo.getPzwh(), row, 9);
+			table.setValueAt("0", row, 10);
+			table.editCellAt(row, 6);
+			table.editCellAt(row, 10);
 		}
 	}
 	// 清除空行

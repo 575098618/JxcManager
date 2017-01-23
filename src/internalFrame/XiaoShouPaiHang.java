@@ -98,7 +98,7 @@ public class XiaoShouPaiHang extends JInternalFrame {
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		dftm = (DefaultTableModel) table.getModel();
 		String[] tableHeads = new String[]{"商品编号", "商品名称", "销售金额", "销售数量",
-				"简称", "产地", "单位", "规格", "包装", "批号", "批准文号","简介","供应商"};
+				"简称", "生产企业", "单位","单价（元）", "数量","规格", "生产批号", "注册号","简介","供应商"};
 		dftm.setColumnIdentifiers(tableHeads);
 		scrollPane.setViewportView(table);
 	}

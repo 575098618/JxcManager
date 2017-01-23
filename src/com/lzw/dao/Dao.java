@@ -72,7 +72,7 @@ public class Dao {
 				info.setJian(set.getString("jian").trim());
 				info.setAddress(set.getString("address").trim());
 				info.setBianma(set.getString("bianma").trim());
-				info.setFax(set.getString("fax").trim());
+				//info.setFax(set.getString("fax").trim());
 				info.setHao(set.getString("hao").trim());
 				info.setLian(set.getString("lian").trim());
 				info.setLtel(set.getString("ltel").trim());
@@ -98,7 +98,7 @@ public class Dao {
 				info.setId(set.getString("id").trim());
 				info.setAddress(set.getString("address").trim());
 				info.setBianma(set.getString("bianma").trim());
-				info.setFax(set.getString("fax").trim());
+				//info.setFax(set.getString("fax").trim());
 				info.setJc(set.getString("jc").trim());
 				info.setLian(set.getString("lian").trim());
 				info.setLtel(set.getString("ltel").trim());
@@ -147,7 +147,7 @@ public class Dao {
 		return insert("insert tb_khinfo values('" + khinfo.getId() + "','"
 				+ khinfo.getKhname() + "','" + khinfo.getJian() + "','"
 				+ khinfo.getAddress() + "','" + khinfo.getBianma() + "','"
-				+ khinfo.getTel() + "','" + khinfo.getFax() + "','"
+				+ khinfo.getTel() + "','" 
 				+ khinfo.getLian() + "','" + khinfo.getLtel() + "','"
 				+ khinfo.getMail() + "','" + khinfo.getXinhang() + "','"
 				+ khinfo.getHao() + "')");
@@ -156,8 +156,8 @@ public class Dao {
 	public static int updateKeHu(TbKhinfo khinfo) {
 		return update("update tb_khinfo set jian='" + khinfo.getJian()
 				+ "',address='" + khinfo.getAddress() + "',bianma='"
-				+ khinfo.getBianma() + "',tel='" + khinfo.getTel() + "',fax='"
-				+ khinfo.getFax() + "',lian='" + khinfo.getLian() + "',ltel='"
+				+ khinfo.getBianma() + "',tel='" + khinfo.getTel() 
+				+ "',lian='" + khinfo.getLian() + "',ltel='"
 				+ khinfo.getLtel() + "',mail='" + khinfo.getMail()
 				+ "',xinhang='" + khinfo.getXinhang() + "',hao='"
 				+ khinfo.getHao() + "' where id='" + khinfo.getId() + "'");
@@ -172,7 +172,7 @@ public class Dao {
 		return update("update tb_gysinfo set jc='" + gysInfo.getJc()
 				+ "',address='" + gysInfo.getAddress() + "',bianma='"
 				+ gysInfo.getBianma() + "',tel='" + gysInfo.getTel()
-				+ "',fax='" + gysInfo.getFax() + "',lian='" + gysInfo.getLian()
+				+ "',lian='" + gysInfo.getLian()
 				+ "',ltel='" + gysInfo.getLtel() + "',mail='"
 				+ gysInfo.getMail() + "',yh='" + gysInfo.getYh()
 				+ "' where id='" + gysInfo.getId() + "'");
@@ -184,7 +184,7 @@ public class Dao {
 		return insert("insert tb_gysinfo values('" + gysInfo.getId() + "','"
 				+ gysInfo.getName() + "','" + gysInfo.getJc() + "','"
 				+ gysInfo.getAddress() + "','" + gysInfo.getBianma() + "','"
-				+ gysInfo.getTel() + "','" + gysInfo.getFax() + "','"
+				+ gysInfo.getTel() + "','"
 				+ gysInfo.getLian() + "','" + gysInfo.getLtel() + "','"
 				+ gysInfo.getMail() + "','" + gysInfo.getYh() + "')");
 	}
@@ -195,7 +195,7 @@ public class Dao {
 		return insert("insert tb_spinfo values('" + spInfo.getId() + "','"
 				+ spInfo.getSpname() + "','" + spInfo.getJc() + "','"
 				+ spInfo.getCd() + "','" + spInfo.getDw() + "','"
-				+ spInfo.getGg() + "','" + spInfo.getBz() + "','"
+				+ spInfo.getGg() + "','" + spInfo.getDJ() + "','"
 				+ spInfo.getPh() + "','" + spInfo.getPzwh() + "','"
 				+ spInfo.getMemo() + "','" + spInfo.getGysname() + "')");
 	}
@@ -203,7 +203,7 @@ public class Dao {
 	public static int updateSp(TbSpinfo spInfo) {
 		return update("update tb_spinfo set jc='" + spInfo.getJc() + "',cd='"
 				+ spInfo.getCd() + "',dw='" + spInfo.getDw() + "',gg='"
-				+ spInfo.getGg() + "',bz='" + spInfo.getBz() + "',ph='"
+				+ spInfo.getGg() + "',bz='" + spInfo.getDJ() + "',ph='"
 				+ spInfo.getPh() + "',pzwh='" + spInfo.getPzwh() + "',memo='"
 				+ spInfo.getMemo() + "',gysname='" + spInfo.getGysname()
 				+ "' where id='" + spInfo.getId() + "'");
@@ -219,7 +219,7 @@ public class Dao {
 		try {
 			if (rs.next()) {
 				spInfo.setId(rs.getString("id").trim());
-				spInfo.setBz(rs.getString("bz").trim());
+				spInfo.setDJ(rs.getString("dj").trim());
 				spInfo.setCd(rs.getString("cd").trim());
 				spInfo.setDw(rs.getString("dw").trim());
 				spInfo.setGg(rs.getString("gg").trim());
@@ -252,7 +252,7 @@ public class Dao {
 				kucun.setId(rs.getString("id"));
 				kucun.setSpname(rs.getString("spname"));
 				kucun.setJc(rs.getString("jc"));
-				kucun.setBz(rs.getString("bz"));
+				//kucun.setBz(rs.getString("bz"));
 				kucun.setCd(rs.getString("cd"));
 				kucun.setDj(rs.getDouble("dj"));
 				kucun.setDw(rs.getString("dw"));
@@ -298,7 +298,7 @@ public class Dao {
 								+ "','" + spInfo.getSpname() + "','"
 								+ spInfo.getJc() + "','" + spInfo.getCd()
 								+ "','" + spInfo.getGg() + "','"
-								+ spInfo.getBz() + "','" + spInfo.getDw()
+								+ spInfo.getDJ() + "','" + spInfo.getDw()
 								+ "'," + details.getDj() + ","
 								+ details.getSl() + ")");
 					} else {

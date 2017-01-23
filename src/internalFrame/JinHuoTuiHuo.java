@@ -46,7 +46,7 @@ public class JinHuoTuiHuo extends JInternalFrame {
 	private TbUserlist user = Login.getUser(); // 登录用户信息
 	private final JTextField jhsj = new JTextField(); // 进货时间
 	private final JTextField jsr = new JTextField(); // 经手人
-	private final JComboBox jsfs = new JComboBox(); // 计算方式
+	private final JComboBox jsfs = new JComboBox(); // 结算方式
 	private final JTextField lian = new JTextField(); // 联系人
 	private final JComboBox gys = new JComboBox(); // 供应商
 	private final JTextField piaoHao = new JTextField(); // 票号
@@ -87,7 +87,7 @@ public class JinHuoTuiHuo extends JInternalFrame {
 
 		setupComponet(new JLabel("结算方式："), 0, 1, 1, 0, false);
 		jsfs.addItem("现金");
-		jsfs.addItem("支票");
+		jsfs.addItem("转账");
 		jsfs.setEditable(true);
 		setupComponet(jsfs, 1, 1, 1, 1, true);
 
@@ -194,8 +194,8 @@ public class JinHuoTuiHuo extends JInternalFrame {
 				int rows = table.getRowCount();
 				for (int i = 0; i < rows; i++) {
 					TbKucun kucun = (TbKucun) table.getValueAt(i, 0);
-					String djStr = (String) table.getValueAt(i, 6);
-					String slStr = (String) table.getValueAt(i, 7);
+					String djStr = (String) table.getValueAt(i, 4);
+					String slStr = (String) table.getValueAt(i, 5);
 					Double dj = Double.valueOf(djStr);
 					Integer sl = Integer.valueOf(slStr);
 					TbRkthDetail detail = new TbRkthDetail();
@@ -223,8 +223,7 @@ public class JinHuoTuiHuo extends JInternalFrame {
 	}
 	// 初始化表格
 	private void initTable() {
-		String[] columnNames = {"商品名称", "商品编号", "产地", "单位", "规格", "包装", "单价",
-				"数量"};
+		String[] columnNames = {"商品名称", "商品编号", "生产企业", "单位","单价（元）", "数量", "规格", "生产批号", "注册号"};
 		((DefaultTableModel) table.getModel())
 				.setColumnIdentifiers(columnNames);
 		TableColumn column = table.getColumnModel().getColumn(0);
@@ -257,7 +256,7 @@ public class JinHuoTuiHuo extends JInternalFrame {
 				kucun.setJc(set.getString("jc").trim());
 				kucun.setDw(set.getString("dw").trim());
 				kucun.setGg(set.getString("gg").trim());
-				kucun.setBz(set.getString("bz").trim());
+				//kucun.setBz(set.getString("bz").trim());
 				kucun.setDj(Double.valueOf(set.getString("dj").trim()));
 				kucun.setKcsl(Integer.valueOf(set.getString("kcsl").trim()));
 				sp.addItem(kucun);
@@ -304,8 +303,8 @@ public class JinHuoTuiHuo extends JInternalFrame {
 				rows--;
 			// 计算货品总数和金额
 			for (int i = 0; i < rows; i++) {
-				String column7 = (String) table.getValueAt(i, 7);
-				String column6 = (String) table.getValueAt(i, 6);
+				String column7 = (String) table.getValueAt(i, 5);
+				String column6 = (String) table.getValueAt(i, 4);
 				int c7 = (column7 == null || column7.isEmpty()) ? 0 : Integer
 						.parseInt(column7);
 				Double c6 = (column6 == null || column6.isEmpty()) ? 0 : Double
@@ -370,11 +369,11 @@ public class JinHuoTuiHuo extends JInternalFrame {
 			table.setValueAt(kucun.getId(), row, 1);
 			table.setValueAt(kucun.getCd(), row, 2);
 			table.setValueAt(kucun.getDw(), row, 3);
-			table.setValueAt(kucun.getGg(), row, 4);
-			table.setValueAt(kucun.getBz(), row, 5);
-			table.setValueAt(kucun.getDj().toString(), row, 6);
-			table.setValueAt(kucun.getKcsl().toString(), row, 7);
-			table.editCellAt(row, 7);
+			table.setValueAt(kucun.getDj().toString(), row, 4);
+			table.setValueAt(kucun.getKcsl().toString(), row, 5);
+			table.setValueAt(kucun.getGg(), row, 6);
+			//table.setValueAt(kucun.getBz(), row, 7);			
+			table.editCellAt(row, 5);
 		}
 	}
 	// 清除空行

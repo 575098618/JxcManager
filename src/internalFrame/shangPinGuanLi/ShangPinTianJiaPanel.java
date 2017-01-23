@@ -26,11 +26,12 @@ import com.lzw.dao.Dao;
 public class ShangPinTianJiaPanel extends JPanel {
 	private JComboBox gysQuanCheng;
 	private JTextField beiZhu;
-	private JTextField wenHao;
+	private JTextField zhuceHao;
 	private JTextField piHao;
-	private JTextField baoZhuang;
+	//private JTextField baoZhuang;
 	private JTextField guiGe;
 	private JTextField danWei;
+	private JTextField danJia;
 	private JTextField chanDi;
 	private JTextField jianCheng;
 	private JTextField quanCheng;
@@ -44,24 +45,27 @@ public class ShangPinTianJiaPanel extends JPanel {
 		setupComponent(new JLabel("简称："), 0, 1, 1, 1, false);
 		jianCheng = new JTextField();
 		setupComponent(jianCheng, 1, 1, 3, 10, true);
-		setupComponent(new JLabel("产地："), 0, 2, 1, 1, false);
+		setupComponent(new JLabel("生产企业："), 0, 2, 1, 1, false);
 		chanDi = new JTextField();
 		setupComponent(chanDi, 1, 2, 3, 300, true);
 		setupComponent(new JLabel("单位："), 0, 3, 1, 1, false);
 		danWei = new JTextField();
 		setupComponent(danWei, 1, 3, 1, 130, true);
-		setupComponent(new JLabel("规格："), 2, 3, 1, 1, false);
+		setupComponent(new JLabel("单价（元）："), 2, 3, 1, 1, false);
+		danJia = new JTextField();
+		setupComponent(danJia, 3, 3, 1, 1, true);
+		setupComponent(new JLabel("规格："), 0, 4, 1, 1, false);
 		guiGe = new JTextField();
-		setupComponent(guiGe, 3, 3, 1, 1, true);
-		setupComponent(new JLabel("包装："), 0, 4, 1, 1, false);
+		setupComponent(guiGe, 1, 4, 1, 1, true);
+		/*setupComponent(new JLabel("包装："), 0, 4, 1, 1, false);
 		baoZhuang = new JTextField();
-		setupComponent(baoZhuang, 1, 4, 1, 1, true);
-		setupComponent(new JLabel("批号："), 2, 4, 1, 1, false);
+		setupComponent(baoZhuang, 1, 4, 1, 1, true);*/
+		setupComponent(new JLabel("生产批号："), 2, 4, 1, 1, false);
 		piHao = new JTextField();
 		setupComponent(piHao, 3, 4, 1, 1, true);
-		setupComponent(new JLabel("批准文号："), 0, 5, 1, 1, false);
-		wenHao = new JTextField();
-		setupComponent(wenHao, 1, 5, 3, 1, true);
+		setupComponent(new JLabel("注册号："), 0, 5, 1, 1, false);
+		zhuceHao = new JTextField();
+		setupComponent(zhuceHao, 1, 5, 3, 1, true);
 		setupComponent(new JLabel("供应商全称："), 0, 6, 1, 1, false);
 		gysQuanCheng = new JComboBox();
 		gysQuanCheng.setMaximumRowCount(5);
@@ -72,14 +76,16 @@ public class ShangPinTianJiaPanel extends JPanel {
 		final JButton tjButton = new JButton();
 		tjButton.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
-				if (baoZhuang.getText().equals("")
-						|| chanDi.getText().equals("")
+				if (chanDi.getText().equals("")
 						|| danWei.getText().equals("")
+						|| danJia.getText().equals("")
 						|| guiGe.getText().equals("")
 						|| jianCheng.getText().equals("")
 						|| piHao.getText().equals("")
-						|| wenHao.getText().equals("")
-						|| quanCheng.getText().equals("")) {
+						|| zhuceHao.getText().equals("")
+						|| quanCheng.getText().equals("")
+						//|| baoZhuang.getText().equals("")
+						) {
 					JOptionPane.showMessageDialog(ShangPinTianJiaPanel.this,
 							"请完成未填写的信息。", "商品添加", JOptionPane.ERROR_MESSAGE);
 					return;
@@ -115,16 +121,17 @@ public class ShangPinTianJiaPanel extends JPanel {
 				}
 				TbSpinfo spInfo = new TbSpinfo();
 				spInfo.setId(id);
-				spInfo.setBz(baoZhuang.getText().trim());
+				//spInfo.setBz(baoZhuang.getText().trim());
 				spInfo.setCd(chanDi.getText().trim());
 				spInfo.setDw(danWei.getText().trim());
+				spInfo.setDJ(danJia.getText().trim());
 				spInfo.setGg(guiGe.getText().trim());
 				spInfo.setGysname(gysQuanCheng.getSelectedItem().toString()
 						.trim());
 				spInfo.setJc(jianCheng.getText().trim());
 				spInfo.setMemo(beiZhu.getText().trim());
 				spInfo.setPh(piHao.getText().trim());
-				spInfo.setPzwh(wenHao.getText().trim());
+				spInfo.setPzwh(zhuceHao.getText().trim());
 				spInfo.setSpname(quanCheng.getText().trim());
 				Dao.addSp(spInfo);
 				JOptionPane.showMessageDialog(ShangPinTianJiaPanel.this,
@@ -144,14 +151,15 @@ public class ShangPinTianJiaPanel extends JPanel {
 		setupComponent(tjButton, 3, 8, 1, 1, false);
 		resetButton.addActionListener(new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
-				baoZhuang.setText("");
+				//baoZhuang.setText("");
 				chanDi.setText("");
 				danWei.setText("");
+				danJia.setText("");
 				guiGe.setText("");
 				jianCheng.setText("");
 				beiZhu.setText("");
 				piHao.setText("");
-				wenHao.setText("");
+				zhuceHao.setText("");
 				quanCheng.setText("");
 			}
 		});
