@@ -18,8 +18,10 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import com.dental.dao.Dao;
+
 import model.TbUserlist;
-import com.lzw.dao.Dao;
 public class XiaoShouPaiHang extends JInternalFrame {
 	private JButton okButton;
 	private JComboBox month;

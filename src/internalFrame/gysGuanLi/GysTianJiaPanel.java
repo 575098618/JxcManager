@@ -14,10 +14,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.dental.dao.Dao;
+
 import keyListener.InputKeyListener;
 import model.TbGysinfo;
-
-import com.lzw.dao.Dao;
 public class GysTianJiaPanel extends JPanel {
 	private JTextField EMailF;
 	private JTextField yinHangF;

@@ -19,8 +19,8 @@ import javax.swing.event.InternalFrameEvent;
 
 import model.TbUserlist;
 
-import com.lzw.dao.Dao;
-import com.lzw.login.Login;
+import com.dental.dao.Dao;
+import com.dental.login.Login;
 public class GengGaiMiMa extends JInternalFrame{
 	private JLabel name;
 	private JPasswordField oldPass;

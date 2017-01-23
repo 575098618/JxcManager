@@ -17,9 +17,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import com.dental.dao.Dao;
+
 import keyListener.InputKeyListener;
 import model.TbKhinfo;
-import com.lzw.dao.Dao;
 public class KeHuXiuGaiPanel extends JPanel {
 	private JTextField keHuQuanCheng;
 	private JTextField yinHangZhangHao;

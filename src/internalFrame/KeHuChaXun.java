@@ -20,8 +20,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+
+import com.dental.dao.*;
+
 import model.TbKhinfo;
-import com.lzw.dao.*;
 public class KeHuChaXun extends JInternalFrame {
 	private JTable table;
 	private JTextField conditionContent;

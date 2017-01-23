@@ -1,4 +1,4 @@
-package com.lzw.login;
+package com.dental.login;
 import java.awt.Graphics;
 import java.awt.Image;
 

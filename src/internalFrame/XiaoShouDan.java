@@ -38,8 +38,9 @@ import model.TbSellDetail;
 import model.TbSellMain;
 import model.TbSpinfo;
 import model.TbUserlist;
-import com.lzw.dao.Dao;
-import com.lzw.login.Login;
+
+import com.dental.dao.Dao;
+import com.dental.login.Login;
 public class XiaoShouDan extends JInternalFrame {
 	private final JTable table;
 	private TbUserlist user = Login.getUser(); // 登录用户信息

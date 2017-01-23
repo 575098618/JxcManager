@@ -25,9 +25,10 @@ import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.table.DefaultTableModel;
 
+import com.dental.dao.*;
+
 import model.TbRukuDetail;
 import model.TbUserlist;
-import com.lzw.dao.*;
 
 public class RuKuTuiHuoChaXun extends JInternalFrame {
 	private JCheckBox selectDate;

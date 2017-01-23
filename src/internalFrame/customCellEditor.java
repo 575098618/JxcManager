@@ -10,8 +10,10 @@ import javax.swing.JTable;
 import javax.swing.event.CellEditorListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.table.TableCellEditor;
+
+import com.dental.dao.Dao;
+
 import model.TbSpinfo;
-import com.lzw.dao.Dao;
 public class customCellEditor extends JComboBox implements TableCellEditor {
 	private CellEditorListener list;
 	private String gysName;

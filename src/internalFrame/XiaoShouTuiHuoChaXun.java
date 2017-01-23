@@ -28,9 +28,9 @@ import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
 import javax.swing.table.DefaultTableModel;
 
-import model.TbUserlist;
+import com.dental.dao.Dao;
 
-import com.lzw.dao.Dao;
+import model.TbUserlist;
 public class XiaoShouTuiHuoChaXun extends JInternalFrame{
 	private JButton queryButton;
 	private JTextField endDate;

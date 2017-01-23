@@ -19,10 +19,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.dental.dao.Dao;
+
 import model.TbGysinfo;
 import model.TbSpinfo;
-
-import com.lzw.dao.Dao;
 public class ShangPinXiuGaiPanel extends JPanel {
 	private JComboBox gysQuanCheng;
 	private JTextField beiZhu;

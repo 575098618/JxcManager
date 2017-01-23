@@ -1,4 +1,4 @@
-package com.lzw;
+package com.dental;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
@@ -33,7 +33,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
 
-import com.lzw.login.Login;
+import com.dental.login.Login;
 public class JXCFrame {
 	private JPanel sysManagePanel;//系统管理面板
 	private JDesktopPane desktopPane;//桌面面板

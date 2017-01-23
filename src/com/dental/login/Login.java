@@ -1,4 +1,4 @@
-package com.lzw.login;
+package com.dental.login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -14,8 +14,8 @@ import javax.swing.WindowConstants;
 
 import model.TbUserlist;
 
-import com.lzw.JXCFrame;
-import com.lzw.dao.Dao;
+import com.dental.JXCFrame;
+import com.dental.dao.Dao;
 public class Login extends JFrame {
 	private JLabel userLabel;
 	private JLabel passLabel;

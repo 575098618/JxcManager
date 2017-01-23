@@ -21,7 +21,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-import com.lzw.dao.Dao;
+import com.dental.dao.Dao;
 public class ShanChuCaoZuoYuan extends JPanel {
 	private JTextField loginName;
 	private JTextField passField;

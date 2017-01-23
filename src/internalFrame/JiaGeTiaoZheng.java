@@ -25,8 +25,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
+
+import com.dental.dao.Dao;
+
 import model.TbKucun;
-import com.lzw.dao.Dao;
 public class JiaGeTiaoZheng extends JInternalFrame {
 	private TbKucun kcInfo;
 	private JLabel guiGe;

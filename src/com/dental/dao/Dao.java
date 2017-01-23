@@ -1,4 +1,4 @@
-package com.lzw.dao;
+package com.dental.dao;
 import internalFrame.guanli.Item;
 
 import java.sql.Connection;

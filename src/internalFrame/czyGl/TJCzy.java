@@ -12,7 +12,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import com.lzw.dao.*;
+
+import com.dental.dao.*;
 
 import model.TbUserlist;
 public class TJCzy extends JPanel {

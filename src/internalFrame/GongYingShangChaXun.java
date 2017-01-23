@@ -18,8 +18,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+
+import com.dental.dao.Dao;
+
 import model.TbGysinfo;
-import com.lzw.dao.Dao;
 public class GongYingShangChaXun extends JInternalFrame {
 	private JTable table;
 	private JTextField conditionContent;

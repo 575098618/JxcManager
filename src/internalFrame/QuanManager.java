@@ -20,8 +20,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
+
+import com.dental.dao.Dao;
+
 import model.TbUserlist;
-import com.lzw.dao.Dao;
 public class QuanManager extends JInternalFrame {
 	private JTextField userName;
 	private JComboBox quanXian;
